@@ -23,9 +23,17 @@ class PostTemplate extends React.Component {
     return (
       <React.Fragment>
         <Layout>
-          <Helmet title={`${post.title} | ${config.siteTitle}`} description={post.description} />
+          <Helmet
+            title={`${post.title} | ${config.siteTitle}`}
+            description={post.description}
+          />
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <Content post={post} postNode={postNode} slug={slug} config={config} />
+          <Content
+            post={post}
+            postNode={postNode}
+            slug={slug}
+            config={config}
+          />
           <Disqus postNode={postNode} />
         </Layout>
       </React.Fragment>

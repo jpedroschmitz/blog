@@ -1,1 +1,1 @@
-export { default } from './PostMeta';
+export { default } from "./PostMeta";

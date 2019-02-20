@@ -1,22 +1,22 @@
 const config = {
-  siteTitle: "João Pedro Schmitz | Blog", 
+  siteTitle: "João Pedro Schmitz | Blog",
   headerTitle: "João Pedro",
-  siteTitleShort: "João Pedro S.", 
-  siteTitleAlt: "João Pedro Schmitz | Blog", 
-  siteLogo: "/logos/favicon.png", 
+  siteTitleShort: "João Pedro S.",
+  siteTitleAlt: "João Pedro Schmitz | Blog",
+  siteLogo: "/logos/favicon.png",
   siteBanner: "/banners/sitebanner.png",
-  siteUrl: "https://www.joaopedro.cc", 
-  pathPrefix: "/", 
+  siteUrl: "https://www.joaopedro.cc",
+  pathPrefix: "/",
   siteDescription: "Um blog de um eterno estudante de desenvolvimento web!",
-  siteRss: "/rss.xml", 
-  googleAnalyticsID: "UA-134411592-1", 
-  disqusShortname: "blog-do-joao-pedro", 
+  siteRss: "/rss.xml",
+  googleAnalyticsID: "UA-134411592-1",
+  disqusShortname: "blog-do-joao-pedro",
   postDefaultCategoryID: "Tech",
-  dateFromFormat: "DD/MM/YYYY", 
-  dateFormat: "DD/MM/YYYY", 
-  themeColor: "#00E2BC", 
+  dateFromFormat: "DD/MM/YYYY",
+  dateFormat: "DD/MM/YYYY",
+  themeColor: "#00E2BC",
   backgroundColor: "#FFFFFF",
-  copyright: 'João Pedro Schmitz'
+  copyright: "João Pedro Schmitz"
 };
 
 if (config.pathPrefix === "/") {

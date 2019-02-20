@@ -1,1 +1,1 @@
-export { default } from './Disqus';
+export { default } from "./Disqus";

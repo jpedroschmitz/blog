@@ -23,7 +23,7 @@ class SEO extends Component {
       description = config.siteDescription;
       image = urljoin(config.siteUrl, config.pathPrefix, config.siteBanner);
     }
-    
+
     const blogURL = urljoin(config.siteUrl, config.pathPrefix);
     const schemaOrgJSONLD = [
       {
@@ -70,14 +70,21 @@ class SEO extends Component {
       <Helmet>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
-        <meta name="google-site-verification" content="T8zsZHxMzNJ2Sb1h-pnIo3ojB7IH0xPomCd1yEQXYJ0" />
-        
+        <meta
+          name="google-site-verification"
+          content="T8zsZHxMzNJ2Sb1h-pnIo3ojB7IH0xPomCd1yEQXYJ0"
+        />
+
         <script type="application/ld+json">
           {JSON.stringify(schemaOrgJSONLD)}
         </script>
 
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : <meta property="og:type" content="website" />}
+        {postSEO ? (
+          <meta property="og:type" content="article" />
+        ) : (
+          <meta property="og:type" content="website" />
+        )}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />

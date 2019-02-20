@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDisqusComments from "react-disqus-comments";
 import urljoin from "url-join";
-import classes from './Disqus.module.css';
+import classes from "./Disqus.module.css";
 import config from "../../../data/SiteConfig";
 
 class Disqus extends Component {
@@ -37,7 +37,7 @@ class Disqus extends Component {
       config.pathPrefix,
       postNode.fields.slug
     );
-    
+
     return (
       <div className={classes.Disqus}>
         <ReactDisqusComments

@@ -1,1 +1,1 @@
-export { default } from './PostImage';
+export { default } from "./PostImage";

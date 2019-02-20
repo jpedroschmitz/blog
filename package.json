@@ -46,14 +46,12 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.4",
-    "gh-pages": "^2.0.1",
     "prettier": "^1.16.0",
     "remark-cli": "^6.0.1",
     "remark-preset-lint-recommended": "^3.0.1",
     "stylefmt": "^6.0.3",
     "stylelint": "^9.10.1",
-    "stylelint-config-standard": "^18.0.0",
-    "write-good": "^1.0.1"
+    "stylelint-config-standard": "^18.0.0"
   },
   "license": "MIT",
   "main": "n/a",
@@ -64,8 +62,7 @@
     "build": "gatsby build",
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
-    "lint:md": "remark content/posts/",
-    "write-good": "write-good $(glob 'content/posts/**/*.md')",
+    "lint:md": "remark content/",
     "format:js": "prettier '**/*.{js,jsx}' --write"
   },
   "remarkConfig": {

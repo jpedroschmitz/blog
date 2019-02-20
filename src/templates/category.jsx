@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../layout";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
+import Subtitle from "../components/UI/Subtitle";
 import config from "../../data/SiteConfig";
 import SEO from "../components/SEO";
 
@@ -19,7 +20,7 @@ class CategoryTemplate extends React.Component {
           <Helmet
             title={`Posts na categoria "${category}" | ${config.siteTitle}`}
           />
-          <h2 style={{ marginBottom: '22px' }}>{`Categoria "${category}"`}</h2>
+          <Subtitle>{`Categoria "${category}"`}</Subtitle>
           <Posts postEdges={edges} />
         </Container>
       </Layout>

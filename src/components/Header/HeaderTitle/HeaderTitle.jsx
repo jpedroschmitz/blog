@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import classes from './HeaderTitle.module.css';
+import React from "react";
+import { Link } from "gatsby";
+import classes from "./HeaderTitle.module.css";
 
 const HeaderTitle = ({ title }) => (
   <Link to="/" className={classes.HeaderTitle}>
