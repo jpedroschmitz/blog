@@ -1,0 +1,9 @@
+.SocialIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.SocialIcons > div {
+    margin: 0 10px 0 10px;
+}

@@ -1,0 +1,14 @@
+.HeaderTitle {
+    display: flex;
+    border: none;
+}
+
+.HeaderTitle:hover {
+    border: none;
+}
+
+@media (max-width: 412px) {
+    .HeaderTitle {
+        padding-top: 35px;
+    }
+}

@@ -1,0 +1,54 @@
+.Search {
+    z-index: 80;
+    position: relative;
+    top: 7px;
+}
+
+.Search:hover {
+    cursor: pointer;
+}
+
+.Icon {
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: 2px solid #000000;
+    display: block;
+    border-radius: 15px;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.Icon:before,
+.Icon:after {
+    display: block;
+    content: '';
+    background: #000000;
+    position: absolute;
+    transform: rotate(-45deg);
+    transition: all .2s ease-in-out;
+    width: 2px;
+    height: 10px;
+    right: -4px;
+    top: 10px;
+}
+
+.Clicked {
+    z-index: 101;
+    top: 0;
+}
+
+.Clicked .Icon {
+    border: none;
+}
+
+.Clicked .Icon:before,
+.Clicked .Icon:after {
+    height: 22px;
+    right: 0;
+    top: 8px;
+}
+
+.Clicked .Icon:after {
+    transform: rotate(45deg);
+}

@@ -1,0 +1,12 @@
+.Description {
+    line-height: 1.5;
+    color: #2d2d2d;
+    margin: 0;
+    font-size: 1.06rem;
+}
+
+@media (max-width: 400px) {
+    .Description {
+        font-size: 0.92rem;
+    }
+}

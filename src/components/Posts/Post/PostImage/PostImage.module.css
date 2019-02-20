@@ -1,0 +1,38 @@
+.PostImageOuterWrapper {
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(236, 235, 234);
+    border-image: initial;
+    overflow: hidden;
+    max-height: 300px;
+}
+
+.PostImageWrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 575px) {
+    .PostImageOuterWrapper {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 495px) {
+    .PostImageOuterWrapper {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .PostImageOuterWrapper {
+        max-height: 150px;
+    }
+}

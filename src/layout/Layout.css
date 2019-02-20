@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    font-size: 2.2222222222222223rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 2;
+    letter-spacing: .069rem;
+    color: #333;
+    font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 22px 0 22px 0;
+    text-align: justify;
+}
+
+li {
+    font-size: 1.25rem;
+    line-height: 2;
+    letter-spacing: .069rem;
+    color: #333;
+    font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 22px 0 22px 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    border-bottom: 2px dashed #333;
+}
+
+a:hover {
+    border-bottom: 2px dashed #15db95;
+}
+
+code {
+    display: inline-block;
+    background: #1d1f21;
+    color: #c5c8c6;
+    overflow: auto;
+    width: 100%;
+}
