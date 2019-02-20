@@ -3,12 +3,12 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import Disqus from "../components/Disqus/Disqus";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 import Content from "../components/Content";
 import config from "../../data/SiteConfig";
 import "../styles/code-dark.css";
 
-export default class PostTemplate extends React.Component {
+class PostTemplate extends React.Component {
   render() {
     const { pageContext, data } = this.props;
     const { slug } = pageContext;
@@ -23,7 +23,7 @@ export default class PostTemplate extends React.Component {
     return (
       <React.Fragment>
         <Layout>
-          <Helmet title={`${post.title} | ${config.siteTitle}`} />
+          <Helmet title={`${post.title} | ${config.siteTitle}`} description={post.description} />
           <SEO postPath={slug} postNode={postNode} postSEO />
           <Content post={post} postNode={postNode} slug={slug} config={config} />
           <Disqus postNode={postNode} />
@@ -45,15 +45,14 @@ export const pageQuery = graphql`
         date
         category
         tags
+        description
       }
       fields {
-        nextTitle
-        nextSlug
-        prevTitle
-        prevSlug
         slug
         date
       }
     }
   }
 `;
+
+export default PostTemplate;

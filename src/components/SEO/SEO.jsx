@@ -21,10 +21,9 @@ class SEO extends Component {
     } else {
       title = config.siteTitle;
       description = config.siteDescription;
-      image = config.siteLogo;
+      image = urljoin(config.siteUrl, config.pathPrefix, config.siteBanner);
     }
-
-    image = urljoin(config.siteUrl, config.pathPrefix, image);
+    
     const blogURL = urljoin(config.siteUrl, config.pathPrefix);
     const schemaOrgJSONLD = [
       {

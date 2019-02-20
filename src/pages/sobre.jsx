@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import  { Link } from 'gatsby';
 import Layout from "../layout";
-import SEO from '../components/SEO/SEO';
+import SEO from '../components/SEO';
 import config from "../../data/SiteConfig";
 import Container from "../components/Container";
 
@@ -52,7 +51,6 @@ class AboutPage extends Component {
               <a href="https://github.com/jpedroschmitz" rel="noreferrer nofollow">GitHub</a>
             </li>
           </ul>
-          <Link to="/">Voltar para a home</Link>
         </Container>
       </Layout>
     );

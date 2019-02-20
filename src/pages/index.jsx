@@ -1,9 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
+import SEO from "../components/SEO";
 import Layout from "../layout";
 import Posts from "../components/Posts";
-import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import Container from "../components/Container";
 

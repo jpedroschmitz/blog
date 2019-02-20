@@ -5,9 +5,9 @@ import Layout from "../layout";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
 import config from "../../data/SiteConfig";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 
-export default class CategoryTemplate extends React.Component {
+class CategoryTemplate extends React.Component {
   render() {
     const { pageContext, data } = this.props;
     const { category } = pageContext;
@@ -56,3 +56,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default CategoryTemplate;

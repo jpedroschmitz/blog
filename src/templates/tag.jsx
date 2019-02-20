@@ -1,13 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
-import SEO from "../components/SEO/SEO";
+import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 
-export default class TagTemplate extends React.Component {
+class TagTemplate extends Component {
   render() {
     const { pageContext, data } = this.props;
     const { tag } = pageContext;
@@ -23,6 +23,7 @@ export default class TagTemplate extends React.Component {
       </Layout>
     );
   }
+
 }
 
 export const pageQuery = graphql`
@@ -54,3 +55,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default TagTemplate;

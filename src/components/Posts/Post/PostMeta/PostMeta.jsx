@@ -1,13 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from 'gatsby';
 import classes from './PostMeta.module.css';
 
 const PostMeta = ({ author, date, category, small }) => {
   let style = null;
-  const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
   if (small) style = { fontSize: '1.06rem' };
-  if (small && width <= 400) style = { fontSize: '0.92rem' };
-
   return (
     <p className={classes.Meta}>
       <span className={classes.MetaContent}>
