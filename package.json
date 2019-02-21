@@ -63,7 +63,9 @@
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/",
-    "format:js": "prettier '**/*.{js,jsx}' --write"
+    "format:js": "prettier '**/*.{js,jsx}' --write",
+    "launch-develop": "npm run clean && npm run lint:js && npm run format:js && gatsby develop",
+    "launch-build": "npm run clean && npm run lint:js && npm run format:js && gatsby build && gatsby serve"
   },
   "remarkConfig": {
     "plugins": [

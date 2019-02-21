@@ -2,7 +2,6 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import Disqus from "../components/Disqus/Disqus";
 import SEO from "../components/SEO";
 import Content from "../components/Content";
 import config from "../../data/SiteConfig";
@@ -34,7 +33,6 @@ class PostTemplate extends React.Component {
             slug={slug}
             config={config}
           />
-          <Disqus postNode={postNode} />
         </Layout>
       </React.Fragment>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./ContentImage.module.css";
+import classes from "./Image.module.css";
 
 const ContentImage = ({ cover, title }) => (
   <div className={classes.ContentImageWrapper}>

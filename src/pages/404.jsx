@@ -19,12 +19,10 @@ class AboutPage extends Component {
           <p>
             Se quiser voltar para a página inicial&nbsp;
             <Link to="/">clique aqui</Link>
-            .
           </p>
           <p>
             Caso queira conhecer um pouco de mim pode clicar&nbsp;
             <Link to="/sobre">aqui</Link>
-            .
           </p>
         </Container>
       </Layout>

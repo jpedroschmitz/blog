@@ -10,8 +10,7 @@ import {
   LinkedinIcon
 } from "react-share";
 import urljoin from "url-join";
-import Container from "../Container";
-import config from "../../../data/SiteConfig";
+import config from "../../../../data/SiteConfig";
 import classes from "./SocialLinks.module.css";
 
 class SocialLinks extends Component {
@@ -22,7 +21,7 @@ class SocialLinks extends Component {
     const iconSize = mobile ? 36 : 48;
 
     return (
-      <Container>
+      <React.Fragment>
         <h3
           style={{
             textAlign: "center",
@@ -50,7 +49,7 @@ class SocialLinks extends Component {
             <LinkedinIcon round size={iconSize} />
           </LinkedinShareButton>
         </div>
-      </Container>
+      </React.Fragment>
     );
   }
 }

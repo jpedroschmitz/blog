@@ -9,9 +9,7 @@ tags:
     - Gatsby
 ---
 
-Iaee pessoal! Como vocês estão?
-
-Bom, antes de começar oficialmente o blog gostaria de me apresentar um pouco para vocês :)
+Iaee pessoal! Como vocês estão? Bom, antes de começar oficialmente o blog gostaria de me apresentar um pouco para vocês :)
 
 Meu nome é João Pedro Schmitz, sou estagiário na Merkadia Soluções Digitais e faço Engenharia de Software na Universidade do Estado de Santa Catarina. Atualmente estou iniciando a 5ª fase.
 
@@ -23,12 +21,14 @@ O meu objetivo com esse blog é compartilhar as minhas experiências com desenvo
 
 ## Como eu fiz esse blog?
 
-Como gosto sempre de aprender coisas novas resolvi experimentar o [Gatsby.js](<https://www.gatsbyjs.org/>) para ver como era e como seria trabalhar com ele. Logo ao iniciar o primeiro projeto já gostei muito, e como eu sempre quis fazer um blog acabei baixando um starter para o Gatsby que já trazia todo a estrutura de um blog pronta. Depois disso ficou fácil, foi só estilizar e melhorar algumas coisas.
+Como gosto sempre de aprender coisas novas resolvi experimentar o [Gatsby.js](<https://www.gatsbyjs.org/>) para ver como era e como seria trabalhar com ele. Logo ao iniciar o primeiro projeto já gostei muito, e como eu sempre quis fazer um blog acabei usando um starter para o Gatsby que já trazia todo a estrutura de um blog pronta. Depois disso ficou fácil, foi só estilizar e melhorar algumas coisas.
 
-Se você quiser dar uma olhada no starter esse é o [link](<https://www.gatsbyjs.org/starters/Vagr9K/gatsby-advanced-starter/>). Caso queria ver outros starters você pode encontrar [aqui](<https://www.gatsbyjs.org/starters/?v=2>).
+Se você quiser dar uma olhada no starter que usei esse é o [link](<https://www.gatsbyjs.org/starters/Vagr9K/gatsby-advanced-starter/>). Outros starters você encontra [aqui](<https://www.gatsbyjs.org/starters/?v=2>).
 
 ## Conclusão 
 
-Bom, essa foi uma pequena introdução minha e das tecnologias que utilizei para criar esse blog. Se tiver alguma dúvida e quiser entrar em contato comigo para deixar dicas, sugestões ou feedbacks pode me mandar um [e-mail](<mailto:jpedroschmitz@hotmail.com>) ou deixar um comentário aqui embaixo. 
+Bom, essa foi uma pequena introdução minha e das tecnologias que utilizei para criar esse blog. Se você tiver alguma dúvida e quiser entrar em contato comigo para deixar dicas, sugestões ou feedbacks pode me mandar um [e-mail](<mailto:jpedroschmitz@hotmail.com>) ou deixar um comentário aqui embaixo. 
 
-No próximo post desejo iniciar uma série ensinando a criar e hospedar um blog simples com Gatsby.js sem custo algum (amo você Netlify ❤). Nos vemos lá!
+No próximo post vou iniciar uma série ensinando a criar e hospedar um blog simples feito com Gatsby.js. 
+
+Nos vemos lá! Deus abençoe!
