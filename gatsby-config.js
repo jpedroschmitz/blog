@@ -1,5 +1,5 @@
 const urljoin = require("url-join");
-const config = require("./data/SiteConfig");
+const config = require("./data/config");
 
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
@@ -14,7 +14,7 @@ module.exports = {
       image_url: `${urljoin(
         config.siteUrl,
         config.pathPrefix
-      )}/logos/favicon.png`,
+      )}/images/favicon.png`,
       copyright: config.copyright
     }
   },
@@ -66,7 +66,10 @@ module.exports = {
         color: config.themeColor
       }
     },
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
+    `gatsby-transformer-sharp`,
+    'gatsby-image',
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
@@ -80,7 +83,7 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "standalone",
-        icon: "static/logos/favicon.png"
+        icon: "static/images/favicon.png"
       }
     },
     "gatsby-plugin-offline",

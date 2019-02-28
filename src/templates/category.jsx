@@ -1,14 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import Helmet from "react-helmet";
+import styled from 'styled-components';
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
-import Subtitle from "../components/UI/Subtitle";
-import config from "../../data/SiteConfig";
+import config from "../../data/config";
 import SEO from "../components/SEO";
+import fonts from '../styles/fonts';
 
-class CategoryTemplate extends React.Component {
+const Title = styled.h1`
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 60px;
+  ${fonts.secondary}
+  font-weight: 300;
+`
+
+export default class CategoryTemplate extends Component {
   render() {
     const { pageContext, data } = this.props;
     const { category } = pageContext;
@@ -20,8 +30,10 @@ class CategoryTemplate extends React.Component {
           <Helmet
             title={`Posts na categoria "${category}" | ${config.siteTitle}`}
           />
-          <Subtitle>{`Categoria "${category}"`}</Subtitle>
-          <Posts postEdges={edges} />
+          <Title>{`Todos os posts com a categoria "${category}"`}</Title>
+          <article>
+            <Posts postEdges={edges} />
+          </article>
         </Container>
       </Layout>
     );
@@ -32,22 +44,27 @@ export const pageQuery = graphql`
   query CategoryPage($category: String) {
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { category: { eq: $category } } }
+      sort: { fields: [fields___prefix], order: DESC }
+      filter: { frontmatter: { category: { eq: $category }, draft: { ne: true } } }
     ) {
       totalCount
       edges {
         node {
           fields {
             slug
-            date
           }
           excerpt
           timeToRead
           frontmatter {
             title
             tags
-            cover
+            cover {
+              childImageSharp {
+                sizes(maxWidth: 650, maxHeight: 400) {
+                    ...GatsbyImageSharpSizes
+                }
+              }
+            }
             date
             category
             description
@@ -57,5 +74,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default CategoryTemplate;

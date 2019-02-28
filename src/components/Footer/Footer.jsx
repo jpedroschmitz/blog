@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
-import classes from "./Footer.module.css";
+import React from "react";
+import styled from "styled-components";
+import breakpoints from '../../styles/breakpoints';
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer className={classes.Footer}>
-        <p>Feito com Gatsby e ❤</p>
-        <div className={classes.FooterLinks}>
-          <Link className={classes.FooterLink} to="/">
-            Home
-          </Link>
-          <Link className={classes.FooterLink} to="/sobre">
-            Sobre
-          </Link>
-        </div>
-      </footer>
-    );
+const Footer = styled.footer`
+  padding: 1.22rem;
+  margin-top: 80px;
+  p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 0.98rem;
   }
-}
+  ${breakpoints.sm} {
+    margin-top: 50px;
+  }
+`;
 
-export default Footer;
+export default () => (
+  <Footer>
+    <p>Feito com Gatsby e muito ❤</p>
+  </Footer>
+);

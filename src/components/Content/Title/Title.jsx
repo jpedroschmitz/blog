@@ -1,6 +1,14 @@
 import React from "react";
-import classes from "./Title.module.css";
+import styled from "styled-components";
+import breakpoints from "../../../styles/breakpoints";
 
-const ContentTitle = ({ title }) => <h2 className={classes.Title}>{title}</h2>;
+const Title = styled.h1`
+  font-size: 54px;
+  line-height: 1.2;
+  margin: 0;
+  ${breakpoints.md} {
+    font-size: 44px;
+  }
+`;
 
-export default ContentTitle;
+export default ({ title }) => <Title>{title}</Title>;

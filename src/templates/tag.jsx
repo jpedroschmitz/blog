@@ -1,14 +1,24 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
+import styled from 'styled-components';
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
-import Subtitle from "../components/UI/Subtitle";
 import SEO from "../components/SEO";
-import config from "../../data/SiteConfig";
+import config from "../../data/config";
+import fonts from '../styles/fonts';
 
-class TagTemplate extends Component {
+const Title = styled.h1`
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 60px;
+  ${fonts.secondary}
+  font-weight: 300;
+`
+
+export default class TagTemplate extends Component {
   render() {
     const { pageContext, data } = this.props;
     const { tag } = pageContext;
@@ -18,8 +28,10 @@ class TagTemplate extends Component {
         <SEO />
         <Container>
           <Helmet title={`Posts com a tag "${tag}" | ${config.siteTitle}`} />
-          <Subtitle>{`Tag "${tag}"`}</Subtitle>
-          <Posts postEdges={edges} />
+          <Title>{`Todos os posts com a tag "${tag}"`}</Title>
+          <article>
+            <Posts postEdges={edges} />
+          </article>
         </Container>
       </Layout>
     );
@@ -30,22 +42,27 @@ export const pageQuery = graphql`
   query TagPage($tag: String) {
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      sort: { fields: [fields___prefix], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } } }
     ) {
       totalCount
       edges {
         node {
           fields {
             slug
-            date
           }
           excerpt
           timeToRead
           frontmatter {
             title
             tags
-            cover
+            cover {
+              childImageSharp {
+                sizes(maxWidth: 650, maxHeight: 400) {
+                    ...GatsbyImageSharpSizes
+                }
+              }
+            }
             date
             category
             description
@@ -55,5 +72,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default TagTemplate;

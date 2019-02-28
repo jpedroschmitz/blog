@@ -1,96 +1,36 @@
 const path = require("path");
 const _ = require("lodash");
-const moment = require("moment");
-const siteConfig = require("./data/SiteConfig");
 
-const postNodes = [];
+const { paginate } = require('gatsby-awesome-pagination');
 
-function addSiblingNodes(createNodeField) {
-  postNodes.sort(
-    ({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) => {
-      const dateA = moment(date1, siteConfig.dateFromFormat);
-      const dateB = moment(date2, siteConfig.dateFromFormat);
-
-      if (dateA.isBefore(dateB)) return 1;
-
-      if (dateB.isBefore(dateA)) return -1;
-
-      return 0;
-    }
-  );
-  for (let i = 0; i < postNodes.length; i += 1) {
-    const nextID = i + 1 < postNodes.length ? i + 1 : 0;
-    const prevID = i - 1 >= 0 ? i - 1 : postNodes.length - 1;
-    const currNode = postNodes[i];
-    const nextNode = postNodes[nextID];
-    const prevNode = postNodes[prevID];
-    createNodeField({
-      node: currNode,
-      name: "nextTitle",
-      value: nextNode.frontmatter.title
-    });
-    createNodeField({
-      node: currNode,
-      name: "nextSlug",
-      value: nextNode.fields.slug
-    });
-    createNodeField({
-      node: currNode,
-      name: "prevTitle",
-      value: prevNode.frontmatter.title
-    });
-    createNodeField({
-      node: currNode,
-      name: "prevSlug",
-      value: prevNode.fields.slug
-    });
-  }
-}
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  let slug;
-  if (node.internal.type === "MarkdownRemark") {
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode });
     const fileNode = getNode(node.parent);
-    const parsedFilePath = path.parse(fileNode.relativePath);
-    if (
-      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
-    } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
-    } else if (parsedFilePath.dir === "") {
-      slug = `/${parsedFilePath.name}/`;
-    } else {
-      slug = `/${parsedFilePath.dir}/`;
+    const source = fileNode.sourceInstanceName;
+    const separtorIndex = slug.indexOf("--") ? slug.indexOf("--") : 0;
+    const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
+
+    if (source !== "parts") {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
+      });
     }
-
-    if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
-        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
-        if (!date.isValid)
-          console.warn(`WARNING: Invalid date.`, node.frontmatter);
-
-        createNodeField({
-          node,
-          name: "date",
-          value: date.toISOString()
-        });
-      }
-    }
-    createNodeField({ node, name: "slug", value: slug });
-    postNodes.push(node);
-  }
-};
-
-exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
-  const { name } = type;
-  const { createNodeField } = actions;
-  if (name === "MarkdownRemark") {
-    addSiblingNodes(createNodeField);
+    createNodeField({
+      node,
+      name: `prefix`,
+      value: separtorIndex ? slug.substring(1, separtorIndex) : ""
+    });
+    createNodeField({
+      node,
+      name: `source`,
+      value: source
+    });
   }
 };
 
@@ -98,22 +38,30 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const postPage = path.resolve("src/templates/post.jsx");
-    const tagPage = path.resolve("src/templates/tag.jsx");
-    const categoryPage = path.resolve("src/templates/category.jsx");
+    const postTemplate = path.resolve("src/templates/post.jsx");
+    const tagTemplate = path.resolve("src/templates/tag.jsx");
+    const categoryTemplate = path.resolve("src/templates/category.jsx");
     resolve(
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMarkdownRemark(
+              sort: { fields: [fields___prefix], order: DESC }
+              limit: 1000
+              filter: { frontmatter: { draft: { ne: true } } }
+            ) {
               edges {
                 node {
-                  frontmatter {
-                    tags
-                    category
-                  }
+                  id
                   fields {
                     slug
+                    prefix
+                    source
+                  }
+                  frontmatter {
+                    title
+                    tags
+                    category
                   }
                 }
               }
@@ -127,46 +75,83 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
-        const tagSet = new Set();
+        const items = result.data.allMarkdownRemark.edges;
+
+        /* Create a category and a tag list */
         const categorySet = new Set();
-        result.data.allMarkdownRemark.edges.forEach(edge => {
-          if (edge.node.frontmatter.tags) {
-            edge.node.frontmatter.tags.forEach(tag => {
-              tagSet.add(tag);
-            });
+        const tagSet = new Set();
+        items.forEach(edge => {
+          const {
+            node: {
+              frontmatter: { category }
+            }
+          } = edge;
+
+          const {
+            node: {
+              frontmatter: { tags }
+            }
+          } = edge;
+
+          if (category && category !== null) {
+            categorySet.add(category);
           }
 
-          if (edge.node.frontmatter.category) {
-            categorySet.add(edge.node.frontmatter.category);
+          if (tags && tags !== null) {
+            tags.forEach(tag => tagSet.add(tag));
           }
+        });
 
+        const itemsPerPage = 5;
+        paginate({
+          createPage, 
+          items,
+          itemsPerFirstPage: itemsPerPage, 
+          itemsPerPage,
+          pathPrefix: '/', 
+          component: path.resolve('src/templates/index.jsx'), 
+        });
+
+        /* Create the category page */
+        const categoryList = Array.from(categorySet);
+        categoryList.forEach(category => {
           createPage({
-            path: edge.node.fields.slug,
-            component: postPage,
+            path: `/categoria/${_.kebabCase(category)}/`,
+            component: categoryTemplate,
             context: {
-              slug: edge.node.fields.slug
+              category
             }
           });
         });
-
+        
+        /* Create the tag page */
         const tagList = Array.from(tagSet);
         tagList.forEach(tag => {
           createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
-            component: tagPage,
+            path: `/tag/${_.kebabCase(tag)}/`,
+            component: tagTemplate,
             context: {
               tag
             }
           });
         });
 
-        const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
+        /* Create the posts page */
+        const posts = items.filter(item => item.node.fields.source === "posts");
+        posts.forEach(({ node }, index) => {
+          const { slug, source } = node.fields;
+          const next = index === 0 ? undefined : posts[index - 1].node;
+          const prev =
+            index === posts.length - 1 ? undefined : posts[index + 1].node;
+
           createPage({
-            path: `/categorias/${_.kebabCase(category)}/`,
-            component: categoryPage,
+            path: slug,
+            component: postTemplate,
             context: {
-              category
+              slug,
+              prev,
+              next,
+              source
             }
           });
         });

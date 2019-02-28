@@ -60,3 +60,9 @@ bundle-stats.json
 
 # Env data
 .env
+
+# Development
+/.idea
+
+# Posts
+content/drafts/
