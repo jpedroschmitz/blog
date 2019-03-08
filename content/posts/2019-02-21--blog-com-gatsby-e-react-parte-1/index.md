@@ -103,7 +103,7 @@ Com o ``` package.json ``` criado você pode abrir o projeto na sua IDE favorita
 Agora vamos instalar algumas dependências para que possamos começar o projeto. Para isso, digite o seguinte comando no terminal (aviso, esse processo pode demorar).
 
 ``` 
-npm install react react-dom gatsby gatsby-source-filesystem gatsby-transformer-remark gatsby-plugin-catch-links 
+npm install react react-dom gatsby gatsby-source-filesystem gatsby-transformer-remark gatsby-plugin-catch-links lodash
 ```
 
 Rodando esse comando você instalará o Gatsby, React e alguns plugins que irei comentar mais adiante.

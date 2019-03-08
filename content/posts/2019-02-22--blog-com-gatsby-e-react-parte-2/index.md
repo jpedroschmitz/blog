@@ -91,6 +91,10 @@ Depois de aplicarmos um reset e de termos adicionado uma fonte para o site podem
     margin-bottom: 1.0rem;
 }
 
+.header a {
+    text-decoration: none;
+}
+
 .header-title {
     font-weight: bold;
     color: #000000;
@@ -102,7 +106,7 @@ Agora vamos importar e realizar uma pequena melhoria ao nosso site. Vamos realiz
 ```javascript
 /* src/components/Header/Header.jsx */
 import React from 'react';
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import './Header.css';
 
 export default () => (
@@ -118,7 +122,7 @@ export default () => (
     `}
     render={data => (
       <header className="header">
-        <h1 className="header-title">{data.site.siteMetadata.title}</h1>
+        <Link to="/"><h1 className="header-title">{data.site.siteMetadata.title}</h1></Link>
       </header>
     )}
   />
@@ -279,7 +283,7 @@ Por tal motivo não podemos nos esquecer de criar uma página de erro 404 person
 import React from "react";
 import Layout from "../components/Layout";
 
-export default ({ data }) => (
+export default () => (
   <Layout>
     <p>
       Infelizmente a página desejada não pode ser encontrada!

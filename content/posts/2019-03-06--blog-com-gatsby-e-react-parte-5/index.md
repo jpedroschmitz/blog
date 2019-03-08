@@ -14,6 +14,8 @@ tags:
 
 ## Melhorando algumas coisas no blog
 
+### siteConfig
+
 ## Alguns avisos
 
 ## Modo de produção no Gatsby
@@ -24,9 +26,7 @@ tags:
 
 ## Conclusão
 
-Se você chegou até aqui, PARABÉNS, você é um campeão!
-
-Antes de terminar essa série queria te deixar um desafio bem simples: fazer o responsivo do site.
+Antes de terminar essa série queria te deixar um desafio bem simples: fazer o responsivo do site, e, caso queira, pode separar algumas partes em componentes (principalmente a parte do `post.jsx`).
 
 Não esqueça que um blog como esse é ótimo para portfolio.
 
