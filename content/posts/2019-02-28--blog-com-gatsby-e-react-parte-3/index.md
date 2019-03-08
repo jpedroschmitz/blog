@@ -4,7 +4,7 @@ cover: "./cover.png"
 date: 2019-02-28
 description: "No terceiro post da série vamos adicionar muitas funcionalidades legais ao blog, inclusive a listagem e criação do posts com Markdown"
 category: "gatsby"
-draft: true
+draft: false
 tags:
     - React
     - Gatsby
@@ -12,7 +12,7 @@ tags:
 
 ## Introdução
 
-Iaee pessoal! Como vocês estão? Estou de volta hoje para falar um pouquinho de Gatsby com React, e para o post de hoje vamos implementar a parte mais "complexa" do nosso blog, a listagem de posts na capa e também um template para os posts. Por isso, já liga a cafeteira que o post de hoje vai ser grande.
+Iaee pessoal! Como vocês estão? Estou de volta hoje para falar mais um pouquinho de Gatsby, e logo de cara vamos implementar a parte mais "complexa" do nosso blog, a listagem de posts na capa. Além disso, vamos criar um template para mostrar todos os posts marcados com a mesma tag. Por isso, já liga a cafeteira que o post de hoje vai ser grande.
 
 ## Tabela de conteúdos <!-- omit in toc -->
 - [Introdução](#introdu%C3%A7%C3%A3o)
@@ -51,13 +51,13 @@ module.exports = {
 }
 ```
 
-- `gatsby-transformer-remark`: é responsável por transformar os posts do blog escritos em markdown para HTML, de modo que possam ser renderizados.
+- `gatsby-transformer-remark`: é responsável por transformar os posts do blog escritos em markdown para HTML;
 
-- `gatsby-plugin-react-helmet`: O [helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=helmet) é um componente que permite você controlar o `head` do seu site. Vai ser muit útil para trocar o title das páginas e conteúdo das meta tags.
+- `gatsby-plugin-react-helmet`: O [helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=helmet) é um componente que permite você controlar o `head` do seu site. Vai ser muit útil para trocar o title das páginas e conteúdo das meta tags;
 
-- `gatsby-source-filesystem`: usado para "pegar" dados dos arquivos do sistema e usá-los no Gatsby.
+- `gatsby-source-filesystem`: usado para "pegar" dados dos arquivos do sistema, de modo que possamos usá-los no Gatsby.
 
-Antes de continuar só precisamos instalar o helmet:
+Porém, antes de continuar precisamos instalar o helmet.
 
 ```
 npm install gatsby-plugin-react-helmet
@@ -67,7 +67,7 @@ npm install gatsby-plugin-react-helmet
 
 Dentro de content crie uma pasta chamada `posts`. É nela que iremos colocar todos os posts do nosso blog, também separados por pastas.
 
-Sabendo disso, vamos criar um padrão para as pastas dos posts, de modo que ao olhar para uma pasta podemos saber a data do post e sua URL. Portando crie dentro de `posts` uma pasta com o seguinte nome: `2019-02-28--nosso-primeiro-post`. Dentro dessa pasta crie também um arquivo `index.md`.
+Sabendo disso, vamos criar um padrão para as pastas dos posts, de modo que ao olhar para uma pasta podemos saber a data do post e sua URL. Portando crie dentro de `posts` uma pasta com o seguinte nome: `2019-02-28--nosso-primeiro-post`. Dentro dessa pasta crie também um arquivo `index.md` e cole o seguinte conteúdo.
 
 ```
 ---
@@ -85,7 +85,7 @@ Aqui vai todo o conteúdo do seu blog, e você pode editar e escrever da maneira
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt hendrerit purus at elementum. Quisque sit amet malesuada felis. Proin ac fermentum lacus. Duis libero magna, iaculis ac semper id, volutpat ac mauris. Pellentesque ultricies lectus ut lectus eleifend fringilla. Nunc laoreet placerat pretium. Phasellus nec ultricies sem. Nunc pharetra ullamcorper elementum. Sed eget sem et nibh volutpat pharetra vel ac enim.
 ```
 
-Todo o bloco ao redor dos hífens é chamado de `frontmatter`, onde estamos declarando:
+Todo o bloco ao redor dos hífens é chamado de `frontmatter`, e é nele que declaramos os principais dados do nosso post.
 
 - title: Título do post;
 - date: Data do post;
@@ -93,11 +93,13 @@ Todo o bloco ao redor dos hífens é chamado de `frontmatter`, onde estamos decl
 - draft: Define se o post será ou não publicado
 - tags: Tags escolhidas para o post
 
-E abaixo dos hífens vai todo o conteúdo do seu post, que será transformado para HTML em um piscar de olhos! Aproveite o embalo crie mais alguns posts dentro de `content`.
+E abaixo dos `frontmatter` vai todo o conteúdo do post, que, será transformado para HTML em um piscar de olhos! 
+
+Agora, aproveite o embalo crie mais alguns posts dentro de `content`, assim podemos testar melhor!
 
 ## Criando os templates
 
-Agora que temos alguns posts vamos criar dois templates, um para cada post e outro para mostrar os posts relacionados com uma tag. 
+Agora que temos alguns posts vamos criar dois templates, um para os posts e outro para mostrar os posts marcados com a mesma tag. 
 
 Esses templates vão ser usados na hora de criar as páginas dinâmicas (algo que veremos mais para frente).
 
@@ -205,7 +207,7 @@ Essa API pode ser acessada a partir de um arquivo chamado `gatsby-node.js` que f
 
 Não se preocupe se você não entender o arquivo bem, é confuso mesmo. Eu inclusive demorei bastante para entender e para conseguir criar e configurar, de modo que funcionasse sem aparecer um erro gigante no terminal haha. O segredo foi seguir o [tutorial](https://www.gatsbyjs.org/docs/creating-and-modifying-pages/) do Gatby e ver o código de outras pessoas (uma forma que aprendo muito!).
 
-Antes de continuar quero avisar que toda vez que você alterar o arquivo `gatsby-node.js` irá precisar reiniciar o servidor. Para isso basta dar um CTRL + C no terminal e usar o `gatsby develop` novamente.
+Antes de continuar quero avisar que toda vez que você alterar o arquivo `gatsby-node.js` irá precisar reiniciar o servidor. Para isso basta dar um `CTRL + C` no terminal e usar o `gatsby develop` novamente.
 
 ## Fazendo consultas e terminado a home
 
@@ -237,9 +239,7 @@ Para testá-la adicione a seguinte query e execute:
 }
 ```
 
-Se nenhum erro surgiu você deve ter visto um JSON com os principais dados do nosso primeiro post.
-
-Uma vez que testamos a ferramenta podemos realizar a mesma consulta utilizando uma page query. Portanto, dentro do `index.jsx` em `pages` adicione o seguite código:
+Se nenhum erro surgiu você deve ter visto um JSON com os principais dados dos nossos posts. E Uma vez que testamos a ferramenta podemos realizar a mesma consulta utilizando uma page query. Portanto, dentro do `index.jsx` em `pages` adicione o seguite código:
 
 ```javascript
 import React, { Component } from "react";
@@ -291,7 +291,7 @@ Porém, vale ressaltar que nessa consulta estamos filtrando os posts de modo que
 
 ![Página inicial do blog](/images/posts/2019-02-28--blog-com-gatsby-e-react-parte-3/result-part5.png)
 
-Se você reparou pode perceber que também já temos um link que nos leva para a página do post, que ainda não tem nada. Todavia, essa parte de mostrar o conteúdo fica para a nosso próximo post da série. O que vamos fazer ainda é criar o template para a tag.
+Se você reparou viu que já temos um link que nos leva para a página do post, que, ainda não tem nada. Todavia, essa parte de mostrar o conteúdo fica para a nosso próximo post da série.
 
 ## Finalizando o template das tags
 
@@ -332,7 +332,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
-          frontmatter {
+          frontmatter {para falar a verdade
             title
             date(formatString: "DD/MM/YYYY")
             description
@@ -350,9 +350,6 @@ Se quiser testar a página pode o fazer pela seguinte URL: [http://localhost:800
 
 ## Conclusão
 
-No post de hoje vimos muita coisa e começamos a dar vida para o nosso blog, que até agora já tem muitas funcionalidades boa, porém, tem muita coisa para melhorar. 
+No post de hoje vimos muita coisa e começamos a dar vida para o nosso blog, que até agora já tem muitas funcionalidades boas, porém, tem também muita coisa para melhorar. 
 
 No próximo post vamos terminar a página que mostra o conteúdo dos posts. Além disso vamos adicionar o Disqus para comentários e também adicionar muitos plugins do Gatsby, que irão deixar o blog fantástico. Nos vemos lá! Deus abençoe!
-
-
-
