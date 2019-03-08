@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
 import config from "../../data/config";
 import SEO from "../components/SEO";
-import fonts from '../styles/fonts';
+import fonts from "../styles/fonts";
 
 const Title = styled.h1`
   font-size: 1.8rem;
@@ -16,7 +16,7 @@ const Title = styled.h1`
   margin-bottom: 60px;
   ${fonts.secondary}
   font-weight: 300;
-`
+`;
 
 export default class CategoryTemplate extends Component {
   render() {
@@ -45,7 +45,9 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___prefix], order: DESC }
-      filter: { frontmatter: { category: { eq: $category }, draft: { ne: true } } }
+      filter: {
+        frontmatter: { category: { eq: $category }, draft: { ne: true } }
+      }
     ) {
       totalCount
       edges {
@@ -61,7 +63,7 @@ export const pageQuery = graphql`
             cover {
               childImageSharp {
                 sizes(maxWidth: 650, maxHeight: 400) {
-                    ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes
                 }
               }
             }

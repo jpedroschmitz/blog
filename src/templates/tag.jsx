@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import Posts from "../components/Posts";
 import Container from "../components/Container";
 import SEO from "../components/SEO";
 import config from "../../data/config";
-import fonts from '../styles/fonts';
+import fonts from "../styles/fonts";
 
 const Title = styled.h1`
   font-size: 1.8rem;
@@ -16,7 +16,7 @@ const Title = styled.h1`
   margin-bottom: 60px;
   ${fonts.secondary}
   font-weight: 300;
-`
+`;
 
 export default class TagTemplate extends Component {
   render() {

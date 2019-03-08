@@ -69,7 +69,7 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
     `gatsby-transformer-sharp`,
-    'gatsby-image',
+    "gatsby-image",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
@@ -133,7 +133,8 @@ module.exports = {
             {
               allMarkdownRemark(
                 limit: 1000,
-                sort: { order: DESC, fields: [fields___date] },
+                sort: { fields: [fields___prefix], order: DESC }
+                filter: { frontmatter: { draft: { ne: true } } }
               ) {
                 edges {
                   node {
@@ -142,11 +143,9 @@ module.exports = {
                     timeToRead
                     fields {
                       slug
-                      date
                     }
                     frontmatter {
                       title
-                      cover
                       date
                       category
                       tags

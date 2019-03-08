@@ -24,7 +24,8 @@ export default class AboutPage extends Component {
           <p>
             Se quiser voltar para a página inicial&nbsp;
             <Link to="/">clique aqui</Link>
-            . Caso queira conhecer um pouco de mim pode clicar&nbsp;
+            . Caso queira conhecer um pouco de
+            mim pode clicar&nbsp;
             <Link to="/sobre">aqui</Link>
             .
           </p>

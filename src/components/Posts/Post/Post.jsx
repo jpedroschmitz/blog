@@ -15,9 +15,9 @@ const Post = styled.article`
 
 export default ({ title, cover, path, date, category, description, main }) => (
   <Post>
-    { main && <Image title={title} cover={cover} path={path} /> }
+    {main && <Image title={title} cover={cover} path={path} />}
     <Title title={title} path={path} />
     <Meta date={date} category={category} small />
-    { main && <Description description={description} /> }
+    {main && <Description description={description} />}
   </Post>
 );

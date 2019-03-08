@@ -1,7 +1,7 @@
 const path = require("path");
 const _ = require("lodash");
 
-const { paginate } = require('gatsby-awesome-pagination');
+const { paginate } = require("gatsby-awesome-pagination");
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
@@ -104,12 +104,12 @@ exports.createPages = ({ graphql, actions }) => {
 
         const itemsPerPage = 5;
         paginate({
-          createPage, 
+          createPage,
           items,
-          itemsPerFirstPage: itemsPerPage, 
+          itemsPerFirstPage: itemsPerPage,
           itemsPerPage,
-          pathPrefix: '/', 
-          component: path.resolve('src/templates/index.jsx'), 
+          pathPrefix: "/",
+          component: path.resolve("src/templates/index.jsx")
         });
 
         /* Create the category page */
@@ -123,7 +123,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           });
         });
-        
+
         /* Create the tag page */
         const tagList = Array.from(tagSet);
         tagList.forEach(tag => {

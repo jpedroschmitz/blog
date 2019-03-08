@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import breakpoints from '../../styles/breakpoints';
+import breakpoints from "../../styles/breakpoints";
 
 const Wrapper = styled.div`
   padding: 0px 25px;

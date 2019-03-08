@@ -207,7 +207,7 @@ export default class PostTemplate extends Component {
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } } ) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       timeToRead
       excerpt
@@ -216,7 +216,7 @@ export const pageQuery = graphql`
         cover {
           childImageSharp {
             sizes(maxWidth: 1150) {
-                ...GatsbyImageSharpSizes
+              ...GatsbyImageSharpSizes
             }
           }
         }

@@ -30,8 +30,8 @@ export default class Index extends Component {
 export const pageQuery = graphql`
   query IndexQueryPaginate($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      skip: $skip 
-      limit: $limit 
+      skip: $skip
+      limit: $limit
       sort: { fields: [fields___prefix], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
     ) {
@@ -48,7 +48,7 @@ export const pageQuery = graphql`
             cover {
               childImageSharp {
                 sizes(maxWidth: 650, maxHeight: 400) {
-                    ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes
                 }
               }
             }

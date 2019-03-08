@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Pagination from './Pagination';
+import Pagination from "./Pagination";
 import Post from "./Post";
 
 export default class PostListing extends Component {
@@ -39,7 +39,12 @@ export default class PostListing extends Component {
             main={main}
           />
         ))}
-        { main && <Pagination next={pathContext.nextPagePath} previous={pathContext.previousPagePath} /> }
+        {main && (
+          <Pagination
+            next={pathContext.nextPagePath}
+            previous={pathContext.previousPagePath}
+          />
+        )}
       </React.Fragment>
     );
   }
