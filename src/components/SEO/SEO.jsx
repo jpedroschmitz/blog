@@ -16,7 +16,11 @@ export default class SEO extends Component {
       description = postMeta.description
         ? postMeta.description
         : postNode.excerpt;
-      image = postMeta.cover;
+      image = urljoin(
+        config.siteUrl,
+        config.pathPrefix,
+        postMeta.cover.childImageSharp.sizes.src
+      );
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
     } else {
       title = config.siteTitle;

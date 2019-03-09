@@ -11,7 +11,7 @@ export default class AboutPage extends Component {
       <Layout>
         <Helmet title={`Sobre mim | ${config.siteTitle}`} />
         <SEO />
-        <Container>
+        <Container wide>
           <h2>Sobre mim</h2>
 
           <p>

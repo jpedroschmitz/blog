@@ -5,9 +5,9 @@ import Title from "./Title";
 import Body from "./Body";
 import Image from "./Image";
 import Comments from "./Comments";
+import Container from "../Container";
 import SocialLinks from "./SocialLinks";
 import Meta from "../Posts/Post/Meta";
-import Container from "../Container";
 import Tags from "../Posts/Post/Tags";
 import breakpoints from "../../styles/breakpoints";
 
@@ -53,7 +53,7 @@ export default ({
   prevSlug
 }) => (
   <React.Fragment>
-    <Container>
+    <Container wide>
       <Title title={post.title} />
       <Meta
         author="João Pedro Schmitz"
@@ -66,7 +66,7 @@ export default ({
 
     <Image title={post.title} cover={post.cover} />
 
-    <Container>
+    <Container wide>
       <Body html={postNode.html} />
       <SocialLinks postPath={slug} postNode={postNode} />
       <Navigation>

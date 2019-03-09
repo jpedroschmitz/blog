@@ -2,7 +2,7 @@
 title: "Criando um blog com Gatsby e React - Parte 3"
 cover: "./cover.png"
 date: 2019-02-28
-description: "No terceiro post da série vamos adicionar muitas funcionalidades legais ao blog, inclusive a listagem e criação do posts com Markdown"
+description: "No terceiro post da série vamos adicionar muitas funcionalidades legais ao blog, inclusive a listagem e criação do posts com Markdown."
 category: "gatsby"
 draft: false
 tags:

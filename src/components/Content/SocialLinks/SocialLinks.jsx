@@ -28,6 +28,26 @@ const SocialIcons = styled.div`
   }
 `;
 
+const IconTwitter = styled(TwitterShareButton)`
+  cursor: pointer;
+  outline: none;
+`;
+
+const IconFacebook = styled(FacebookShareButton)`
+  cursor: pointer;
+  outline: none;
+`;
+
+const IconLinkedin = styled(LinkedinShareButton)`
+  cursor: pointer;
+  outline: none;
+`;
+
+const IconGoogle = styled(GooglePlusShareButton)`
+  cursor: pointer;
+  outline: none;
+`;
+
 export default ({ postNode, postPath, mobile }) => {
   const post = postNode.frontmatter;
   const url = urljoin(config.siteUrl, config.pathPrefix, postPath);
@@ -38,25 +58,25 @@ export default ({ postNode, postPath, mobile }) => {
       <Title>Compartilhe :)</Title>
 
       <SocialIcons>
-        <TwitterShareButton url={url} title={post.title}>
+        <IconTwitter url={url} title={post.title}>
           <TwitterIcon round size={iconSize} />
-        </TwitterShareButton>
+        </IconTwitter>
 
-        <GooglePlusShareButton url={url}>
+        <IconGoogle url={url}>
           <GooglePlusIcon round size={iconSize} />
-        </GooglePlusShareButton>
+        </IconGoogle>
 
-        <FacebookShareButton url={url} quote={postNode.excerpt}>
+        <IconFacebook url={url} quote={postNode.excerpt}>
           <FacebookIcon round size={iconSize} />
-        </FacebookShareButton>
+        </IconFacebook>
 
-        <LinkedinShareButton
+        <IconLinkedin
           url={url}
           title={post.title}
           description={postNode.excerpt}
         >
           <LinkedinIcon round size={iconSize} />
-        </LinkedinShareButton>
+        </IconLinkedin>
       </SocialIcons>
     </React.Fragment>
   );
