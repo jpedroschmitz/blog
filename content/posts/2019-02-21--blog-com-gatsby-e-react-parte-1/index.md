@@ -68,8 +68,7 @@ Na lista abaixo você pode ver algumas funcionalidades que iremos implementar.
 - Suporte para Google Analytics;
 - Suporte offline;
 - Markdown para escrever os posts; 
-- Manifest; 
-- Seção de comentários com Disqus; 
+- Manifest.json; 
 - Tags; 
 - Robots.txt; 
 - Schema.org JSONLD; 

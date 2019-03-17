@@ -242,6 +242,7 @@ Para testá-la adicione a seguinte query e execute:
 Se nenhum erro surgiu você deve ter visto um JSON com os principais dados dos nossos posts. E Uma vez que testamos a ferramenta podemos realizar a mesma consulta utilizando uma page query. Portanto, dentro do `index.jsx` em `pages` adicione o seguite código:
 
 ```javascript
+// src/pages/index.jsx
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
@@ -300,6 +301,7 @@ O template para as tags é muito parecido com a nossa página inicial. A única 
 Portanto, abra o `tag.jsx` e adicione o seguinte código:
 
 ```javascript
+// src/templates/tag.jsx
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
@@ -352,4 +354,4 @@ Se quiser testar a página pode o fazer pela seguinte URL: [http://localhost:800
 
 No post de hoje vimos muita coisa e começamos a dar vida para o nosso blog, que até agora já tem muitas funcionalidades boas, porém, tem também muita coisa para melhorar. 
 
-No próximo post vamos terminar a página que mostra o conteúdo dos posts. Além disso vamos adicionar o Disqus para comentários e também adicionar muitos plugins do Gatsby, que irão deixar o blog fantástico. Nos vemos lá! Deus abençoe!
+No próximo post vamos terminar a página que mostra o conteúdo dos posts. Além disso vamos adicionar muitos plugins do Gatsby que irão deixar o blog fantástico. Nos vemos lá! Deus abençoe!

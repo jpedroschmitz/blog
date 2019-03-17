@@ -23,12 +23,12 @@ export default class AboutPage extends Component {
             No início de 2017 começei a cursar Engenharia de Software na
             Universidade do Estado de Santa Catarina e atualmente estou na 5ª
             fase. Nessa época também descobri o poder do desenvolvimento web, e
-            de lá para cá foram muitos e muitos cursos e muitas horas de estudo
+            de lá para cá foram muitos cursos e muitas horas de estudo
             e prática. Hoje procuro me especializar principalmente no
             desenvolvimento FrontEnd e em UX/UI.
           </p>
           <p>
-            Além de tudo isso eu ainda amo trabalhar em equipe e ajudar as
+            Também amo trabalhar em equipe e ajudar as
             pessoas. No meu tempo livre costumo estudar teologia e conhecer um
             pouco melhor Jesus :)
           </p>
