@@ -10,11 +10,14 @@ tags:
     - Gatsby
 ---
 
+## Introdução <!-- omit in toc -->
+
 Iaee pessoal! Como vocês estão? Hoje estou de volta para dar continuidade a nossa série. Então já pega o cafezinho porque hoje vai ter muita coisa boa.
+
+E conforme eu comentei no último post, hoje nós vamos desenvolver toda a parte visual do blog para deixar ele bonitão. Por isso, já abra o projeto e bora colocar a mão na massa.
 
 ## Tabela de conteúdos <!-- omit in toc -->
 
-- [Introdução](#introdu%C3%A7%C3%A3o)
 - [Adicionando um reset ao site](#adicionando-um-reset-ao-site)
 - [Adicionando uma fonte](#adicionando-uma-fonte)
 - [Estilizando o header](#estilizando-o-header)
@@ -23,34 +26,32 @@ Iaee pessoal! Como vocês estão? Hoje estou de volta para dar continuidade a no
 - [Criando uma página de erro 404](#criando-uma-p%C3%A1gina-de-erro-404)
 - [Conclusão](#conclus%C3%A3o)
 
-## Introdução
 
-Conforme eu comentei no último post, hoje nós vamos desenvolver toda a parte visual do blog para deixar ele bonitão. Por isso, já abra o projeto e bora colocar a mão na massa.
 
 ## Adicionando um reset ao site
 
 Antes de começarmos a fazer o header, sidebar e todo o site, precisamos primeiro adicionar um reset para remover o estilo padrão dos navegadores. Para isso eu vou usar o [minireset.css](https://jgthms.com/minireset.css/), que pode ser instalado com o seguinte comando:
 
 ```
-npm install minireset.css 
+npm install minireset.css
 ```
 
-Ao terminar a instalação abra o `index.js` dentro de pages e adicione a seguinte linha de código: 
+Ao terminar a instalação abra o `index.js` dentro de pages e adicione a seguinte linha de código:
 
 ```javascript
-import 'minireset.css'; 
+import 'minireset.css';
 ```
 
 ![Blog com reset aplicado](/images/posts/2019-02-22--blog-com-gatsby-e-react-parte-2/result-part2.png)
 
 ## Adicionando uma fonte
 
-Agora que temos um reset para o site vamos adicionar uma fonte para o blog, e, a escolhida da vez foi a [Raleway](https://fonts.google.com/?query=rale&selection.family=Raleway:400,700). 
+Agora que temos um reset para o site vamos adicionar uma fonte para o blog, e, a escolhida da vez foi a [Raleway](https://fonts.google.com/?query=rale&selection.family=Raleway:400,700).
 
 Para usar uma fonte devemos primeiro importar ela, e isso pode ser feito adicionando uma tag no head do site ou adicionando um import no CSS, que é o que vamos usar. Para isso, crie um arquivo `Layout.css` e adicione esse código:
 
 ```css
-/* src/components/Layout/Layout.css*/ 
+/* src/components/Layout/Layout.css*/
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
 body {
@@ -151,7 +152,7 @@ Se tudo transcorreu bem até o momento esse deve ser o resultado parcial.
 
 ### Criando um container
 
-Agora vamos criar um container para colocarmos o nosso sidebar e a nossa lista de posts. 
+Agora vamos criar um container para colocarmos o nosso sidebar e a nossa lista de posts.
 
 ```javascript
 // src/components/Container/Container.jsx
@@ -208,7 +209,7 @@ export default ({ title, description }) => (
     padding: 1.5rem;
     margin-bottom: 1rem;
     border-radius: .50rem;
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
 }
 
 .sidebar .sidebar-title {
@@ -245,19 +246,19 @@ export default ({ children, title }) => (
       <Container>
         {children}
         <aside className="aside">
-          <Sidebar 
-            title="Sobre mim" 
+          <Sidebar
+            title="Sobre mim"
             description="Sou um desenvolvedor apaixonado por JavaScript e amo desenvolver produtos que melhoram a vida das pessoas."
           />
-          <Sidebar 
-            title="Sobre o blog" 
+          <Sidebar
+            title="Sobre o blog"
             description="Aqui você encontará muito conteúdo de FrontEnd e CSS, além de umas dicas senasacionais de carreira!"
           />
         </aside>
       </Container>
     </main>
   </div>
-);   
+);
 ```
 
 ```css

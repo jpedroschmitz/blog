@@ -34,18 +34,17 @@ const NavLink = styled(Link)`
   }
 `;
 
-export default ({ visible }) =>
-  visible && (
-    <Dropdown>
-      <nav role="navigation">
-        <List>
-          <NavItem>
-            <NavLink to="/">home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/sobre">sobre</NavLink>
-          </NavItem>
-        </List>
-      </nav>
-    </Dropdown>
-  );
+export default ({ visible }) => visible && (
+  <Dropdown>
+    <nav role="navigation">
+      <List>
+        <NavItem>
+          <NavLink to="/">home</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/sobre">sobre</NavLink>
+        </NavItem>
+      </List>
+    </nav>
+  </Dropdown>
+);

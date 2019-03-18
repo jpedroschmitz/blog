@@ -19,7 +19,7 @@ export default class SEO extends Component {
       image = urljoin(
         config.siteUrl,
         config.pathPrefix,
-        postMeta.cover.childImageSharp.sizes.src
+        postMeta.cover.childImageSharp.sizes.src,
       );
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
     } else {
@@ -35,8 +35,8 @@ export default class SEO extends Component {
         "@type": "WebSite",
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
-      }
+        alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+      },
     ];
     if (postSEO) {
       schemaOrgJSONLD.push(
@@ -50,10 +50,10 @@ export default class SEO extends Component {
               item: {
                 "@id": postURL,
                 name: title,
-                image
-              }
-            }
-          ]
+                image,
+              },
+            },
+          ],
         },
         {
           "@context": "http://schema.org",
@@ -64,10 +64,10 @@ export default class SEO extends Component {
           headline: title,
           image: {
             "@type": "ImageObject",
-            url: image
+            url: image,
           },
-          description
-        }
+          description,
+        },
       );
     }
     return (

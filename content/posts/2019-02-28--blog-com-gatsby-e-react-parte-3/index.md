@@ -10,12 +10,11 @@ tags:
     - Gatsby
 ---
 
-## Introdução
+## Introdução <!-- omit in toc -->
 
 Iaee pessoal! Como vocês estão? Estou de volta hoje para falar mais um pouquinho de Gatsby, e logo de cara vamos implementar a parte mais "complexa" do nosso blog, a listagem de posts na capa. Além disso, vamos criar um template para mostrar todos os posts marcados com a mesma tag. Por isso, já liga a cafeteira que o post de hoje vai ser grande.
 
 ## Tabela de conteúdos <!-- omit in toc -->
-- [Introdução](#introdu%C3%A7%C3%A3o)
 - [Configurando o Gatsby](#configurando-o-gatsby)
 - [Criando os posts](#criando-os-posts)
 - [Criando os templates](#criando-os-templates)
@@ -25,7 +24,7 @@ Iaee pessoal! Como vocês estão? Estou de volta hoje para falar mais um pouquin
 - [Finalizando o template das tags](#finalizando-o-template-das-tags)
 - [Conclusão](#conclus%C3%A3o)
 
-## Configurando o Gatsby 
+## Configurando o Gatsby
 
 Primeiro antes de mais nada nos vamos dar uma configurada no Gatsby para que ele possa reconhecer os plugins que temos instalados. Para isso, abra o arquivo `gatsby-config.js` e adicione o seguinte conteúdo:
 
@@ -69,13 +68,13 @@ Dentro de content crie uma pasta chamada `posts`. É nela que iremos colocar tod
 
 Sabendo disso, vamos criar um padrão para as pastas dos posts, de modo que ao olhar para uma pasta podemos saber a data do post e sua URL. Portando crie dentro de `posts` uma pasta com o seguinte nome: `2019-02-28--nosso-primeiro-post`. Dentro dessa pasta crie também um arquivo `index.md` e cole o seguinte conteúdo.
 
-```
+```md
 ---
 title: "Nosso primeiro post"
 date: "2019-02-28"
 description: "Illas semine campoque declivia oppida corpora nam inter fuit discordia tellus solidumque iunctarum erat: quae terrenae ubi rerum recessit"
 draft: false
-tags: 
+tags:
     - Blog
     - Primeiro post
 ---
@@ -93,13 +92,13 @@ Todo o bloco ao redor dos hífens é chamado de `frontmatter`, e é nele que dec
 - draft: Define se o post será ou não publicado
 - tags: Tags escolhidas para o post
 
-E abaixo dos `frontmatter` vai todo o conteúdo do post, que, será transformado para HTML em um piscar de olhos! 
+E abaixo dos `frontmatter` vai todo o conteúdo do post, que, será transformado para HTML em um piscar de olhos!
 
 Agora, aproveite o embalo crie mais alguns posts dentro de `content`, assim podemos testar melhor!
 
 ## Criando os templates
 
-Agora que temos alguns posts vamos criar dois templates, um para os posts e outro para mostrar os posts marcados com a mesma tag. 
+Agora que temos alguns posts vamos criar dois templates, um para os posts e outro para mostrar os posts marcados com a mesma tag.
 
 Esses templates vão ser usados na hora de criar as páginas dinâmicas (algo que veremos mais para frente).
 
@@ -156,12 +155,12 @@ export default ({ data }) => {
       </div>
     ))
   );
-  return ( 
+  return (
     <div className="posts">
       {posts}
     </div>
   )
-}     
+}
 ```
 
 ```javascript
@@ -199,7 +198,7 @@ export { default } from './Posts.jsx';
 }
 ```
 
-## Configurando a API Node do Gatsby 
+## Configurando a API Node do Gatsby
 
 Calma, calma, você não precisa ficar preocupado. Não iremos precisar de um servidor com node para o nosso site. O que acontece na verdade, é que o Gatsby fornece uma API Node, que por sua vez providencia diversas funcionalidades, inclusive criação de páginas dinâmicas a partir de arquivos.
 
@@ -211,7 +210,7 @@ Antes de continuar quero avisar que toda vez que você alterar o arquivo `gatsby
 
 ## Fazendo consultas e terminado a home
 
-Se você não entende de GraphQL não deixe de seguir com o tutorial. 
+Se você não entende de GraphQL não deixe de seguir com o tutorial.
 
 O que vamos fazer agora é realizar uma consulta para pegarmos os dados que irão vir dos posts. Mas antes vamos olhar uma ferramenta muito legal do Gatsby, o GraphiQL. Para isso abra a seguinte url no seu navegador preferido: [http://localhost:8000/___graphql](http://localhost:8000/___graphql).
 
@@ -286,7 +285,7 @@ export const pageQuery = graphql`
 `;
 ```
 
-Se tudo deu certo a sua página principal deve ter tido umas mudanças que deram um vida para nosso blog. 
+Se tudo deu certo a sua página principal deve ter tido umas mudanças que deram um vida para nosso blog.
 
 Porém, vale ressaltar que nessa consulta estamos filtrando os posts de modo que somente os posts que não são rascunhos sejam mostrados.
 
@@ -352,6 +351,6 @@ Se quiser testar a página pode o fazer pela seguinte URL: [http://localhost:800
 
 ## Conclusão
 
-No post de hoje vimos muita coisa e começamos a dar vida para o nosso blog, que até agora já tem muitas funcionalidades boas, porém, tem também muita coisa para melhorar. 
+No post de hoje vimos muita coisa e começamos a dar vida para o nosso blog, que até agora já tem muitas funcionalidades boas, porém, tem também muita coisa para melhorar.
 
 No próximo post vamos terminar a página que mostra o conteúdo dos posts. Além disso vamos adicionar muitos plugins do Gatsby que irão deixar o blog fantástico. Nos vemos lá! Deus abençoe!

@@ -31,7 +31,7 @@ const MenuText = styled.button`
   }
 `;
 
-export default function() {
+export default () => {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -42,4 +42,4 @@ export default function() {
       </Menu>
     </React.Fragment>
   );
-}
+};

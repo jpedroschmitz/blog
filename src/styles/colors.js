@@ -5,5 +5,5 @@ export default {
   link: "#0984e3",
   gray: "#333333",
   black: "#000000",
-  white: "#FFFFFF"
+  white: "#FFFFFF",
 };

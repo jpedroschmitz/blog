@@ -8,7 +8,7 @@ class HTML extends Component {
       bodyAttributes,
       preBodyComponents,
       body,
-      postBodyComponents
+      postBodyComponents,
     } = this.props;
     return (
       <html lang="pt-BR" {...htmlAttributes}>

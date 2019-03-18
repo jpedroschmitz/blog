@@ -3,11 +3,11 @@ const _ = require("lodash");
 
 const { paginate } = require("gatsby-awesome-pagination");
 
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === "MarkdownRemark") {
     const slug = createFilePath({ node, getNode });
     const fileNode = getNode(node.parent);
     const source = fileNode.sourceInstanceName;
@@ -17,19 +17,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     if (source !== "parts") {
       createNodeField({
         node,
-        name: `slug`,
-        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
+        name: "slug",
+        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`,
       });
     }
     createNodeField({
       node,
-      name: `prefix`,
-      value: separtorIndex ? slug.substring(1, separtorIndex) : ""
+      name: "prefix",
+      value: separtorIndex ? slug.substring(1, separtorIndex) : "",
     });
     createNodeField({
       node,
-      name: `source`,
-      value: source
+      name: "source",
+      value: source,
     });
   }
 };
@@ -67,8 +67,8 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-        `
-      ).then(result => {
+        `,
+      ).then((result) => {
         if (result.errors) {
           /* eslint no-console: "off" */
           console.log(result.errors);
@@ -77,20 +77,19 @@ exports.createPages = ({ graphql, actions }) => {
 
         const items = result.data.allMarkdownRemark.edges;
 
-        /* Create a category and a tag list */
         const categorySet = new Set();
         const tagSet = new Set();
-        items.forEach(edge => {
+        items.forEach((edge) => {
           const {
             node: {
-              frontmatter: { category }
-            }
+              frontmatter: { category },
+            },
           } = edge;
 
           const {
             node: {
-              frontmatter: { tags }
-            }
+              frontmatter: { tags },
+            },
           } = edge;
 
           if (category && category !== null) {
@@ -109,40 +108,36 @@ exports.createPages = ({ graphql, actions }) => {
           itemsPerFirstPage: itemsPerPage,
           itemsPerPage,
           pathPrefix: "/",
-          component: path.resolve("src/templates/index.jsx")
+          component: path.resolve("src/templates/index.jsx"),
         });
 
-        /* Create the category page */
         const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
+        categoryList.forEach((category) => {
           createPage({
             path: `/categoria/${_.kebabCase(category)}/`,
             component: categoryTemplate,
             context: {
-              category
-            }
+              category,
+            },
           });
         });
 
-        /* Create the tag page */
         const tagList = Array.from(tagSet);
-        tagList.forEach(tag => {
+        tagList.forEach((tag) => {
           createPage({
             path: `/tag/${_.kebabCase(tag)}/`,
             component: tagTemplate,
             context: {
-              tag
-            }
+              tag,
+            },
           });
         });
 
-        /* Create the posts page */
         const posts = items.filter(item => item.node.fields.source === "posts");
         posts.forEach(({ node }, index) => {
           const { slug, source } = node.fields;
           const next = index === 0 ? undefined : posts[index - 1].node;
-          const prev =
-            index === posts.length - 1 ? undefined : posts[index + 1].node;
+          const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
 
           createPage({
             path: slug,
@@ -151,11 +146,11 @@ exports.createPages = ({ graphql, actions }) => {
               slug,
               prev,
               next,
-              source
-            }
+              source,
+            },
           });
         });
-      })
+      }),
     );
   });
 };

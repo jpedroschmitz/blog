@@ -1,8 +1,42 @@
 {
   "name": "joaopedro.cc",
-  "description": "A blog created with Gatsby.js",
+  "description": "A blog of an eternal web development student!",
   "version": "1.1.0",
-  "author": "João Pedro Schmitz",
+  "author": "João Pedro Schmitz <jpedroschmitz@hotmail.com> (https://www.joaopedro.cc/)",
+  "license": "ISC",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpedroschmitz/joaopedro.cc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jpedroschmitz/joaopedro.cc/issues"
+  },
+  "keywords": [
+    "js",
+    "css",
+    "blog",
+    "react",
+    "gatsby",
+    "frontend"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "dev": "npm run develop",
+    "serve": "gatsby serve",
+    "build": "gatsby build",
+    "clear": "rimraf .cache",
+    "lint": "eslint --ext .js,.jsx .",
+    "lint:md": "remark content/",
+    "prepush": "npm run lint",
+    "launch-develop": "npm run clean && npm run lint:js && npm run format:js && gatsby develop",
+    "launch-build": "npm run clean && npm run lint:js && npm run format:js && gatsby build && gatsby serve"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
+  },
   "dependencies": {
     "add": "^2.0.6",
     "babel-plugin-styled-components": "^1.10.0",
@@ -51,30 +85,12 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.16.0",
+    "husky": "^1.3.1",
     "remark-cli": "^6.0.1",
     "remark-preset-lint-recommended": "^3.0.1",
+    "rimraf": "^2.6.3",
     "stylefmt": "^6.0.3",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.0.0"
-  },
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "develop": "gatsby develop",
-    "dev": "npm run develop",
-    "serve": "gatsby serve",
-    "build": "gatsby build",
-    "clean": "rm -rf public && rm -rf .cache",
-    "lint:js": "eslint --ext .js,.jsx .",
-    "lint:md": "remark content/",
-    "format:js": "prettier '**/*.{js,jsx}' --write",
-    "launch-develop": "npm run clean && npm run lint:js && npm run format:js && gatsby develop",
-    "launch-build": "npm run clean && npm run lint:js && npm run format:js && gatsby build && gatsby serve"
-  },
-  "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-recommended"
-    ]
   }
 }

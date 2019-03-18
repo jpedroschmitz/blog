@@ -4,5 +4,5 @@ export default {
   md: "@media only screen and (max-width: 600px)",
   lg: "@media only screen and (max-width: 768px)",
   xl: "@media only screen and (max-width: 960px)",
-  xxl: "@media only screen and (max-width: 1250px)"
+  xxl: "@media only screen and (max-width: 1250px)",
 };

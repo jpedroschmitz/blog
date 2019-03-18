@@ -6,7 +6,7 @@ export default class PostListing extends Component {
   getPostList() {
     const { postEdges } = this.props;
     const postList = [];
-    postEdges.forEach(postEdge => {
+    postEdges.forEach((postEdge) => {
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -16,7 +16,7 @@ export default class PostListing extends Component {
         category: postEdge.node.frontmatter.category,
         description: postEdge.node.frontmatter.description,
         excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       });
     });
     return postList;

@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb"],
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
     "react/prefer-stateless-function": "off",
@@ -9,7 +9,9 @@
       "components": [ "Link" ],
       "specialLink": [ "hrefLeft", "hrefRight", "to" ],
       "aspects": [ "noHref", "invalidHref", "preferButton" ]
-    }]
+    }],
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"]
   },
   "settings": {
     "import/core-modules": []

@@ -13,7 +13,7 @@ const config = {
   disqusShortname: "blog-do-joao-pedro",
   themeColor: "#00E2BC",
   backgroundColor: "#FFFFFF",
-  copyright: "João Pedro Schmitz"
+  copyright: "João Pedro Schmitz",
 };
 
 if (config.pathPrefix === "/") {
@@ -22,10 +22,8 @@ if (config.pathPrefix === "/") {
   config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, "")}`;
 }
 
-if (config.siteUrl.substr(-1) === "/")
-  config.siteUrl = config.siteUrl.slice(0, -1);
+if (config.siteUrl.substr(-1) === "/") config.siteUrl = config.siteUrl.slice(0, -1);
 
-if (config.siteRss && config.siteRss[0] !== "/")
-  config.siteRss = `/${config.siteRss}`;
+if (config.siteRss && config.siteRss[0] !== "/") config.siteRss = `/${config.siteRss}`;
 
 module.exports = config;

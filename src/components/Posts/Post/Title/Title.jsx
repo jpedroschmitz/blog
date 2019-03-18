@@ -5,9 +5,9 @@ import breakpoints from "../../../../styles/breakpoints";
 
 const Title = styled(Link)`
   & h2 {
-    font-size: calc(2.04em);
+    font-size: calc(1.94em);
     line-height: 1.1;
-    padding: 05px 0 0 12px;
+    padding: 0px 0 0 12px;
     margin: 20px 0 0 0;
   }
 

@@ -13,10 +13,10 @@ module.exports = {
       description: config.siteDescription,
       image_url: `${urljoin(
         config.siteUrl,
-        config.pathPrefix
+        config.pathPrefix,
       )}/images/favicon.png`,
-      copyright: config.copyright
-    }
+      copyright: config.copyright,
+    },
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -25,15 +25,15 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "assets",
-        path: `${__dirname}/static/`
-      }
+        path: `${__dirname}/static/`,
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/`
-      }
+        path: `${__dirname}/content/`,
+      },
     },
     {
       resolve: "gatsby-transformer-remark",
@@ -42,33 +42,33 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 690
-            }
+              maxWidth: 690,
+            },
           },
           {
-            resolve: "gatsby-remark-responsive-iframe"
+            resolve: "gatsby-remark-responsive-iframe",
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
-        ]
-      }
+          "gatsby-remark-autolink-headers",
+        ],
+      },
     },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: config.googleAnalyticsID
-      }
+        trackingId: config.googleAnalyticsID,
+      },
     },
     {
       resolve: "gatsby-plugin-nprogress",
       options: {
-        color: config.themeColor
-      }
+        color: config.themeColor,
+      },
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
-    `gatsby-transformer-sharp`,
+    "gatsby-transformer-sharp",
     "gatsby-image",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
@@ -83,8 +83,8 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "standalone",
-        icon: "static/images/favicon.png"
-      }
+        icon: "static/images/favicon.png",
+      },
     },
     "gatsby-plugin-offline",
     {
@@ -125,8 +125,8 @@ module.exports = {
                 guid: rssMetadata.site_url + edge.node.fields.slug,
                 custom_elements: [
                   { "content:encoded": edge.node.html },
-                  { author: config.userEmail }
-                ]
+                  { author: config.userEmail },
+                ],
               }));
             },
             query: `
@@ -155,10 +155,10 @@ module.exports = {
               }
             }
           `,
-            output: config.siteRss
-          }
-        ]
-      }
-    }
-  ]
+            output: config.siteRss,
+          },
+        ],
+      },
+    },
+  ],
 };

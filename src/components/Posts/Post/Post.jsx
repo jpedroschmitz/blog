@@ -13,7 +13,9 @@ const Post = styled.article`
   }
 `;
 
-export default ({ title, cover, path, date, category, description, main }) => (
+export default ({
+  title, cover, path, date, category, description, main,
+}) => (
   <Post>
     {main && <Image title={title} cover={cover} path={path} />}
     <Title title={title} path={path} />

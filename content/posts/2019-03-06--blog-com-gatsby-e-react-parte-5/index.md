@@ -12,10 +12,6 @@ tags:
 
 ## Introdução
 
-## Melhorando algumas coisas no blog
-
-### siteConfig
-
 ## Alguns avisos
 
 ## Modo de produção no Gatsby

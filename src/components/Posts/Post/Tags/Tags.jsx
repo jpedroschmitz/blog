@@ -60,8 +60,9 @@ export default class PostTags extends Component {
     const { tags } = this.props;
     return (
       <Tags>
-        {tags &&
-          tags.map(tag => (
+        {
+          tags
+          && tags.map(tag => (
             <Tag key={tag} to={`/tag/${_.kebabCase(tag)}`}>
               {tag}
             </Tag>
