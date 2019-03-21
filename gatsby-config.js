@@ -4,7 +4,7 @@ const config = require("./data/config");
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
-    siteUrl: `${config.siteUrl}/`,
+    siteUrl: `${config.siteUrl}`,
     disqusShortname: config.disqusShortname,
     rssMetadata: {
       site_url: urljoin(config.siteUrl, config.pathPrefix),
@@ -38,19 +38,18 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: [
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 690,
-            },
+        plugins: [{
+          resolve: "gatsby-remark-images",
+          options: {
+            maxWidth: 690,
           },
-          {
-            resolve: "gatsby-remark-responsive-iframe",
-          },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers",
+        },
+        {
+          resolve: "gatsby-remark-responsive-iframe",
+        },
+        "gatsby-remark-prismjs",
+        "gatsby-remark-copy-linked-files",
+        "gatsby-remark-autolink-headers",
         ],
       },
     },
@@ -72,7 +71,34 @@ module.exports = {
     "gatsby-image",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: "/sitemap.xml",
+        query: `
+            {
+            site {
+                siteMetadata {
+                    siteUrl
+                }
+            }
+
+            allSitePage {
+                edges {
+                    node {
+                        path
+                    }
+                }
+            }
+        }`,
+        // eslint-disable-next-line arrow-body-style
+        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => {
+          return {
+            url: site.siteMetadata.siteUrl + edge.node.path,
+          };
+        }),
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -112,24 +138,28 @@ module.exports = {
           }
         }
       `,
-        feeds: [
-          {
-            serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
-                categories: edge.node.frontmatter.tags,
-                date: edge.node.fields.date,
-                title: edge.node.frontmatter.title,
-                description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [
-                  { "content:encoded": edge.node.html },
-                  { author: config.userEmail },
-                ],
-              }));
-            },
-            query: `
+        feeds: [{
+          serialize(ctx) {
+            const {
+              rssMetadata,
+            } = ctx.query.site.siteMetadata;
+            return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              categories: edge.node.frontmatter.tags,
+              date: edge.node.fields.date,
+              title: edge.node.frontmatter.title,
+              description: edge.node.excerpt,
+              url: rssMetadata.site_url + edge.node.fields.slug,
+              guid: rssMetadata.site_url + edge.node.fields.slug,
+              custom_elements: [{
+                "content:encoded": edge.node.html,
+              },
+              {
+                author: config.userEmail,
+              },
+              ],
+            }));
+          },
+          query: `
             {
               allMarkdownRemark(
                 limit: 1000,
@@ -155,9 +185,8 @@ module.exports = {
               }
             }
           `,
-            output: config.siteRss,
-          },
-        ],
+          output: config.siteRss,
+        }],
       },
     },
   ],
