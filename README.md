@@ -1,11 +1,8 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<h1 align="center">
-  <a href="https://www.joaopedro.cc/">joaopedro.cc</a>
-</h1>
+## João Pedro Schmitz
 
-Um estudante de Engenharia de Software que é entusiasta de novas tecnologias e que adora aprender novos frameworks JavaScript. Atualemente trabalha como desenvolvedor FrontEnd, mas tem muita vontade de aprender mais sobre inteligência artificial.
+A Software Engineering student who is an enthusiast of new technologies and loves learning new JavaScript frameworks. Currently working as a FrontEnd developer but wishes to learn more about artificial intelligence.
 
-## 🧐 How it was developed?
+### 🧐 How it was developed?
 
 The entire blog was developed with Gatsby.
 
@@ -13,6 +10,6 @@ Gastsby "is a free and open source framework based on React that helps developer
 
 Want to learn Gatsby and don't know where? Check my blog [series](https://www.joaopedro.cc/blog-com-gatsby-e-react-parte-1/)
 
-## 💫 Hosting
+### 💫 Hosting
 
 This site is proudly hosted by [Netlify](https://www.netlify.com/).
