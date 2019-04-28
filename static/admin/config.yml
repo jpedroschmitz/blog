@@ -40,40 +40,6 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "blog-en"
-    label: "Blog (EN)"
-    folder: "content/blog/en"
-    create: true
-    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
-    fields:
-      - {label: "Template", name: "template", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Post Image", name: "image", widget: "image"}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Modified Date", name: "date", widget: "datetime"}
-      - {label: "Highlight", name: "date", widget: "boolean", default: true}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Class", name: "main-class", widget: "select", options: ["gatsby", "css", "react", "js", "html", "svg", "dev", "general", "java", "go", "python"]}
-      - {label: "Color", name: "color", widget: "select", options: [
-          { label: "Gatsby", value: "#639" },
-          { label: "CSS", value: "#2DA0C3" },
-          { label: "React", value: "#61dafb" },
-          { label: "JS", value: "#D6BA32" },
-          { label: "HTML", value: "#EB7728" },
-          { label: "SVG", value: "#7D669E" },
-          { label: "Dev", value: "#637a91" },
-          { label: "General", value: "#6ab04c" },
-          { label: "Java", value: "#f00" },
-          { label: "Go", value: "#375EAB" },
-          { label: "Python", value: "#ffd343" }
-        ]
-        }
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
   - name: "pages-pt"
     label: "Pages (PT)"
     folder: "content/pages/pt"
@@ -87,15 +53,3 @@ collections:
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "pages-en"
-    label: "Pages (EN)"
-    folder: "content/pages/en"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Template", name: "template", widget: "hidden", default: "page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Introduction", name: "introduction", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
