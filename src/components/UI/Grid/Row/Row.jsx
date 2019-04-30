@@ -9,4 +9,3 @@ export default ({ centered, children }) => {
     <div className={attachedClass.join(" ")}>{children}</div>
   );
 };
-
