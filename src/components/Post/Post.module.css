@@ -1,0 +1,45 @@
+.Article {
+  margin-bottom: 5rem;
+  width: 30.50%;
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+  background: url('../../../static/img/highlight/cover.jpg') center no-repeat;
+  background-size: cover;
+}
+
+.Article:nth-child(3n - 1) {
+  margin-left: 4.25%;
+  margin-right: 4.25%;
+}
+
+.Article:nth-child(4), .Article:nth-child(7) {
+  clear: both;
+}
+
+.ArticleCategory {
+  background: #347EED;
+  padding: 05px;
+  position: absolute;
+  width: 134px;
+  bottom: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #FFF;
+}
+
+.ArticleInfo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  max-height: 45%;
+  background-color: #FFF;
+  padding: 20px 15px;
+}
+
+.ArticleDate {
+  padding-top: 10px;
+  font-size: 0.875rem;
+}

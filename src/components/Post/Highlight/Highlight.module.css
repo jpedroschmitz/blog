@@ -1,0 +1,52 @@
+.Hightlight {
+  height: 650px;
+  width: 100%;
+  position: relative;
+  color: #000;
+  background: url('../../../../static/img/highlight/cover.jpg') center no-repeat;
+  background-size: cover;
+}
+
+.HightlightNav {
+  width: 35vw;
+  background-color: #FFF;
+  padding: 60px 45px;
+  box-sizing: border-box;
+  height: 225px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.HightlightBar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  background-color: #D21739;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 05px 12px;
+  color: #FFF;
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+}
+
+.HightlightInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+
+.HightlightCategory {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 40px;
+}
+
+.HightlightDate {
+  font-weight: 300;
+  font-size: 0.875rem;
+}

@@ -1,0 +1,20 @@
+.Post {
+  padding: 12px 40px;
+  border: 1px solid #C8D6E5;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.Post a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Post a p {
+  font-size: 0.875rem;
+}

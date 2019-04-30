@@ -1,11 +1,11 @@
 import React from "react";
-import { StaticQuery, graphql, Link } from "gatsby";
+import { Link } from "gatsby";
 import classes from "./Header.module.css";
 
-const Header = () => (
+export default () => (
   <header className={classes.Header}>
     <h1 className={classes.HeaderTitle}>
-      <a href="index.html">João Pedro S.</a>
+      <Link to="/">João Pedro S.</Link>
     </h1>
     <div className={classes.HeaderNavigation}>
       <nav className={classes.HeaderNav}>
@@ -17,21 +17,19 @@ const Header = () => (
             <Link to="/categorias">Categorias</Link>
           </li>
           <li>
-            <Link to="/tags" >Tags</Link>
+            <Link to="/tags">Tags</Link>
           </li>
           <li>
             <Link to="/sobre-mim">Sobre mim</Link>
           </li>
           <li>
-            <div className={[classes.Icon, classes.IconSearch].join(' ')} />
+            <div className={[classes.Icon, classes.IconSearch].join(" ")} />
           </li>
           <li>
-            <div className={[classes.Icon, classes.IconModeNight].join(' ')} />
+            <div className={[classes.Icon, classes.IconModeNight].join(" ")} />
           </li>
         </ul>
       </nav>
     </div>
-</header>
-)
-
-export default Header;
+  </header>
+);
