@@ -1,0 +1,30 @@
+.Pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Pagination span {
+  font-size: 0.875rem;
+  margin: 0 15px;
+}
+
+.Pagination button {
+  border: none;
+  outline: none;
+  background-color: #F6F6F6;
+  padding: 10px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+  border-radius: .55rem;
+}
+
+.Pagination button:disabled {
+  background-color: #dcdde1;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.Pagination button:hover {
+  background-color: #dcdde1;
+}

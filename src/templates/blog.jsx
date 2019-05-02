@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/Layout";
-import Highlight from "../components/Post/Highlight";
 import Post from "../components/Post";
 import Container from "../components/UI/Grid/Container";
 import Row from "../components/UI/Grid/Row";
@@ -15,7 +14,6 @@ import Pagination from "../components/Pagination";
 
 export default () => (
   <Layout>
-    <Highlight />
     <Container>
       <Row centered>
         <Post />

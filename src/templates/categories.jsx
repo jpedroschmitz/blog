@@ -3,19 +3,16 @@ import Layout from "../components/Layout";
 import PageBar from "../components/Internal/PageBar";
 import Post from "../components/Internal/Post";
 import Container from "../components/UI/Grid/Container";
-import Row from "../components/UI/Grid/Row";
 
-export default () => (
-  <Layout>
-    <PageBar title="Categorias" introduction="" />
-    <Container>
-      <Row centered>
-        <Post title="Why you should start coding today, not tomorrow" quantity="5" />
-        <Post title="Why you should start coding today, not tomorrow" quantity="5" />
-        <Post title="Why you should start coding today, not tomorrow" quantity="5" />
-        <Post title="Why you should start coding today, not tomorrow" quantity="5" />
-        <Post title="Why you should start coding today, not tomorrow" quantity="5" />
-      </Row>
-    </Container>
-  </Layout>
-);
+export default (props) => {
+  const { pageContext } = props;
+  const { categoryList } = pageContext;
+  return (
+    <Layout>
+      <PageBar title="Categorias" introduction="React, Gatsby, node.js. Do FrontEnd ao BackEnd. Veja aqui todas as categorias do blog." />
+      <Container>
+        {categoryList.map(item => <Post title={item} key={item} quantity="1" />)}
+      </Container>
+    </Layout>
+  );
+};
