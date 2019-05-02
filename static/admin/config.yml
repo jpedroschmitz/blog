@@ -10,7 +10,7 @@ collections:
     label: "Blog (PT)"
     folder: "content/blog/pt"
     create: true
-    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
+    slug: "{{day}}-{{month}}-{{year}}--{{slug}}"
     fields:
       - {label: "Template", name: "template", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
@@ -22,7 +22,6 @@ collections:
       - {label: "Highlight", name: "date", widget: "boolean", default: true}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Category", name: "category", widget: "string"}
-      - {label: "Class", name: "main-class", widget: "select", options: ["gatsby", "css", "react", "js", "html", "svg", "dev", "general", "java", "go", "python"]}
       - {label: "Color", name: "color", widget: "select", options: [
           { label: "Gatsby", value: "#639" },
           { label: "CSS", value: "#2DA0C3" },
