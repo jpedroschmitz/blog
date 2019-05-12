@@ -1,4 +1,4 @@
 ---
-category: Gatsby
-color: #639
+category: "Gatsby"
+color: "#639"
 ---
