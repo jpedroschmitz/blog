@@ -38,7 +38,8 @@
     "quotes": [
       "error",
       "double"
-    ]
+    ],
+    "object-curly-newline": 0
   },
   "settings": {
     "import/core-modules": []
