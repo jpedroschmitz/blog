@@ -12,7 +12,7 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <PageBar title="Tags" introduction="Veja todas as tags do blog"/>
+    <PageBar title="Tags" introduction="Veja todas as tags do blog" />
     <Container>
       <Row centered>
         {group.map(item => (
