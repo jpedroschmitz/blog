@@ -6,11 +6,9 @@ A Software Engineering student who is an enthusiast of new technologies and love
 
 ### 🧐 How it was developed?
 
-The entire blog was developed with Gatsby.
+The entire blog was developed with Gatsby,  a free and open source framework based on React that helps developers build blazing fast websites and apps, as they like to say.
 
-Gastsby "is a free and open source framework based on React that helps developers build blazing fast websites and apps", as they like to say.
-
-Want to learn Gatsby and don't know where? Check my blog [series](https://www.joaopedro.cc/blog-com-gatsby-e-react-parte-1/)
+Want to learn Gatsby and don't know where? Check my blog [series](https://www.joaopedro.cc/blog-com-gatsby-e-react-parte-1/).
 
 ### 💫 Hosting
 
