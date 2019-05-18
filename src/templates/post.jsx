@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import Highlight from "../components/Post/Highlight";
+import Highlight from "../components/Internal/Post/Highlight";
 import Container from "../components/UI/Grid/Container";
 
 export default () => (

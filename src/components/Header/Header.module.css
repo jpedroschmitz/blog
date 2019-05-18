@@ -1,6 +1,14 @@
+.HeaderWrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: #FFF;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 20px 1.30rem;
+}
+
 .Header {
-  padding: 35px 25px;
-  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -11,8 +19,11 @@
   display: block;
 }
 
+.Header .HeaderTitle {
+  font-size: 1.6rem;
+}
+
 .Header .HeaderTitle a {
-  text-transform: uppercase;
   color: #000000;
   text-decoration: none;
 }
@@ -25,7 +36,7 @@
 
 .Header .HeaderNav ul li {
   margin: 0 1.5rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .Header .HeaderNav ul li:last-child {
@@ -33,14 +44,15 @@
 }
 
 .Header .HeaderNav ul li a {
-  color: #000;
+  color: #333;
   text-decoration: none;
+  border-bottom: 1px dashed transparent;
   font-size: 1rem;
 }
 
 .Header .HeaderNav ul li a:hover {
   color: #000;
-  text-decoration: underline;
+  border-color: #e7e7e7;
 }
 
 .Header .Icon {
@@ -48,14 +60,6 @@
   height: 24px;
   cursor: pointer;
   transition: 0.2s ease;
-}
-
-.Header .IconLanguageEn {
-  background: url('../../../static/img/icons/en.svg') no-repeat;
-}
-
-.Header .IconLanguagePt {
-  background: url('../../../static/img/icons/pt.svg') no-repeat;
 }
 
 .Header .IconSearch {

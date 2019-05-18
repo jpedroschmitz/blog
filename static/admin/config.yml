@@ -33,6 +33,7 @@ collections:
       - {label: "Template", name: "template", widget: "hidden", default: "page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Introduction", name: "introduction", widget: "string"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -45,4 +46,5 @@ collections:
     fields:
       - {label: "Template", name: "template", widget: "hidden", default: "categories"}
       - {label: "Category name", name: "category", widget: "string"}
+      - {label: "Introduction", name: "introduction", widget: "string"}
       - {label: "Color", name: "color", widget: "string"}

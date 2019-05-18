@@ -3,7 +3,7 @@
   width: 100%;
   position: relative;
   color: #000;
-  background: url('../../../../static/img/highlight/cover.jpg') center no-repeat;
+  background: url('../../../../../static/img/highlight/cover.jpg') center no-repeat;
   background-size: cover;
 }
 

@@ -2,6 +2,7 @@
 template: page
 title: Sobre mim
 introduction: Conheça um pouco o cara que escreve para esse blog
+draft: false
 description: >-
   Meu nome é João Pedro Schmitz e sou um desenvolvedor FrontEnd apaixonado por
   JavaScript e todo o ecossistema em torno dessa tecnologia. No meu tempo livre,
