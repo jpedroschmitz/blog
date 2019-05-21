@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import PageBar from "../components/Internal/PageBar";
 import Post from "../components/Internal/Post";
 import Container from "../components/UI/Grid/Container";
-import Row from "../components/UI/Grid/Row";
 
 const CategoriesPage = ({
   data: {
@@ -12,9 +11,9 @@ const CategoriesPage = ({
   },
 }) => (
   <Layout>
-    <PageBar title="Categorias" introduction="Veja aqui todas as categorias do blog" />
+    <PageBar title="Categorias" introduction="Procure aqui os temas do blog através das categorias." />
     <Container>
-      <Row centered>
+      <article>
         {group.map(item => (
           <Post
             key={item.fieldValue}
@@ -24,7 +23,7 @@ const CategoriesPage = ({
             slug={item.fieldValue}
           />
         ))}
-      </Row>
+      </article>
     </Container>
   </Layout>
 );

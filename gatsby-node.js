@@ -41,6 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve("src/templates/post.jsx");
     const tagTemplate = path.resolve("src/templates/tag.jsx");
+    const indexTemplate = path.resolve("src/templates/index.jsx");
     const categoryTemplate = path.resolve("src/templates/category.jsx");
     const pageTemplate = path.resolve("src/templates/page.jsx");
     resolve(
@@ -48,9 +49,9 @@ exports.createPages = ({ graphql, actions }) => {
         `
           {
             allMarkdownRemark(
-              sort: { fields: [fields___prefix], order: DESC }
-              limit: 1000
-              filter: { frontmatter: { draft: { ne: true } } }
+              sort: {fields: [fields___source], order: DESC},
+              limit: 1000,
+              filter: {frontmatter: {draft: { eq: false }}}
             ) {
               edges {
                 node {
@@ -84,6 +85,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           const categorySet = new Set();
           const tagSet = new Set();
+          const postsSet = new Set();
           items.forEach((edge) => {
             const {
               node: {
@@ -125,17 +127,20 @@ exports.createPages = ({ graphql, actions }) => {
                   slug,
                 },
               });
+            } else if (source === "posts") {
+              postsSet.add(edge);
             }
           });
 
-          const itemsPerPage = 1;
+          const itemsPerPage = 12;
+          const posts = Array.from(postsSet);
           paginate({
             createPage,
-            items,
+            items: posts,
             itemsPerFirstPage: itemsPerPage,
             itemsPerPage,
-            pathPrefix: "/blog",
-            component: path.resolve("src/templates/blog.jsx"),
+            pathPrefix: "/",
+            component: indexTemplate,
           });
 
           const categoryList = Array.from(categorySet);
@@ -160,7 +165,6 @@ exports.createPages = ({ graphql, actions }) => {
             });
           });
 
-          const posts = items.filter(item => item.node.fields.source === "posts");
           posts.forEach(({ node }, index) => {
             const { source } = node.fields;
             const { slug } = node.frontmatter;

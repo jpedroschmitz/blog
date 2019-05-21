@@ -49,6 +49,7 @@
     "gatsby-transformer-sharp": "^2.1.18",
     "lodash.kebabcase": "^4.1.1",
     "minireset.css": "0.0.4",
+    "moment": "^2.24.0",
     "netlify-cms": "^2.9.1",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",

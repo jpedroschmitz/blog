@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    headerTitle: "João Pedro S.",
+    siteUrl: "https://www.joaopedro.cc/",
+    disqusShortname: "blog-do-joao-pedro",
   },
   plugins: [
     "gatsby-plugin-netlify-cms",

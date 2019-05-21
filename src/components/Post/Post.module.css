@@ -1,10 +1,17 @@
+.Link {
+  display: block;
+  height: 100%;
+}
+
 .Article {
   margin-bottom: 5rem;
   width: 30.50%;
   height: 300px;
   position: relative;
+  border-radius: 0.55rem;
   cursor: pointer;
-  background: url('../../../static/img/highlight/cover.jpg') center no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -37,6 +44,7 @@
   max-height: 45%;
   background-color: #FFF;
   padding: 20px 15px;
+  color: #000;
 }
 
 .ArticleDate {

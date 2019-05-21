@@ -1,15 +1,17 @@
 import React from "react";
+import { Link } from "gatsby";
+import kebabcase from "lodash.kebabcase";
 import classes from "./Highlight.module.css";
 
-export default () => (
+export default ({ title, category, date, image, timeToRead }) => (
   <section>
-    <article className={classes.Hightlight}>
+    <article className={classes.Hightlight} style={{ backgroundImage: `url(${image})` }}>
       <div className={classes.HightlightNav}>
-        <div className={classes.HightlightBar}>Highlight</div>
-        <h2>Why it is so important for you to start coding today, know how</h2>
+        <h2>{title}</h2>
         <div className={classes.HightlightInfo}>
-          <p className={classes.HightlightCategory}>Tech</p>
-          <p className={classes.HightlightDate}>12 days ago</p>
+          <Link to={`categoria/${kebabcase(category)}`} className={classes.HightlightCategory}>{category}</Link>
+          <p>{date}</p>
+          <p>{`${timeToRead} min de leitura`}</p>
         </div>
       </div>
     </article>

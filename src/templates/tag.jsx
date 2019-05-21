@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import PageBar from "../components/Internal/PageBar";
 import Post from "../components/Internal/Post";
 import Container from "../components/UI/Grid/Container";
-import Row from "../components/UI/Grid/Row";
 
 export default ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -13,9 +12,10 @@ export default ({ pageContext, data }) => {
     <Layout>
       <PageBar title={`Tag: ${tag}`} introduction="" />
       <Container>
-        <Row centered>
+        <article>
           {edges.map(item => (
             <Post
+              key={item.node.frontmatter.slug}
               category={item.node.frontmatter.category}
               date={item.node.frontmatter.date}
               title={item.node.frontmatter.title}
@@ -23,7 +23,7 @@ export default ({ pageContext, data }) => {
               borderColor={item.node.frontmatter.color}
             />
           ))}
-        </Row>
+        </article>
       </Container>
     </Layout>
   );
@@ -34,7 +34,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___prefix], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } } }
+      filter: { frontmatter: { tags: { in: [$tag] }, draft: { eq: false } } }
     ) {
       totalCount
       edges {

@@ -4,8 +4,6 @@ import Layout from "../components/Layout";
 import PageBar from "../components/Internal/PageBar";
 import Container from "../components/UI/Grid/Container";
 
-// TODO - get description from pageContext and add to page head
-
 export default ({ data }) => {
   const { title, introduction } = data.markdownRemark.frontmatter;
   const { html } = data.markdownRemark;

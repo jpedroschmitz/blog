@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import PageBar from "../components/Internal/PageBar";
 import Post from "../components/Internal/Post";
 import Container from "../components/UI/Grid/Container";
-import Row from "../components/UI/Grid/Row";
 
 const TagsPage = ({
   data: {
@@ -12,9 +11,9 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <PageBar title="Tags" introduction="Veja todas as tags do blog" />
+    <PageBar title="Tags" introduction="JavaScript, React, node.js e até Java. Tem de tudo um pouco." />
     <Container>
-      <Row centered>
+      <article>
         {group.map(item => (
           <Post
             key={item.fieldValue}
@@ -24,7 +23,7 @@ const TagsPage = ({
             slug={item.fieldValue}
           />
         ))}
-      </Row>
+      </article>
     </Container>
   </Layout>
 );

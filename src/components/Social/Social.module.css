@@ -1,0 +1,12 @@
+.Icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 55px;
+}
+
+.Icons > div {
+  margin: 0px 20px 0px 0px;
+  cursor: pointer;
+  outline: none;
+}

@@ -1,7 +1,7 @@
 ---
 template: page
-title: Sobre mim
-introduction: Conheça um pouco o cara que escreve para esse blog
+title: "Sobre mim"
+introduction: "Conheça um pouco o cara que escreve e mantém esse blog."
 draft: false
 description: >-
   Meu nome é João Pedro Schmitz e sou um desenvolvedor FrontEnd apaixonado por

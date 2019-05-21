@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import moment from "moment";
 import Layout from "../components/Layout";
 import Post from "../components/Post";
 import Container from "../components/UI/Grid/Container";
@@ -15,9 +16,12 @@ export default ({ data }) => {
         <Row centered>
           {edges.map(item => (
             <Post
+              key={item.node.frontmatter.slug}
               category={item.node.frontmatter.category}
-              date={item.node.frontmatter.date}
+              date={moment(item.node.frontmatter.date, "YYYYMMDD").fromNow()}
               title={item.node.frontmatter.title}
+              image={`${origin}${item.node.frontmatter.image}`}
+              slug={item.node.frontmatter.slug}
             />
           ))}
         </Row>
@@ -29,21 +33,17 @@ export default ({ data }) => {
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      sort: { fields: [fields___prefix], order: DESC }
       limit: 6
-      filter: { frontmatter: { draft: { ne: false } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { eq: false } }, fields: { source: { eq: "posts"} } }
     ) {
       edges {
         node {
-          id
-          fields {
-            slug
-            prefix
-            source
-          }
           frontmatter {
             title
-            date
+            date(formatString: "YYYYMMDD")
+            slug
+            image
             category
           }
         }

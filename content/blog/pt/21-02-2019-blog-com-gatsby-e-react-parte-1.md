@@ -1,18 +1,18 @@
 ---
 template: post
-title: Criando um blog com Gatsby e React
+title: "Criando um blog com Gatsby e React - Parte 1"
 tags:
-  - Gatsby
   - React
-  - JavaScript
+  - Gatsby
 category: Gatsby
-slug: criando-blog-com-gatsby-e-react
-image: /img/upload/cover.jpg
+slug: blog-com-gatsby-e-react-parte-1
+image: /img/upload/blog-gatsby-react.png
 draft: false
-date: 2019-05-12T03:00:00.000Z
-description: Um post muito legal de Gatsby e React
+date: 2019-02-21T03:00:00.000Z
+description: "Nesse primeiro post da série iremos ver o que é o Gatsby e porque é tão bom usá-lo. Além disso, daremos início ao nosso projeto criando a primeira página."
 ---
-## Introdução 
+
+## Introdução  <!-- omit in toc -->
 
 Iaee pessoal! Como vocês estão? Conforme prometido hoje estou aqui para começar a construir o nosso blog com React e Gatsby. Vai ter muita funcionalidade boa que vai deixar o blog top demais. Não esqueça de assinar o feed RSS para não perder os próximos posts.
 
@@ -20,7 +20,7 @@ Antes de começar já pega aquele cafezinho por que o primeiro post dessa série
 
 *Edit:* Caso queira ver o blog no ar clique [aqui](https://codestackbrasil.netlify.com/).
 
-## Tabela de conteúdos 
+## Tabela de conteúdos <!-- omit in toc -->
 
 - [Pré-requisitos](#pr%C3%A9-requisitos)
 - [O que vamos construir?](#o-que-vamos-construir)
@@ -237,6 +237,8 @@ You can now view codestack in the browser.
 ```
 
 Se você abrir o endereço [http://localhost:8000/](http://localhost:8000/) deverá ver a seguinte tela ainda sem muito estilo:
+
+![Resultado do projeto até essa parte do post](/images/posts/2019-02-21--blog-com-gatsby-e-react-parte-1/result-part1.png)
 
 ## Conclusão
 
