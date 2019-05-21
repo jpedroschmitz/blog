@@ -7,7 +7,7 @@ import Comments from "../components/Comments";
 import Social from "../components/Social";
 import Container from "../components/UI/Grid/Container";
 
-export default ({ data, location, pageContext }) => {
+export default ({ data, location }) => {
   const { html } = data.markdownRemark;
   const { title, image, date, category, slug } = data.markdownRemark.frontmatter;
   const { timeToRead } = data.markdownRemark;
