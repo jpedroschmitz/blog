@@ -9,11 +9,12 @@ description: >-
   normalmente estudo Teologia e conheço Jesus um pouco melhor.
 slug: sobre-mim
 ---
-Olá, meu nome é João Pedro Schmitz e sou um desenvolvedor FrontEnd do Brasil apaixonado por JavaScript e todo o ecossistema em torno dessa tecnologia.
 
-No início de 2017, comecei a estudar Engenharia de Software na Universidade do Estado de Santa Catarina. Espero que nos próximos 2 anos eu possa terminar :)
+Olá, meu nome é João Pedro Schmitz, nasci em Pinhalzinho/SC e atualmente sou desenvolvedor FrontEnd, apaixonado por JavaScript e todo o ecossistema em torno dessa tecnologia.
 
-Eu amo trabalhar em equipes e ajudar pessoas. No meu tempo livre, normalmente estudo Teologia e conheço Jesus um pouco melhor.
+Eu faço Engenharia de Software na [Universidade do Estado de Santa Catarina](https://www.udesc.br/), mas, esse não é a único curso que estudo, eu também faço teolgia na [Escola Convergência](https://escolaconvergencia.com.br).
+
+Eu amo trabalhar em equipe e sou um cara bem comunicativo, que adora expor suas opiniões e dar sugestões. Além disso tudo (que nem é muito né haha), eu trabalho como voluntário em projetos para a [Life.Church](https://www.life.church/).
 
 ## Habilidades
 

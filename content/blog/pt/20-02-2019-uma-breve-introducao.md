@@ -12,7 +12,7 @@ date: 2019-02-20T03:00:00.000Z
 description: "Uma breve introdução de quais tecnologias foram usadas para criar esse blog e o porquê de tê-lo criado."
 ---
 
-Iaee pessoal! Como vocês estão? Bom, antes de começar oficialmente o blog gostaria de me apresentar um pouco para vocês :)
+Fala pessoal! Como vocês estão? Bom, antes de começar oficialmente o blog gostaria de me apresentar um pouco para vocês :)
 
 Meu nome é João Pedro Schmitz, sou estagiário na Merkadia Soluções Digitais e faço Engenharia de Software na Universidade do Estado de Santa Catarina. Atualmente estou iniciando a 5ª fase.
 

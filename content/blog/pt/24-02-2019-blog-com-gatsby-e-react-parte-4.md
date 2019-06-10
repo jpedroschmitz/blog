@@ -14,13 +14,13 @@ description: "No 4 post da série vamos terminar o nosso blog e adicionar divers
 
 ## Introdução <!-- omit in toc -->
 
-Iaee pessoal! Como vocês estão? Depois de alguns dias estou de volta para mais um post da nossa série. Hoje vamos adicionar vários plugins e melhorar algumas coisas. Por isso, como de costume, já pega o café e bora *codar*.
+Fala pessoal! Como vocês estão? Depois de alguns dias estou de volta para mais um post da nossa série. Hoje vamos adicionar vários plugins e melhorar algumas coisas. Por isso, como de costume, já pega o café e bora *codar*.
 
 ## Tabela de conteúdos <!-- omit in toc -->
 
 - [Terminando o template dos posts](#terminando-o-template-dos-posts)
 - [Melhorias no projeto](#melhorias-no-projeto)
-- [React Helmet](#react-helmet)
+- [Facilitando nossa vida](#facilitando-nossa-vida)
 - [Melhorando o SEO](#melhorando-o-seo)
   - [Adicionando outros plugins](#adicionando-outros-plugins)
   - [Robots.txt](#robotstxt)
@@ -28,9 +28,7 @@ Iaee pessoal! Como vocês estão? Depois de alguns dias estou de volta para mais
 
 ## Terminando o template dos posts
 
-Antes de começarmos a adicionar os plugins vamos primeiro terminar o template do nosso post. A ideia é adicionarmos um título, mostrarmos as tags e a data de publicação.
-
-Para isso, dentro de templates, no `post.jsx` adicione o seguinte código:
+Antes de começarmos a adicionar os plugins vamos primeiro terminar o template do nosso post. A ideia é adicionarmos um título, mostrarmos as tags e a data de publicação. Para isso, dentro de templates, no `post.jsx` adicione o seguinte código:
 
 ```jsx
 // src/templates/post.jsx
@@ -85,29 +83,21 @@ Adicione também um pouco de CSS no `Layout.css`.
 /* src/components/Layout/Layout.css */
 /* ... */
 .content p {
-    line-height: 1.5;
-    text-align: justify;
-    margin: 22px 0px;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 22px 0px;
 }
 ```
 
-![Página do post](/images/posts/2019-03-04--blog-com-gatsby-e-react-parte-4/result-part7.png)
+![Página do post](/img/upload/result-part7.png)
 
 ## Melhorias no projeto
 
 Agora que terminamos toda a parte bruta do site vamos começar a cuidar dos pequenos detalhes que vão deixar o nosso blog bem "equipado", e para começarmos, vamos usar um componente responsável por manipular o `head` das nossas páginas, o [Helmet](https://github.com/nfl/react-helmet).
 
-## React Helmet
+## Facilitando nossa vida
 
-Para utilizar o helmet precisamos instalar ele junto com um plugin do Gatsby que permite o suporte para renderização dos dados no *server*.
-
-```bash
-npm install --save react-helmet gatsby-plugin-react-helmet
-```
-
-Uma vez que o plugin foi instalado precisamos adicionar dentro do `gatsby-node.js`. Portanto, dentro do array de plugins adicione a seguite linha: `'gatsby-plugin-react-helmet'`
-
-Agora o que precisamos fazer é criar um arquivo JavaScript com os principais dados do nosso site, de modo que facilite a nossa vida depois. Para isso, dentro da pasta `data` crie um arquivo `config.js`. Dentro dessa arquivo vamos colocar o título do nosso site, dados para o `manifest.json`, ID do Google Analytics e outras coisas.
+De modo a facilitar a nossa vida nós vamos criar um arquivo JavaScript com os principais dados do nosso site, de modo que facilite a manutenção depois. Para isso, dentro da pasta `data` crie um arquivo `config.js`. Dentro dessa arquivo vamos colocar o título do nosso site, dados para o `manifest.json`, ID do Google Analytics e outras informações.
 
 ```javascript
 // data/config.js
@@ -141,9 +131,7 @@ module.exports = {
 }
 ```
 
-Se você abrir a página no navegador nada deve ter mudado. A mesma interface, porém com uma manutenção melhor.
-
-O que precisamos fazer nesse momento é criar um estrutura básica para o helmet, e para isso, nada mais justo que usarmos o layout.
+Se você abrir a página no navegador nada deve ter mudado. A mesma interface, porém com uma manutenção melhor. Agora vamos criar um estrutura básica para o helmet (plugin para editar o head do site), e para isso, nada mais justo que usarmos o layout.
 
 Dentro do arquivo `Layout.jsx` adicione o seguinte componente junto com os imports:
 
@@ -170,9 +158,7 @@ O favicon que estou utilizando aqui pode ser encontrado nesse [link](https://br.
 
 ## Melhorando o SEO
 
-Todo mundo sabe que SEO é muito importante para qualquer site/blog por justamente criar visibilidade para a sua marca/produto ou para o seu framework JavaScript haha. Por tal motivo vamos precisar de um componente top para podermos usar em todas as páginas.
-
-Logo, dentro de components crie uma pasta SEO e um arquivo `SEO.jsx`. No arquivo cole o seguinte código:
+Todo mundo sabe que SEO é muito importante para qualquer site/blog por justamente criar visibilidade para a sua marca/produto ou para o seu framework JavaScript haha. Por tal motivo vamos precisar de um componente top para podermos usar em todas as páginas. Logo, dentro de `components` crie uma pasta SEO e um arquivo `SEO.jsx`. No arquivo cole o seguinte código:
 
 ```jsx
 // src/components/SEO/SEO.jsx
@@ -372,13 +358,13 @@ Depois de instalar todos esses plugins nós precisamos adicionar eles no arquivo
 },
 ```
 
-Ah, já ia esquecendo de comentar. Você não precisa gerar imagens de todos os tamanhos para o seu manifest. Se você passar um ícone de 512 x 512 ele irá gerar automaticamente para você :)
+Ah, já ia esquecendo de comentar. Você não precisa gerar imagens de todos os tamanhos para o seu manifest. Se você passar um ícone de 512 x 512 o plugin irá gerar automaticamente para você :)
 
 ### Robots.txt
 
 Antes de terminar crie também um arquivo `robots.txt` dentro da pasta `static`. Nesse arquivo adicione o seguinte conteúdo:
 
-```txt
+```
 User-agent: *
 
 Allow: /
@@ -387,10 +373,8 @@ Disallow: /404
 sitemap: https://codestackbrasil.netlify.com/sitemap.xml
 ```
 
-Lembre-se de trocar a URL para a sua, quando tiver uma.
+*Observação: Lembre-se de trocar a URL pela a sua (caso não tenha uma pode trocar depois).*
 
 ## Conclusão
 
-E depois de muita coisa feita chegamos ao fim do nosso penúltimo post da série. Caso tenha ficado com alguma dúvida ou quer deixar alguma sugestão não deixe de comentar aqui embaixo para podermos trocar uma ideia.
-
-No último post da série vamos aprender a fazer deploy no Netlify. Nos vemos lá! Deus abençoe!
+E depois de muita coisa feita chegamos ao fim do nosso penúltimo post da série. Caso tenha ficado com alguma dúvida ou quer deixar alguma sugestão não deixe de comentar aqui embaixo para podermos trocar uma ideia. No último post da série vamos aprender a fazer deploy no Netlify. Nos vemos lá! Deus abençoe!

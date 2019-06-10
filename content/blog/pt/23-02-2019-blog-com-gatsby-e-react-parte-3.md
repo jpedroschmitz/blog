@@ -14,7 +14,7 @@ description: "No terceiro post da série vamos adicionar muitas funcionalidades 
 
 ## Introdução <!-- omit in toc -->
 
-Iaee pessoal! Como vocês estão? Estou de volta hoje para falar mais um pouquinho de Gatsby, e logo de cara vamos implementar a parte mais "complexa" do nosso blog, a listagem de posts na capa. Além disso, vamos criar um template para mostrar todos os posts marcados com a mesma tag. Por isso, já liga a cafeteira que o post de hoje vai ser grande.
+Fala pessoal! Como vocês estão? Estou de volta hoje para falar mais um pouquinho de Gatsby, e logo de cara vamos implementar a parte mais "complexa" do nosso blog, a listagem de posts na capa. Além disso, vamos criar um template para mostrar todos os posts marcados com a mesma tag. Por isso, já liga a cafeteira que o post de hoje vai ser grande.
 
 ## Tabela de conteúdos <!-- omit in toc -->
 - [Configurando o Gatsby](#configurando-o-gatsby)
@@ -61,7 +61,7 @@ module.exports = {
 Porém, antes de continuar precisamos instalar o helmet.
 
 ```bash
-npm install gatsby-plugin-react-helmet
+npm install gatsby-plugin-react-helmet react-helmet
 ```
 
 ## Criando os posts
@@ -94,17 +94,11 @@ Todo o bloco ao redor dos hífens é chamado de `frontmatter`, e é nele que dec
 - draft: Define se o post será ou não publicado
 - tags: Tags escolhidas para o post
 
-E abaixo dos `frontmatter` vai todo o conteúdo do post, que, será transformado para HTML em um piscar de olhos!
-
-Agora, aproveite o embalo crie mais alguns posts dentro de `content`, assim podemos testar melhor!
+E abaixo dos `frontmatter` vai todo o conteúdo do post, que, será transformado para HTML em um piscar de olhos! Agora, aproveite e crie mais alguns posts dentro de `content`, assim podemos testar melhor!
 
 ## Criando os templates
 
-Agora que temos alguns posts vamos criar dois templates, um para os posts e outro para mostrar os posts marcados com a mesma tag.
-
-Esses templates vão ser usados na hora de criar as páginas dinâmicas (algo que veremos mais para frente).
-
-Para começar crie dois arquivos dentro da pasta templates em src, o `tag.jsx` e o `post.jsx`.
+Precisamos criar também dois templates, um para os posts e outro para mostrar os posts que tem a mesma tag. Esses templates vão ser usados na hora de criar as páginas dinâmicas (algo que veremos mais para frente). Para começar crie dois arquivos dentro da pasta templates em src, o `tag.jsx` e o `post.jsx`.
 
 ```jsx
 // src/templates/tag.jsx
@@ -173,52 +167,50 @@ export { default } from './Posts.jsx';
 ```css
 /* src/components/Posts/Posts.css */
 .posts {
-    padding: 10px 15px;
-    width: 100%;
+  padding: 10px 15px;
+  width: 100%;
 }
 
 .post {
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: .50rem;
-    background-color: #FFFFFF;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: .50rem;
+  background-color: #FFFFFF;
 }
 
 .post-title {
-    color: #000000;
-    text-decoration: none;
+  color: #000000;
+  text-decoration: none;
 }
 
 .post-title h2 {
-    margin-bottom: 5px;
-    font-size: 22px;
-    font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .post-date {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 ```
 
 ## Configurando a API Node do Gatsby
 
-Calma, calma, você não precisa ficar preocupado. Não iremos precisar de um servidor com node para o nosso site. O que acontece na verdade, é que o Gatsby fornece uma API Node, que por sua vez providencia diversas funcionalidades, inclusive criação de páginas dinâmicas a partir de arquivos.
+Calma, calma, você não precisa ficar preocupado. Não iremos precisar de um servidor com node para o nosso site. O que acontece na verdade, é que o Gatsby fornece uma API em Node.js, que por sua vez providencia diversas funcionalidades, inclusive criação de páginas dinâmicas a partir de arquivos.
 
-Essa API pode ser acessada a partir de um arquivo chamado `gatsby-node.js` que fica na raiz do nosso projeto. Esse arquivo pode também exportar várias API nodes, mas, nós só estamos interessados na `createPages` API. E como ele vai ficar bem grande, vou deixar nesse [gist](https://gist.github.com/jpedroschmitz/5d783e83573992eb1f37ff323503c81c) para que vocês possam copiar e colar no seu arquivo.
+Essa API pode ser acessada a partir de um arquivo chamado `gatsby-node.js` que deve ficar na raiz do projeto. Esse arquivo pode também exportar várias API's nodes, mas, nós só estamos interessados na `createPages` API. E como ele vai ficar bem grande, vou deixar nesse [gist](https://gist.github.com/jpedroschmitz/5d783e83573992eb1f37ff323503c81c) para que vocês possam copiar e colar no seu `gatsby-node.js`.
 
-Não se preocupe se você não entender o arquivo bem, é confuso mesmo. Eu inclusive demorei bastante para entender e para conseguir criar e configurar, de modo que funcionasse sem aparecer um erro gigante no terminal haha. O segredo foi seguir o [tutorial](https://www.gatsbyjs.org/docs/creating-and-modifying-pages/) do Gatby e ver o código de outras pessoas (uma forma que aprendo muito!).
+Se ficar com alguma dúvida pode deixar aqui nos comentários que terei prazer em te ajudar. Além disso, você pode dar uma olhada nesse [tutorial](https://www.gatsbyjs.org/docs/creating-and-modifying-pages/) do site do Gatsby que ele me ajudou bastante a entender como criar páginas dinâmicas.
 
-Antes de continuar quero avisar que toda vez que você alterar o arquivo `gatsby-node.js` irá precisar reiniciar o servidor. Para isso basta dar um `CTRL + C` no terminal e usar o `gatsby develop` novamente.
+Além disso, é importante avisar que toda vez que você alterar o arquivo `gatsby-node.js` irá precisar reiniciar o servidor. Para isso basta dar um `CTRL + C` no terminal e usar o `gatsby develop` novamente.
 
 ## Fazendo consultas e terminado a home
 
-Se você não entende de GraphQL não deixe de seguir com o tutorial.
+*Observação: Se você não entende de GraphQL não deixe de seguir com o tutorial.*
 
 O que vamos fazer agora é realizar uma consulta para pegarmos os dados que irão vir dos posts. Mas antes vamos olhar uma ferramenta muito legal do Gatsby, o GraphiQL. Para isso abra a seguinte url no seu navegador preferido: [http://localhost:8000/___graphql](http://localhost:8000/___graphql).
 
-O GraphiQL é uma ferramenta que ajuda a economizar muito tempo procurando erros e facilita demais a nossa vida como programador.
-
-Para testá-la adicione a seguinte query e execute:
+O GraphiQL é uma ferramenta que ajuda a economizar muito tempo procurando erros e facilita demais a nossa vida. Para testá-la adicione a seguinte query e execute:
 
 ```graphql
 {
@@ -240,7 +232,7 @@ Para testá-la adicione a seguinte query e execute:
 }
 ```
 
-Se nenhum erro surgiu você deve ter visto um JSON com os principais dados dos nossos posts. E Uma vez que testamos a ferramenta podemos realizar a mesma consulta utilizando uma page query. Portanto, dentro do `index.jsx` em `pages` adicione o seguite código:
+Se nenhum erro surgiu você deve ter visto um JSON com os principais dados dos nossos posts. E uma vez que testamos e obtivemos sucesso na ferramenta podemos realizar a mesma consulta utilizando uma page query. Portanto, dentro do `index.jsx` em `pages` adicione o seguite código:
 
 ```jsx
 // src/pages/index.jsx
@@ -287,19 +279,15 @@ export const pageQuery = graphql`
 `;
 ```
 
-Se tudo deu certo a sua página principal deve ter tido umas mudanças que deram um vida para nosso blog.
+Se tudo deu certo a sua página principal deve ter tido umas mudanças que deram um vida para nosso blog. Porém, vale ressaltar que nessa consulta estamos filtrando os posts de modo que somente os posts que não são rascunhos sejam mostrados.
 
-Porém, vale ressaltar que nessa consulta estamos filtrando os posts de modo que somente os posts que não são rascunhos sejam mostrados.
-
-![Página inicial do blog](/images/posts/2019-02-28--blog-com-gatsby-e-react-parte-3/result-part5.png)
+![Página inicial do blog](/img/upload/result-part5.png)
 
 Se você reparou viu que já temos um link que nos leva para a página do post, que, ainda não tem nada. Todavia, essa parte de mostrar o conteúdo fica para a nosso próximo post da série.
 
 ## Finalizando o template das tags
 
-O template para as tags é muito parecido com a nossa página inicial. A única diferença é que teremos um consulta diferente e também um título acima dos posts, para ajudar o usuário a se localizar.
-
-Portanto, abra o `tag.jsx` e adicione o seguinte código:
+O template para as tags é muito parecido com a nossa página inicial. A única diferença é que teremos um consulta diferente e também um título acima dos posts, para ajudar o usuário a se localizar. Portanto, abra o `tag.jsx` e adicione o seguinte código:
 
 ```jsx
 // src/templates/tag.jsx
@@ -349,7 +337,7 @@ export const pageQuery = graphql`
 
 Se quiser testar a página pode o fazer pela seguinte URL: [http://localhost:8000/tag/blog/](http://localhost:8000/tag/blog/).
 
-![Página das tags](/images/posts/2019-02-28--blog-com-gatsby-e-react-parte-3/result-part6.png)
+![Página das tags](/img/upload/result-part6.png)
 
 ## Conclusão
 
