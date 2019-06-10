@@ -15,7 +15,7 @@ collections:
       - {label: "Template", name: "template", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["category", "firstName", "lastName"], valueField: "category"}
+      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["title"], valueField: "category"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
@@ -45,6 +45,6 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Template", name: "template", widget: "hidden", default: "categories"}
-      - {label: "Category name", name: "category", widget: "string"}
+      - {label: "Category name", name: "title", widget: "string"}
       - {label: "Introduction", name: "introduction", widget: "string"}
       - {label: "Color", name: "color", widget: "string"}
