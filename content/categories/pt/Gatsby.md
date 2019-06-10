@@ -1,5 +1,5 @@
 ---
-category: "Gatsby"
-introduction: "Veja vários posts de tal teconoligia que faz tal coisa"
+title: "Gatsby"
+introduction: "Gatsby é <3. Melhor de todos!"
 color: "#639"
 ---

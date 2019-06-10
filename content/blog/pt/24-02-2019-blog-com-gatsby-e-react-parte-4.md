@@ -32,7 +32,7 @@ Antes de começarmos a adicionar os plugins vamos primeiro terminar o template d
 
 Para isso, dentro de templates, no `post.jsx` adicione o seguinte código:
 
-```javascript
+```jsx
 // src/templates/post.jsx
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
@@ -101,7 +101,7 @@ Agora que terminamos toda a parte bruta do site vamos começar a cuidar dos pequ
 
 Para utilizar o helmet precisamos instalar ele junto com um plugin do Gatsby que permite o suporte para renderização dos dados no *server*.
 
-```sh
+```bash
 npm install --save react-helmet gatsby-plugin-react-helmet
 ```
 
@@ -147,7 +147,7 @@ O que precisamos fazer nesse momento é criar um estrutura básica para o helmet
 
 Dentro do arquivo `Layout.jsx` adicione o seguinte componente junto com os imports:
 
-```javascript
+```jsx
 // src/components/Layout/Layout.jsx
 
 // imports aqui
@@ -174,7 +174,7 @@ Todo mundo sabe que SEO é muito importante para qualquer site/blog por justamen
 
 Logo, dentro de components crie uma pasta SEO e um arquivo `SEO.jsx`. No arquivo cole o seguinte código:
 
-```javascript
+```jsx
 // src/components/SEO/SEO.jsx
 import React from "react";
 import { Helmet } from "react-helmet";
@@ -218,7 +218,7 @@ export default ({ title, description, url, article }) => {
 
 Agora que temos o nosso componente de SEO o que precisamos fazer é adicionar nas nossas 4 páginas (tag, index, 404 e post).
 
-```javascript
+```jsx
 // src/templates/tag.jsx
 
 // imports
@@ -244,7 +244,7 @@ export default class Tag extends Component {
 // aqui fica a query normal
 ```
 
-```javascript
+```jsx
 // src/templates/posts.jsx
 
 // imports
@@ -282,13 +282,13 @@ No `index.js` e no `404.js` basta importar o componente do SEO e adicionar dentr
 
 Seguindo a mesma ideia do Helmet vamos adicionar alguns plugins para o blog, são eles:
 
-- [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap) - Gera um sitemap automático toda as vezes que fizemos o build.
-- [gatsby-plugin-offline](https://www.gatsbyjs.org/packages/gatsby-plugin-offline) - Dá suporte para o site funcionar offline.
-- [gatsby-plugin-manifest](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest) - Cria um manifest sem complicações.
+- [gatsby-plugin-sitemap](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap) - Gera um sitemap automático no build;
+- [gatsby-plugin-offline](https://www.gatsbyjs.org/packages/gatsby-plugin-offline) - Dá suporte para o site funcionar offline;
+- [gatsby-plugin-manifest](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest) - Cria um manifest sem complicações;
 - [gatsby-plugin-google-analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics) - Dá suporte para o analytics no seu site;
 - [gatsby-plugin-google-feed](https://www.gatsbyjs.org/packages/gatsby-plugin-feed) - Cria um feed RSS para o seu site.
 
-```sh
+```bash
 npm install --save gatsby-plugin-sitemap gatsby-plugin-offline gatsby-plugin-manifest gatsby-plugin-google-analytics gatsby-plugin-feed
 ```
 
@@ -376,9 +376,7 @@ Ah, já ia esquecendo de comentar. Você não precisa gerar imagens de todos os 
 
 ### Robots.txt
 
-Antes de terminar crie também um arquivo `robots.txt` dentro da pasta `static`.
-
-Nesse arquivo adicione o seguinte conteúdo:
+Antes de terminar crie também um arquivo `robots.txt` dentro da pasta `static`. Nesse arquivo adicione o seguinte conteúdo:
 
 ```txt
 User-agent: *

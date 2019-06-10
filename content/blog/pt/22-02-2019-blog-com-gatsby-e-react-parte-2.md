@@ -34,7 +34,7 @@ E conforme eu comentei no último post, hoje nós vamos desenvolver toda a parte
 
 Antes de começarmos a fazer o header, sidebar e todo o site, precisamos primeiro adicionar um reset para remover o estilo padrão dos navegadores. Para isso eu vou usar o [minireset.css](https://jgthms.com/minireset.css/), que pode ser instalado com o seguinte comando:
 
-```
+```bash
 npm install minireset.css
 ```
 
@@ -106,7 +106,7 @@ Depois de aplicarmos um reset e de termos adicionado uma fonte para o site podem
 
 Agora vamos importar e realizar uma pequena melhoria ao nosso site. Vamos realizar a consulta do título de dentro do Header para evitar de fazermos consultas em todas as páginas que criarmos.
 
-```javascript
+```jsx
 /* src/components/Header/Header.jsx */
 import React from 'react';
 import { StaticQuery, graphql, Link } from "gatsby"
@@ -134,7 +134,7 @@ export default () => (
 
 Lembre-se que precisamos atualizar também o `index.js` para remover a consulta.
 
-```javascript
+```jsx
 // src/pages/index.js
 import React from "react";
 import Layout from "../components/Layout";
@@ -156,7 +156,7 @@ Se tudo transcorreu bem até o momento esse deve ser o resultado parcial.
 
 Agora vamos criar um container para colocarmos o nosso sidebar e a nossa lista de posts.
 
-```javascript
+```jsx
 // src/components/Container/Container.jsx
 import React from 'react';
 import './Container.css';
@@ -192,7 +192,7 @@ Dentro do `Layout.jsx` adicione o container de modo que ele fique ao redor do `{
 
 Seguindo a mesma lógica dos componentes anteriores vamos criar o nosso Sidebar.
 
-```javascript
+```jsx
 // src/components/Sidebar/Sidebar.jsx
 import React from 'react';
 import './Sidebar.css';
@@ -233,7 +233,7 @@ export { default } from './Sidebar';
 
 Agora altere os arquivos `Layout.jsx`  e `Layout.css`, para que possamos adicionar o Sidebar ao layout padrão.
 
-```javascript
+```jsx
 // src/components/Layout/Layout.jsx
 import React from 'react';
 import Header from '../Header';
@@ -281,7 +281,7 @@ Agora que temos quase toda a parte visual do nosso blog e layout pronta podemos 
 
 Por tal motivo não podemos nos esquecer de criar uma página de erro 404 personalizada, e, com o Gatsby isso é muito simples. Basta criar um arquivo `404.js` dentro de `pages` e pronto.
 
-```javascript
+```jsx
 // src/pages/404.js
 import React from "react";
 import Layout from "../components/Layout";

@@ -14,11 +14,11 @@ description: "Nesse primeiro post da série iremos ver o que é o Gatsby e porqu
 
 ## Introdução  <!-- omit in toc -->
 
+*Edit: Caso queira ver o blog no ar [clique aqui](https://codestackbrasil.netlify.com/).*
+
 Iaee pessoal! Como vocês estão? Conforme prometido hoje estou aqui para começar a construir o nosso blog com React e Gatsby. Vai ter muita funcionalidade boa que vai deixar o blog top demais. Não esqueça de assinar o feed RSS para não perder os próximos posts.
 
 Antes de começar já pega aquele cafezinho por que o primeiro post dessa série vai ser grande e tem muito conteúdo.
-
-*Edit:* Caso queira ver o blog no ar clique [aqui](https://codestackbrasil.netlify.com/).
 
 ## Tabela de conteúdos <!-- omit in toc -->
 
@@ -152,7 +152,7 @@ No final de todos esse processo essa deve ser a sua estrutura:
 
 Agora que temos a nossa estrutura pronta vamos criar o nosso componente padrão para todas as telas, o layout. Para isso, crie uma pasta com o nome de `` Layout `` dentro de ``components``. Dentro dessa pasta crie também um arquivo ``Layout.jsx`` e um arquivo `` index.js ``.
 
-```javascript
+```jsx
 // src/components/Layout/Layout.jsx
 import React from 'react';
 import Header from '../Header';
@@ -174,7 +174,7 @@ export { default } from "./Layout";
 
 Se você reparou no código anterior percebeu que usamos um componente Header que ainda não foi criado. Portanto, para criar esse componente siga a mesma estrutura de pastas e arquivos de Layout.
 
-```javascript
+```jsx
 // src/components/Header/Header.jsx
 import React from 'react';
 
@@ -192,7 +192,7 @@ export { default } from "./Header";
 
 Com o básico do layout pronto vamos criar a página inicial. Para isso crie um arquivo `index.js` dentro de `pages`. É nesse arquivo que vamos fazer uma consulta utilizando GraphQL para pegarmos os dados do nosso blog (aqueles que salvamos no `gatsby-config.js`). O objetivo é simplificar a manutenção, até porque se precisarmos alterar o nosso título vamos a um só lugar :)
 
-```javascript
+```jsx
 // src/pages/index.js
 import React from "react";
 import { graphql } from "gatsby";

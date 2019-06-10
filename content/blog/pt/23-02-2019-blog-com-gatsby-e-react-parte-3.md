@@ -28,7 +28,7 @@ Iaee pessoal! Como vocês estão? Estou de volta hoje para falar mais um pouquin
 
 ## Configurando o Gatsby
 
-Primeiro antes de mais nada nos vamos dar uma configurada no Gatsby para que ele possa reconhecer os plugins que temos instalados. Para isso, abra o arquivo `gatsby-config.js` e adicione o seguinte conteúdo:
+Primeiro antes de mais nada nos vamos dar uma configurada no Gatsby para que ele possa reconhecer os plugins que temos instalados. Para isso, abra o arquivo ```gatsby-config.js``` e adicione o seguinte conteúdo:
 
 ```javascript
 // gatsby-config.js
@@ -54,13 +54,13 @@ module.exports = {
 
 - `gatsby-transformer-remark`: é responsável por transformar os posts do blog escritos em markdown para HTML;
 
-- `gatsby-plugin-react-helmet`: O [helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=helmet) é um componente que permite você controlar o `head` do seu site. Vai ser muit útil para trocar o title das páginas e conteúdo das meta tags;
+- `gatsby-plugin-react-helmet`: O [helmet](https://www.gatsbyjs.org/packages/gatsby-plugin-react-helmet/?=helmet) é um componente que permite você controlar o head do seu site. Vai ser muito útil para trocar o title e description das páginas;
 
 - `gatsby-source-filesystem`: usado para "pegar" dados dos arquivos do sistema, de modo que possamos usá-los no Gatsby.
 
 Porém, antes de continuar precisamos instalar o helmet.
 
-```
+```bash
 npm install gatsby-plugin-react-helmet
 ```
 
@@ -106,7 +106,7 @@ Esses templates vão ser usados na hora de criar as páginas dinâmicas (algo qu
 
 Para começar crie dois arquivos dentro da pasta templates em src, o `tag.jsx` e o `post.jsx`.
 
-```javascript
+```jsx
 // src/templates/tag.jsx
 import React from "react";
 import Layout from "../components/Layout";
@@ -120,7 +120,7 @@ export default ({ data }) => (
 );
 ```
 
-```javascript
+```jsx
 // src/templates/post.jsx
 import React from "react";
 import Layout from "../components/Layout";
@@ -140,7 +140,7 @@ Com os templates criados precisamos criar também um componente que vai pegar os
 
 Portanto, crie dentro de `components` uma pasta `Posts`.
 
-```javascript
+```jsx
 // src/components/Posts/Posts.jsx
 import React from 'react';
 import { Link } from 'gatsby';
@@ -220,7 +220,7 @@ O GraphiQL é uma ferramenta que ajuda a economizar muito tempo procurando erros
 
 Para testá-la adicione a seguinte query e execute:
 
-```
+```graphql
 {
   allMarkdownRemark(limit: 2000, sort: {fields: [fields___prefix], order: DESC}) {
     edges {
@@ -242,7 +242,7 @@ Para testá-la adicione a seguinte query e execute:
 
 Se nenhum erro surgiu você deve ter visto um JSON com os principais dados dos nossos posts. E Uma vez que testamos a ferramenta podemos realizar a mesma consulta utilizando uma page query. Portanto, dentro do `index.jsx` em `pages` adicione o seguite código:
 
-```javascript
+```jsx
 // src/pages/index.jsx
 import React, { Component } from "react";
 import { graphql } from "gatsby";
@@ -301,7 +301,7 @@ O template para as tags é muito parecido com a nossa página inicial. A única 
 
 Portanto, abra o `tag.jsx` e adicione o seguinte código:
 
-```javascript
+```jsx
 // src/templates/tag.jsx
 import React, { Component } from "react";
 import { graphql } from "gatsby";
