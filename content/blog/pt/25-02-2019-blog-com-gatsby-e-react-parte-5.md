@@ -6,7 +6,7 @@ tags:
   - Gatsby
 category: Gatsby
 slug: blog-com-gatsby-e-react-parte-5
-image: /img/upload/blog-gatsby-react.png
+image: /img/upload/blog-gatsby-react-2.png
 draft: true
 date: 2019-06-01T03:00:00.000Z
 description: ""

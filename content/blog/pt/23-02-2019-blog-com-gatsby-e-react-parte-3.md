@@ -6,7 +6,7 @@ tags:
   - Gatsby
 category: Gatsby
 slug: blog-com-gatsby-e-react-parte-3
-image: /img/upload/blog-gatsby-react.png
+image: /img/upload/blog-gatsby-react-2.png
 draft: false
 date: 2019-02-28T03:00:00.000Z
 description: "No terceiro post da série vamos adicionar muitas funcionalidades legais ao blog, inclusive a listagem e criação do posts com Markdown."

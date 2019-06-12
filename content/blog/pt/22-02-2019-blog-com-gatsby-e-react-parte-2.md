@@ -6,7 +6,7 @@ tags:
   - Gatsby
 category: Gatsby
 slug: blog-com-gatsby-e-react-parte-2
-image: /img/upload/blog-gatsby-react.png
+image: /img/upload/blog-gatsby-react-2.png
 draft: false
 date: 2019-02-24T03:00:00.000Z
 description: "No post de hoje vamos dar continuidade ao nosso blog adicionando um reset, fontes e também criando a identidade visual das páginas."

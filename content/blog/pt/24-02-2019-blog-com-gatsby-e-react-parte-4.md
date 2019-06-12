@@ -6,7 +6,7 @@ tags:
   - Gatsby
 category: Gatsby
 slug: blog-com-gatsby-e-react-parte-4
-image: /img/upload/blog-gatsby-react.png
+image: /img/upload/blog-gatsby-react-2.png
 draft: false
 date: 2019-03-18T03:00:00.000Z
 description: "No 4 post da série vamos terminar o nosso blog e adicionar diversos plugins que irão deixá-lo sensacional!"
