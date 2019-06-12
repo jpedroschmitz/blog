@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import PageBar from "../components/Internal/PageBar";
+import PageBar from "../components/PageBar";
 import Post from "../components/Internal/Post";
 import Container from "../components/UI/Grid/Container";
 

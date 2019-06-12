@@ -10,32 +10,32 @@ import {
   WhatsappIcon,
   LinkedinIcon,
 } from "react-share";
-import classes from "./Social.module.css";
+import * as S from "./S.Social";
 
 export const SocialIcons = ({ title, slug, data }) => {
   const { siteUrl } = data.site.siteMetadata;
   const url = siteUrl + slug;
   return (
-    <>
-      <h3 style={{ marginBottom: "35px", marginTop: "35px" }}>Compartilhe :)</h3>
-      <section className={classes.Icons}>
+    <React.Fragment>
+      <S.Title>Compartilhe :)</S.Title>
+      <S.Social>
         <TwitterShareButton url={url} title={title}>
-          <TwitterIcon round size="38" />
+          <TwitterIcon round size={38} />
         </TwitterShareButton>
 
         <WhatsappShareButton url={url} title={title}>
-          <WhatsappIcon round size="38" />
+          <WhatsappIcon round size={38} />
         </WhatsappShareButton>
 
         <FacebookShareButton url={url}>
-          <FacebookIcon round size="38" />
+          <FacebookIcon round size={38} />
         </FacebookShareButton>
 
         <LinkedinShareButton url={url} title={title}>
-          <LinkedinIcon round size="38" />
+          <LinkedinIcon round size={38} />
         </LinkedinShareButton>
-      </section>
-    </>
+      </S.Social>
+    </React.Fragment>
   );
 };
 

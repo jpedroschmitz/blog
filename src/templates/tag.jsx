@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import PageBar from "../components/Internal/PageBar";
+import PageBar from "../components/PageBar";
 import Post from "../components/Internal/Post";
 import Container from "../components/UI/Grid/Container";
 
@@ -33,7 +33,7 @@ export const pageQuery = graphql`
   query TagPage($tag: String) {
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [fields___prefix], order: DESC }
+      sort: { fields: [fields___source], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] }, draft: { eq: false } } }
     ) {
       totalCount
@@ -45,7 +45,6 @@ export const pageQuery = graphql`
             tags
             date
             slug
-            category
             description
           }
         }

@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import PageBar from "../components/Internal/PageBar";
+import Content from "../components/Content";
+import PageBar from "../components/PageBar";
 import Container from "../components/UI/Grid/Container";
 
 export default ({ data }) => {
@@ -11,7 +12,7 @@ export default ({ data }) => {
     <Layout>
       <PageBar title={title} introduction={introduction} />
       <Container>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Content html={html} />
       </Container>
     </Layout>
   );

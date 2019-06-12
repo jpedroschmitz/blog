@@ -1,9 +1,4 @@
 import React from "react";
-import classes from "./Row.module.css";
+import Row from "./S.Row";
 
-export default ({ centered, children }) => {
-  let attachedClass = [classes.Row];
-  if (centered) attachedClass = [classes.Row, classes.Center];
-
-  return <div className={attachedClass.join(" ")}>{children}</div>;
-};
+export default ({ centered, children }) => <Row center={centered}>{children}</Row>;

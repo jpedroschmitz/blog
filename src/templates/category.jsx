@@ -1,16 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import PageBar from "../components/Internal/PageBar";
+import PageBar from "../components/PageBar";
 import Post from "../components/Internal/Post";
 import Container from "../components/UI/Grid/Container";
 
-export default ({ pageContext, data }) => {
-  const { category } = pageContext;
+export default ({ data, pageContext }) => {
+  const { category, introduction } = pageContext;
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <PageBar title={`Categoria: ${category}`} introduction="" />
+      <PageBar title={`Categoria: ${category}`} introduction={introduction} />
       <Container>
         <article>
           {edges.map(item => (
@@ -32,8 +32,8 @@ export const pageQuery = graphql`
   query CategoryPage($category: String) {
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [fields___prefix], order: DESC }
-      filter: { frontmatter: { category: { eq: $category }, draft: { eq: false } } }
+      sort: { fields: [fields___source], order: DESC }
+      filter: { frontmatter: { category: { frontmatter: { title: { eq: $category } } }, draft: { eq: false } } }
     ) {
       totalCount
       edges {
@@ -43,7 +43,11 @@ export const pageQuery = graphql`
             title
             tags
             date(formatString: "DD/MM/YYYY")
-            category
+            category {
+              frontmatter {
+                introduction
+              }
+            }
             slug
             description
           }

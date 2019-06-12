@@ -1,0 +1,122 @@
+import { createGlobalStyle } from "styled-components";
+import Roboto from "../assets/fonts/Roboto-Regular.ttf";
+import fonts from "./fonts";
+import colors from "./colors";
+
+export default createGlobalStyle`
+  @font-face {
+    font-family: "Roboto";
+    src: url(${Roboto});
+  }
+
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 100%;
+    padding-bottom: 60px;
+    transition: 0.2s ease-in;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    ${fonts.text}
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.09);
+    -webkit-border-radius: 100px;
+  }
+
+  ::-webkit-scrollbar:hover {
+    background-color: rgba(0, 0, 0, 0.28);
+  }
+
+  ::-webkit-scrollbar-thumb:vertical {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 100px;
+  }
+
+  ::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(0, 0, 0, 0.61);
+    -webkit-border-radius: 100px;
+  }
+
+  pre::-webkit-scrollbar {
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-border-radius: 100px;
+  }
+
+  pre::-webkit-scrollbar:hover {
+    background-color: rgba(0, 0, 0, 0.09);
+  }
+
+  pre::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 100px;
+  }
+
+  pre::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 100px;
+  }
+
+  .gatsby-highlight {
+    padding-bottom: 30px;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 1.625rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.375rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5 {
+    font-size: 1.125rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    ${fonts.primary}
+  }
+
+  a {
+    color: ${colors.link};
+    border-bottom: 1px solid transparent;
+  }
+
+  .dark {
+    background-color: ${colors.dark};
+    color: ${colors.darkColor};
+  }
+
+  .dark p {
+    color: ${colors.darkColor};
+  }
+
+  :not(pre) > code[class*="language-"] {
+    padding: .1em 0.4em!important;
+  }
+`;

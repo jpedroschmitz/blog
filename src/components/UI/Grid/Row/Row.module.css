@@ -1,9 +1,0 @@
-.Row {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.Center {
-  align-items: center;
-}

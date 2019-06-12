@@ -4,10 +4,12 @@ import moment from "moment";
 import Layout from "../components/Layout";
 import Highlight from "../components/Internal/Post/Highlight";
 import Comments from "../components/Comments";
+import Content from "../components/Content";
 import Social from "../components/Social";
+import PostNavigation from "../components/PostNavigation";
 import Container from "../components/UI/Grid/Container";
 
-export default ({ data, location }) => {
+export default ({ data, location, pageContext }) => {
   const { html } = data.markdownRemark;
   const { title, image, date, category, slug } = data.markdownRemark.frontmatter;
   const { timeToRead } = data.markdownRemark;
@@ -18,12 +20,14 @@ export default ({ data, location }) => {
         timeToRead={timeToRead}
         title={title}
         date={moment(date, "YYYYMMDD").fromNow()}
-        category={category}
+        category={category.frontmatter.title}
+        color={category.frontmatter.color}
         image={`${origin}${image}`}
       />
       <Container>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Content html={html} />
         <Social title={title} slug={slug} />
+        <PostNavigation prev={pageContext.prev} next={pageContext.next} />
         <Comments postTitle={title} postSlug={slug} />
       </Container>
     </Layout>
@@ -41,12 +45,14 @@ export const pageQuery = graphql`
         image
         slug
         date(formatString: "YYYYMMDD")
-        category
+        category {
+          frontmatter {
+            title
+            color
+          }
+        }
         tags
         description
-      }
-      fields {
-        slug
       }
     }
   }

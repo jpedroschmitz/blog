@@ -54,7 +54,7 @@ export const pageQuery = graphql`
       skip: $skip
       limit: $limit
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } }, fields: { source: { eq: "posts"}} }
+      filter: { frontmatter: { draft: { eq: false } }, fields: { source: { eq: "posts" } } }
     ) {
       edges {
         node {
@@ -63,7 +63,12 @@ export const pageQuery = graphql`
             date(formatString: "YYYYMMDD")
             slug
             image
-            category
+            category {
+              frontmatter {
+                title
+                color
+              }
+            }
           }
         }
       }

@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 import kebabCase from "lodash.kebabcase";
-import classes from "./Post.module.css";
+import * as S from "./S.Post";
 
-export default ({ title, quantity, borderColor, slug, link }) => (
-  <article className={classes.Post} style={{ borderColor }}>
-    <Link to={link ? `${link}/${kebabCase(slug)}` : kebabCase(slug)}>
-      <h3>{title}</h3>
-      {quantity && <p>{`${quantity} post(s)`}</p>}
+export default ({ title, color, slug, link }) => (
+  <S.Post borderColor={color}>
+    <Link to={link ? `/${link}/${kebabCase(slug)}` : `/${kebabCase(slug)}`}>
+      <S.Title>{title}</S.Title>
     </Link>
-  </article>
+  </S.Post>
 );

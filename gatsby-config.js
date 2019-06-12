@@ -3,9 +3,13 @@ module.exports = {
     siteUrl: "https://www.joaopedro.cc/",
     disqusShortname: "blog-do-joao-pedro",
   },
+  mapping: {
+    "MarkdownRemark.frontmatter.category": "MarkdownRemark.frontmatter.title",
+  },
   plugins: [
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-image",
@@ -40,21 +44,51 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "categories",
+        path: `${__dirname}/content/categories/pt`,
+      },
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: [{
-          resolve: "gatsby-remark-images",
-          options: {
-            maxWidth: 690,
+        plugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 690,
+            },
+          },
+          {
+            resolve: "gatsby-remark-responsive-iframe",
+          },
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              aliases: {
+                sh: "bash",
+                react: "jsx",
+                txt: "",
+              },
+            },
+          },
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-autolink-headers",
+        ],
+      },
+    },
+    {
+      resolve: "@gatsby-contrib/gatsby-plugin-elasticlunr-search",
+      options: {
+        fields: ["title", "tags", "category", "description"],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            category: node => node.frontmatter.category,
+            slug: node => node.frontmatter.slug,
           },
         },
-        {
-          resolve: "gatsby-remark-responsive-iframe",
-        },
-        "gatsby-remark-prismjs",
-        "gatsby-remark-copy-linked-files",
-        "gatsby-remark-autolink-headers",
-        ],
       },
     },
   ],
