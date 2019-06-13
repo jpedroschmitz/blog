@@ -50,6 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
                       frontmatter {
                         title
                         introduction
+                        description
                         color
                       }
                     }

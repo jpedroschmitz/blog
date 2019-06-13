@@ -47,4 +47,5 @@ collections:
       - {label: "Template", name: "template", widget: "hidden", default: "categories"}
       - {label: "Category name", name: "title", widget: "string"}
       - {label: "Introduction", name: "introduction", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
       - {label: "Color", name: "color", widget: "string"}
