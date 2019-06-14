@@ -14,6 +14,7 @@ const config = {
   disqusShortname: "blog-do-joao-pedro",
   themeColor: "#00E2BC",
   backgroundColor: "#FFFFFF",
+  userEmail: "jpedroschmitz@hotmail.com",
   copyright: "João Pedro Schmitz",
 };
 
