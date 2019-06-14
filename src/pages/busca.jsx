@@ -18,16 +18,14 @@ export default class Search extends Component {
     const { data } = this.props;
     const { index } = data.siteSearchIndex;
     return Index.load(index);
-  }
+  };
 
-  search = (evt) => {
+  search = evt => {
     const query = evt.target.value;
     this.index = this.getOrCreateIndex();
     this.setState({
       query,
-      results: this.index
-        .search(query, {})
-        .map(({ ref }) => this.index.documentStore.getDoc(ref)),
+      results: this.index.search(query, {}).map(({ ref }) => this.index.documentStore.getDoc(ref)),
     });
   };
 

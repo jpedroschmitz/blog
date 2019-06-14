@@ -8,7 +8,7 @@ export default styled.div`
   right: 0;
   bottom: 0;
   z-index: 100;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 78px 16px;
   box-sizing: border-box;
   transition: transform 0.3s ease-out;

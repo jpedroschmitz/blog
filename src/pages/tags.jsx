@@ -12,7 +12,10 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <SEO pageTitle="Tags" pageDescription="Procure os assuntos do blog através de tags como ReactJS, Gatsby, JavaScript, CSS, HTML e outras mais." />
+    <SEO
+      pageTitle="Tags"
+      pageDescription="Procure os assuntos do blog através de tags como ReactJS, Gatsby, JavaScript, CSS, HTML e outras mais."
+    />
     <InternalBar title="Tags" introduction="Veja aqui todas as tags do blog, como React.js, Gatsby.js e outras." />
     <Container>
       <article>

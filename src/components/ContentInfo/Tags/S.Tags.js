@@ -53,6 +53,6 @@ export const Tag = styled(Link)`
   }
 
   .dark &::after {
-    background: ${colors.dark}
+    background: ${colors.dark};
   }
 `;

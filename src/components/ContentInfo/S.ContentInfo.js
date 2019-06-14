@@ -29,7 +29,7 @@ export const Title = styled.h2`
   }
 
   .dark & {
-    color: #FFF;
+    color: #fff;
   }
 `;
 
@@ -52,5 +52,5 @@ export const Category = styled(Link)`
   margin-right: 40px;
   color: inherit;
   text-decoration: none;
-  color: ${props => props.color}
+  color: ${props => props.color};
 `;

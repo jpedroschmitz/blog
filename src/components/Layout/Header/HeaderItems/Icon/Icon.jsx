@@ -5,9 +5,10 @@ import night from "../../../../../../static/img/icons/night.svg";
 import search from "../../../../../../static/img/icons/search.svg";
 
 export default styled.button`
-  ${props => (props.typeIcon === "day" || props.typeIcon === "night"
-    ? "width: 28px; height: 28px;"
-    : "width: 24px; height: 24px;")}
+  ${props =>
+    props.typeIcon === "day" || props.typeIcon === "night"
+      ? "width: 28px; height: 28px;"
+      : "width: 24px; height: 24px;"}
   cursor: pointer;
   border: none;
   outline: none;

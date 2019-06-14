@@ -11,7 +11,10 @@ export default ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <SEO pageTitle="Página não encontrada" pageDescription="Infelizmente a página desejada não pode ser encontrada." />
+      <SEO
+        pageTitle="Página não encontrada"
+        pageDescription="Infelizmente a página desejada não pode ser encontrada."
+      />
       <Container>
         <h2>Página não encontrada.</h2>
         <p style={{ marginBottom: "35px", marginTop: "20px" }}>Se quiser pode dar uma olhada nos últimos posts :)</p>

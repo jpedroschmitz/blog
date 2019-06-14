@@ -82,7 +82,11 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
       <meta property="og:site_name" content={config.siteTitle} />
       <meta property="og:image" content={image} />
       <meta property="og:image:secure_url" content={image} />
-      {postSEO ? <meta property="og:image:alt" content={title} /> : <meta property="og:image:alt" content="Banner do site" />}
+      {postSEO ? (
+        <meta property="og:image:alt" content={title} />
+      ) : (
+        <meta property="og:image:alt" content="Banner do site" />
+      )}
       {postSEO ? <meta property="og:image:width" content="2200" /> : <meta property="og:image:width" content="600" />}
       {postSEO ? <meta property="og:image:height" content="1200" /> : <meta property="og:image:height" content="315" />}
       {postSEO && <meta property="article:published_time" content={postNode.frontmatter.date} />}

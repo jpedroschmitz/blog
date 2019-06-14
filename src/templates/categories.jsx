@@ -7,7 +7,10 @@ import SEO from "../components/SEO";
 
 const CategoriesPage = ({ pageContext }) => (
   <Layout>
-    <SEO pageTitle="Categorias" pageDescription="Procure os assuntos do blog através de categorias como ReactJS, Gatsby, JavaScript, CSS, HTML e outras mais." />
+    <SEO
+      pageTitle="Categorias"
+      pageDescription="Procure os assuntos do blog através de categorias como ReactJS, Gatsby, JavaScript, CSS, HTML e outras mais."
+    />
     <InternalBar title="Categorias" introduction="Procure os assuntos do blog através de categorias." />
     <Container>
       <article>

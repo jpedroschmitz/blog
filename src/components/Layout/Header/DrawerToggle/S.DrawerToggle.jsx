@@ -32,16 +32,17 @@ export default styled.div`
     background: #000;
     width: 28px;
     height: 2px;
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
 
-    &:before, &:after {
+    &:before,
+    &:after {
       background: #000;
-      content: '';
+      content: "";
       display: block;
       width: 100%;
       height: 100%;
       position: absolute;
-      transition: .5s ease-in-out;
+      transition: 0.5s ease-in-out;
     }
 
     &:before {

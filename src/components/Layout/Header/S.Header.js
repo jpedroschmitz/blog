@@ -6,10 +6,10 @@ export const Wrapper = styled.header`
   top: 0;
   width: 100%;
   z-index: 101;
-  background-color: #FFF;
+  background-color: #fff;
   color: #000;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  padding: 20px 1.30rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 20px 1.3rem;
 
   ${breakpoints.lg} {
     padding: 20px 0.7rem;

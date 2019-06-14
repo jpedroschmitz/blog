@@ -9,7 +9,11 @@
   ],
   "parser": "babel-eslint",
   "rules": {
+    "operator-linebreak": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-confusing-arrow": "off",
     "react/prefer-stateless-function": "off",
+    "arrow-parens": "off",
     "react/prop-types": "off",
     "react/no-danger": "off",
     "linebreak-style": 0,

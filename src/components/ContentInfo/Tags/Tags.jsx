@@ -4,8 +4,8 @@ import * as S from "./S.Tags";
 
 export default ({ tags }) => (
   <S.Tags>
-    {tags
-      && tags.map(tag => (
+    {tags &&
+      tags.map(tag => (
         <S.Tag key={tag} to={`/tag/${kebabCase(tag)}`}>
           {tag}
         </S.Tag>

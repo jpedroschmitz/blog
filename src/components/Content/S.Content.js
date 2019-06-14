@@ -3,7 +3,8 @@ import fonts from "../../styles/fonts";
 import colors from "../../styles/colors";
 
 export default styled.div`
-  & ol, ul {
+  & ol,
+  ul {
     padding-left: 1.25rem;
     margin: 0 auto 1.875rem;
   }
@@ -22,8 +23,9 @@ export default styled.div`
     margin-bottom: 0;
   }
 
-  & ul > p, li > p {
-    margin-bottom: 0!important;
+  & ul > p,
+  li > p {
+    margin-bottom: 0 !important;
   }
 
   & a {

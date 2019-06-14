@@ -11,7 +11,10 @@ export default ({ pageContext, data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <SEO pageTitle={`Tag: ${tag}`} pageDescription={`Veja todo o conteúdo relacionado com a tag ${tag} no blog do João Pedro Schmitz.`} />
+      <SEO
+        pageTitle={`Tag: ${tag}`}
+        pageDescription={`Veja todo o conteúdo relacionado com a tag ${tag} no blog do João Pedro Schmitz.`}
+      />
       <InternalBar title={`Tag: ${tag}`} introduction="" />
       <Container>
         <article>

@@ -15,10 +15,10 @@ export default styled.div`
     cursor: pointer;
     text-decoration: none;
     color: #000000;
-    border-radius: .55rem;
+    border-radius: 0.55rem;
     border: 1px solid transparent;
   }
   & a:hover {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 `;

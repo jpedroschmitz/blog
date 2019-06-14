@@ -1,10 +1,10 @@
 import React from "react";
 import Content from "../../components/Content";
-import PageBar from "../../components/Internal/PageBar";
+import InternalBar from "../../components/InternalBar";
 
 export default ({ entry, widgetFor }) => (
   <>
-    <PageBar title={entry.getIn(["title"])} introduction="Preview de Page" />
+    <InternalBar title={entry.getIn(["title"])} introduction="Preview de Page" />
     <Content html={widgetFor("body")} />
   </>
 );
