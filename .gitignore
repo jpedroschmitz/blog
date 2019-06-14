@@ -178,4 +178,8 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+<<<<<<< HEAD
 public/*
+=======
+public/*
+>>>>>>> new-blog
