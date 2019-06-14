@@ -11,8 +11,7 @@ import SEO from "../components/SEO";
 
 moment.locale("pt-br");
 
-export default ({ data, location, pathContext }) => {
-  const { origin } = location;
+export default ({ data, pathContext }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
@@ -26,7 +25,7 @@ export default ({ data, location, pathContext }) => {
                 category={item.node.frontmatter.category}
                 date={moment(item.node.frontmatter.date, "YYYYMMDD").fromNow()}
                 title={item.node.frontmatter.title}
-                image={`${origin}${item.node.frontmatter.image}`}
+                image={item.node.frontmatter.image}
                 slug={item.node.frontmatter.slug}
               />
             ))}

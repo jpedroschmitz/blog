@@ -10,11 +10,10 @@ import ContentNavigation from "../components/ContentNavigation";
 import Container from "../components/UI/Grid/Container";
 import SEO from "../components/SEO";
 
-export default ({ data, location, pageContext }) => {
+export default ({ data, pageContext }) => {
   const { html } = data.markdownRemark;
   const { title, image, date, category, slug, tags } = data.markdownRemark.frontmatter;
   const { timeToRead } = data.markdownRemark;
-  const { origin } = location;
   return (
     <Layout>
       <ContentInfo
@@ -23,7 +22,7 @@ export default ({ data, location, pageContext }) => {
         date={moment(date, "YYYYMMDD").fromNow()}
         category={category.frontmatter.title}
         color={category.frontmatter.color}
-        image={`${origin}${image}`}
+        image={image}
         tags={tags}
       />
       <SEO postNode={data.markdownRemark} postPath={slug} postSEO />

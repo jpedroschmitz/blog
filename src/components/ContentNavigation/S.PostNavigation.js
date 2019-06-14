@@ -19,10 +19,6 @@ export const Post = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-  ), url('${props => props.url}');
   width: ${props => (props.isFullWidth ? "100%" : "50%")};
 
   &:hover {
