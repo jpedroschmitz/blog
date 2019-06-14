@@ -1,6 +1,0 @@
-User-agent: *
-
-Allow: /
-Disallow: /404
-
-sitemap: https://www.joaopedro.cc/sitemap.xml
