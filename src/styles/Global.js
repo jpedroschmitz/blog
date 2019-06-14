@@ -20,13 +20,13 @@ export default createGlobalStyle`
     top: 0;
     font-size: 100%;
     padding-bottom: 60px;
-    transition: 0.2s ease-in;
   }
 
   body {
     display: flex;
     flex-direction: column;
     ${fonts.text}
+    transition: color .5s ease-in-out;
   }
 
   ::-webkit-scrollbar {
@@ -36,7 +36,7 @@ export default createGlobalStyle`
   }
 
   ::-webkit-scrollbar:hover {
-    background-color: rgba(0, 0, 0, 0.28);
+    background-color: rgba(0, 0, 0, 0.18);
   }
 
   ::-webkit-scrollbar-thumb:vertical {

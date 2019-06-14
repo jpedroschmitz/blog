@@ -1,6 +1,6 @@
 export default {
-  link: "#0074D9",
-  linkHover: "#0074D9",
+  link: "#00a8ff",
+  linkHover: "#00a8ff",
   dark: "#393e46",
   darkColor: "#eee",
 };

@@ -7,13 +7,7 @@ import Post from "../components/Post";
 import Container from "../components/UI/Grid/Container";
 import Row from "../components/UI/Grid/Row";
 import Pagination from "../components/Pagination";
-
-/*
-  Um estudante de Engenharia de Software que é entusiasta de novas
-  tecnologias e que adora aprender novos frameworks JavaScript.
-  Atualemente trabalha como desenvolvedor FrontEnd, mas tem muita
-  vontade de aprender mais sobre inteligência artificial.
-*/
+import SEO from "../components/SEO";
 
 moment.locale("pt-br");
 
@@ -22,6 +16,7 @@ export default ({ data, location, pathContext }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
+      <SEO postSEO={false} />
       <Container>
         <article>
           <Row centered>
@@ -60,7 +55,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "YYYYMMDD")
+            date
             slug
             image
             category {

@@ -5,14 +5,16 @@ import Layout from "../components/Layout";
 import Post from "../components/Post";
 import Container from "../components/UI/Grid/Container";
 import Row from "../components/UI/Grid/Row";
+import SEO from "../components/SEO";
 
 export default ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
+      <SEO pageTitle="Página não encontrada" pageDescription="Infelizmente a página desejada não pode ser encontrada." />
       <Container>
         <h2>Página não encontrada.</h2>
-        <p style={{ marginBottom: "35px" }}>Se quiser pode dar uma olhada nos últimos posts :)</p>
+        <p style={{ marginBottom: "35px", marginTop: "20px" }}>Se quiser pode dar uma olhada nos últimos posts :)</p>
         <Row centered>
           {edges.map(item => (
             <Post
@@ -20,7 +22,7 @@ export default ({ data }) => {
               category={item.node.frontmatter.category}
               date={moment(item.node.frontmatter.date, "YYYYMMDD").fromNow()}
               title={item.node.frontmatter.title}
-              image={`${origin}${item.node.frontmatter.image}`}
+              image={item.node.frontmatter.image}
               slug={item.node.frontmatter.slug}
             />
           ))}

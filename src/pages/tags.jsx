@@ -1,9 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import PageBar from "../components/PageBar";
-import Post from "../components/Internal/Post";
+import InternalBar from "../components/InternalBar";
+import InternalPost from "../components/InternalPost";
 import Container from "../components/UI/Grid/Container";
+import SEO from "../components/SEO";
 
 const TagsPage = ({
   data: {
@@ -11,11 +12,12 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <PageBar title="Tags" introduction="JavaScript, React, node.js e até Java. Tem de tudo um pouco." />
+    <SEO pageTitle="Tags" pageDescription="Procure os assuntos do blog através de tags como ReactJS, Gatsby, JavaScript, CSS, HTML e outras mais." />
+    <InternalBar title="Tags" introduction="Veja aqui todas as tags do blog, como React.js, Gatsby.js e outras." />
     <Container>
       <article>
         {group.map(item => (
-          <Post
+          <InternalPost
             key={item.fieldValue}
             title={item.fieldValue}
             link="tag"

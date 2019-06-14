@@ -64,5 +64,6 @@ export default styled.div`
     ${fonts.primary}
     font-weight: 700;
     line-height: 1.4;
+    margin: 0 auto 1.25rem;
   }
 `;

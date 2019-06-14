@@ -9,7 +9,7 @@ slug: blog-com-gatsby-e-react-parte-3
 image: /img/upload/blog-gatsby-react-2.png
 draft: false
 date: 2019-02-28T03:00:00.000Z
-description: "No terceiro post da série vamos adicionar muitas funcionalidades legais ao blog, inclusive a listagem e criação do posts com Markdown."
+description: "No posts de hoje vamos configurar a API Node do Gatsby para converter os posts de Markdown para HTML. Além disso veremos como realizar consultas com GraphQL no Gatsby."
 ---
 
 ## Introdução <!-- omit in toc -->

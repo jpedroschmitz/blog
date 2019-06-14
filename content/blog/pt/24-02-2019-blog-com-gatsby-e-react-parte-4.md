@@ -9,7 +9,7 @@ slug: blog-com-gatsby-e-react-parte-4
 image: /img/upload/blog-gatsby-react-2.png
 draft: false
 date: 2019-03-18T03:00:00.000Z
-description: "No 4 post da série vamos terminar o nosso blog e adicionar diversos plugins que irão deixá-lo sensacional!"
+description: "SEO hoje em dia é muito importante para os blogs e websites. No post de hoje iremos utilizar alguns plugins do Gatsby que irão melhorar nosso rankeamento."
 ---
 
 ## Introdução <!-- omit in toc -->
@@ -19,7 +19,6 @@ Fala pessoal! Como vocês estão? Depois de alguns dias estou de volta para mais
 ## Tabela de conteúdos <!-- omit in toc -->
 
 - [Terminando o template dos posts](#terminando-o-template-dos-posts)
-- [Melhorias no projeto](#melhorias-no-projeto)
 - [Facilitando nossa vida](#facilitando-nossa-vida)
 - [Melhorando o SEO](#melhorando-o-seo)
   - [Adicionando outros plugins](#adicionando-outros-plugins)
@@ -90,10 +89,6 @@ Adicione também um pouco de CSS no `Layout.css`.
 ```
 
 ![Página do post](/img/upload/result-part7.png)
-
-## Melhorias no projeto
-
-Agora que terminamos toda a parte bruta do site vamos começar a cuidar dos pequenos detalhes que vão deixar o nosso blog bem "equipado", e para começarmos, vamos usar um componente responsável por manipular o `head` das nossas páginas, o [Helmet](https://github.com/nfl/react-helmet).
 
 ## Facilitando nossa vida
 

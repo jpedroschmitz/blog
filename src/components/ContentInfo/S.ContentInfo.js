@@ -1,33 +1,35 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+import breakpoints from "../../styles/breakpoints";
 
-export const Hightlight = styled.article`
-  height: 650px;
+export const Hightlight = styled.div`
   width: 100%;
-  position: relative;
-  color: inherit;
+  margin: 0px auto;
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('${props => props.url}')
+  height: 100vh;
+  background-image: url('${props => props.url}');
+  ${breakpoints.xl} {
+    display: none;
+  }
 `;
 
-export const Nav = styled.div`
-  width: 35%;
-  background-color: #FFF;
-  padding: 45px;
-  box-sizing: border-box;
-  height: 190px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+export const Title = styled.h2`
+  font-weight: bold;
+  color: #000;
+  font-size: 54px;
+  line-height: 1.2;
+  margin: 0;
+  width: 85%;
 
-  @media (min-width: 700px) {
-    width: 50%;
+  ${breakpoints.md} {
+    font-size: 36px;
   }
 
   .dark & {
-    background-color: #393e46;
+    color: #FFF;
   }
 `;
 
@@ -37,7 +39,7 @@ export const Info = styled.div`
   padding: 20px 0;
 
   & p {
-    font-weight: 300;
+    font-weight: bold;
     font-size: 0.875rem;
     margin-right: 40px;
   }

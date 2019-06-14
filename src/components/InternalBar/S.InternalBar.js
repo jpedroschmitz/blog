@@ -16,6 +16,7 @@ export const Info = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  padding: 15px;
 
   & p {
     padding-top: 15px;
@@ -25,6 +26,7 @@ export const Info = styled.div`
 export const Title = styled.h2`
   text-transform: uppercase;
   font-weight: bold;
+  color: ${props => props.color};
 
   .dark & {
     color: #eee;

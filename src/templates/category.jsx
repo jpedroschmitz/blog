@@ -1,20 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import PageBar from "../components/PageBar";
-import Post from "../components/Internal/Post";
+import InternalBar from "../components/InternalBar";
+import InternalPost from "../components/InternalPost";
 import Container from "../components/UI/Grid/Container";
+import SEO from "../components/SEO";
 
 export default ({ data, pageContext }) => {
-  const { category, introduction } = pageContext;
+  const { category, introduction, description, color } = pageContext;
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <PageBar title={`Categoria: ${category}`} introduction={introduction} />
+      <SEO pageTitle={category} pageDescription={description} />
+      <InternalBar color={color} title={`Categoria: ${category}`} introduction={introduction} />
       <Container>
         <article>
           {edges.map(item => (
-            <Post
+            <InternalPost
               key={item.node.frontmatter.slug}
               category={item.node.frontmatter.category}
               date={item.node.frontmatter.date}
@@ -43,11 +45,6 @@ export const pageQuery = graphql`
             title
             tags
             date(formatString: "DD/MM/YYYY")
-            category {
-              frontmatter {
-                introduction
-              }
-            }
             slug
             description
           }

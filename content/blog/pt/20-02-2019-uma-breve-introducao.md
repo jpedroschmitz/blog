@@ -6,7 +6,7 @@ tags:
   - Blog
 category: Geral
 slug: uma-breve-introducao
-image: /img/upload/uma-breve-introducao.jpeg
+image: /img/upload/uma-breve-introducao.png
 draft: false
 date: 2019-02-20T03:00:00.000Z
 description: "Uma breve introdução de quais tecnologias foram usadas para criar esse blog e o porquê de tê-lo criado."

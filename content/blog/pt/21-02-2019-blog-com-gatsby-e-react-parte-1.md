@@ -9,7 +9,7 @@ slug: blog-com-gatsby-e-react-parte-1
 image: /img/upload/blog-gatsby-react-2.png
 draft: false
 date: 2019-02-21T03:00:00.000Z
-description: "Nesse primeiro post da série iremos ver o que é o Gatsby e porque é tão bom usá-lo. Além disso, daremos início ao nosso projeto criando a primeira página."
+description: "O Gatsby é um framework open source baseado no React para desenvolver sites estáticos extremamente rápidos. No post de hoje damos início ao desenvolvimento de um blog."
 ---
 
 ## Introdução  <!-- omit in toc -->

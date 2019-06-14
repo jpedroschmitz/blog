@@ -8,9 +8,11 @@ export const Article = styled.article`
   position: relative;
   cursor: pointer;
   ${breakpoints.xxl} {
-    & {
-      width: 45%;
-    }
+    width: 45%;
+  }
+
+  ${breakpoints.md} {
+    width: 100%;
   }
 `;
 
@@ -23,7 +25,10 @@ export const Background = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('${props => props.url}');
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ), url('${props => props.url}');
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
@@ -35,7 +40,7 @@ export const Background = styled.div`
     height: 100%;
   }
 
-  & h3 {
+  & h2 {
     font-size: 2.2rem;
     font-weight: bold;
   }

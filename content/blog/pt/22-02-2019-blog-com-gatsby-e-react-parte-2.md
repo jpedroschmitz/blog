@@ -9,7 +9,7 @@ slug: blog-com-gatsby-e-react-parte-2
 image: /img/upload/blog-gatsby-react-2.png
 draft: false
 date: 2019-02-24T03:00:00.000Z
-description: "No post de hoje vamos dar continuidade ao nosso blog adicionando um reset, fontes e também criando a identidade visual das páginas."
+description: "Muitas vezes precisamos adicionar fontes e criar página de erro 404 customizadas. No post de hoje veremos como adicionar fontes e criar uma página de erro 404 no Gatsby."
 ---
 
 ## Introdução <!-- omit in toc -->

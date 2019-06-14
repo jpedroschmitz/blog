@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Post = styled.article`
-  padding: 12px 40px;
   border: 0.094rem solid #C8D6E5;
   border-radius: 25px;
-  ${props => (props.borderColor ? `border-color: ${props.borderColor}` : null)};
+  ${props => (props.borderColor ? `border-color: ${props.borderColor}` : "#C8D6E5")};
   margin-bottom: 30px;
   width: 100%;
 
@@ -12,9 +11,8 @@ export const Post = styled.article`
     display: block;
     color: #000000;
     text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 100%;
+    width: 100%;
   }
 
   & a p {
@@ -28,4 +26,5 @@ export const Post = styled.article`
 
 export const Title = styled.h3`
   color: ${props => props.color};
+  padding: 12px 40px;
 `;

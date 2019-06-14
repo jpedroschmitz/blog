@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import SearchList from "../components/SearchList";
 import Container from "../components/UI/Grid/Container";
 import Input from "../components/UI/Input";
+import SEO from "../components/SEO";
 
 export default class Search extends Component {
   state = {
@@ -13,10 +14,7 @@ export default class Search extends Component {
   };
 
   getOrCreateIndex = () => {
-    if (this.index) {
-      return this.index;
-    }
-
+    if (this.index) return this.index;
     const { data } = this.props;
     const { index } = data.siteSearchIndex;
     return Index.load(index);
@@ -37,6 +35,7 @@ export default class Search extends Component {
     const { results, query } = this.state;
     return (
       <Layout>
+        <SEO pageTitle="Buscar" pageDescription="Encontre todos os posts do blog buscando por palavras chaves." />
         <Container>
           <h2>Digite algo para buscar:</h2>
           <Input type="text" placeholder="Ex: React, blog, Gatsby..." value={query} onChange={this.search} />

@@ -1,17 +1,19 @@
 import React from "react";
 import Layout from "../components/Layout";
-import PageBar from "../components/PageBar";
-import Post from "../components/Internal/Post";
+import InternalBar from "../components/InternalBar";
+import InternalPost from "../components/InternalPost";
 import Container from "../components/UI/Grid/Container";
+import SEO from "../components/SEO";
 
 const CategoriesPage = ({ pageContext }) => (
   <Layout>
-    <PageBar title="Categorias" introduction="Procure aqui os temas do blog através das categorias." />
+    <SEO pageTitle="Categorias" pageDescription="Procure os assuntos do blog através de categorias como ReactJS, Gatsby, JavaScript, CSS, HTML e outras mais." />
+    <InternalBar title="Categorias" introduction="Procure os assuntos do blog através de categorias." />
     <Container>
       <article>
         {pageContext.categories.map(item => (
-          <Post
-            key={item.fieldValue}
+          <InternalPost
+            key={item.frontmatter.title}
             title={item.frontmatter.title}
             color={item.frontmatter.color}
             link="categoria"

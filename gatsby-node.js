@@ -141,13 +141,15 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         categoryList.forEach((category) => {
-          const { title, introduction } = category.frontmatter;
+          const { title, introduction, description, color } = category.frontmatter;
           createPage({
             path: `/categoria/${kebabCase(category.frontmatter.title)}/`,
             component: categoryTemplate,
             context: {
               category: title,
               introduction,
+              description,
+              color,
             },
           });
         });

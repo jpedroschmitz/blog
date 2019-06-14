@@ -1,6 +1,6 @@
 ---
 title: "Geral"
-introduction: "Veja aqui posts sobre tudo, desabafos, desafios, e muito mais!."
-description: "Info aqui"
+introduction: "Veja aqui posts sobre tudo, como desafios, viagens, experiências e dicas."
+description: "Veja aqui posts sobre tudo, como desafios, viagens, experiências e dicas."
 color: "#636e72"
 ---

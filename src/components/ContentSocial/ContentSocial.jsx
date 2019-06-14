@@ -10,7 +10,7 @@ import {
   WhatsappIcon,
   LinkedinIcon,
 } from "react-share";
-import * as S from "./S.Social";
+import * as S from "./S.ContentSocial";
 
 export const SocialIcons = ({ title, slug, data }) => {
   const { siteUrl } = data.site.siteMetadata;
