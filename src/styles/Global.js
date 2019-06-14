@@ -9,6 +9,10 @@ export default createGlobalStyle`
     src: url(${Roboto});
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body,
   html {
     width: 100%;
