@@ -1,6 +1,6 @@
 {
   "name": "joaopedro.cc",
-  "description": "A Software Engineering student who is an enthusiast of new technologies and loves learning new JavaScript frameworks. Currently working as a FrontEnd developer but wishes to learn more about artificial intelligence.",
+  "description": "A blog from a FrontEnd developer that is an enthusiast of new technologies and a JavaScript fan. Currently studying Software Engineering and working for a better world.",
   "version": "2.0.0",
   "author": "João Pedro Schmitz <jpedroschmitz@hotmail.com> (https://www.joaopedro.cc/)",
   "license": "ISC",
@@ -67,7 +67,7 @@
     "react-dom": "16.8.6",
     "react-github-btn": "1.0.5",
     "react-helmet": "5.2.1",
-    "react-share": "2.4.0",
+    "react-share": "3.0.0",
     "styled-components": "4.3.1",
     "url-join": "4.0.0"
   },

@@ -5,16 +5,19 @@ import {
   WhatsappShareButton,
   LinkedinShareButton,
   TwitterShareButton,
+  PocketShareButton,
   FacebookIcon,
   TwitterIcon,
   WhatsappIcon,
   LinkedinIcon,
+  PocketIcon,
 } from "react-share";
+import urljoin from "url-join";
 import * as S from "./S.ContentSocial";
 
 export const SocialIcons = ({ title, slug, data }) => {
   const { siteUrl } = data.site.siteMetadata;
-  const url = siteUrl + slug;
+  const url = urljoin(siteUrl, slug);
   return (
     <React.Fragment>
       <S.Title>Compartilhe :)</S.Title>
@@ -31,9 +34,13 @@ export const SocialIcons = ({ title, slug, data }) => {
           <FacebookIcon round size={38} />
         </FacebookShareButton>
 
-        <LinkedinShareButton url={url} title={title}>
+        <LinkedinShareButton url={url}>
           <LinkedinIcon round size={38} />
         </LinkedinShareButton>
+
+        <PocketShareButton url={url} title={title}>
+          <PocketIcon round size={38} />
+        </PocketShareButton>
       </S.Social>
     </React.Fragment>
   );

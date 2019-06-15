@@ -60,7 +60,8 @@ export const Post = styled.div`
     width: 100%;
     margin: 10px 0;
     height: 200px;
-    &:last-child, &:first-child {
+    &:last-child,
+    &:first-child {
       border-radius: 0.55rem;
       border: none;
     }
