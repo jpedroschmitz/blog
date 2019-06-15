@@ -11,7 +11,7 @@ class CSSInjector extends React.Component {
   };
 
   componentDidMount() {
-    const iframe = document.querySelector(".nc-previewPane-frame");
+    const iframe = document.getElementsByTagName("iframe")[0];
     const iframeHeadElem = iframe.contentDocument.head;
     this.setState({ iframeRef: iframeHeadElem });
   }
