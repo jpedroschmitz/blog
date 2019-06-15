@@ -20,7 +20,6 @@ collections:
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Highlight", name: "date", widget: "boolean", default: true}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
 
