@@ -11,7 +11,10 @@ const CategoriesPage = ({ pageContext }) => (
       pageTitle="Categorias"
       pageDescription="Procure os assuntos do blog através de categorias como ReactJS, Gatsby, JavaScript, CSS, HTML e outras mais."
     />
-    <InternalBar title="Categorias" introduction="Procure os assuntos do blog através de categorias." />
+    <InternalBar
+      title="Categorias"
+      introduction="Procure os assuntos do blog através de categorias."
+    />
     <Container>
       <article>
         {pageContext.categories.map(item => (

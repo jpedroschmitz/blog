@@ -7,7 +7,9 @@ export default ({ next, prev }) => (
     {prev && (
       <S.Post
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${prev.frontmatter.image}')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${
+            prev.frontmatter.image
+          }')`,
         }}
         isFullWidth={(next && !prev) || (!next && prev)}
       >
@@ -20,7 +22,9 @@ export default ({ next, prev }) => (
     {next && (
       <S.Post
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${next.frontmatter.image}')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${
+            next.frontmatter.image
+          }')`,
         }}
         isFullWidth={(next && !prev) || (!next && prev)}
       >

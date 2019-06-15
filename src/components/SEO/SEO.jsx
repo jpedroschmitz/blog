@@ -75,7 +75,11 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
       <meta name="HandheldFriendly" content="True" />
       <meta name="referrer" content="no-referrer-when-downgrade" />
       <meta property="og:url" content={postSEO ? postURL : blogURL} />
-      {postSEO ? <meta property="og:type" content="article" /> : <meta property="og:type" content="website" />}
+      {postSEO ? (
+        <meta property="og:type" content="article" />
+      ) : (
+        <meta property="og:type" content="website" />
+      )}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:locale" content="pt_BR" />
@@ -87,10 +91,21 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
       ) : (
         <meta property="og:image:alt" content="Banner do site" />
       )}
-      {postSEO ? <meta property="og:image:width" content="2200" /> : <meta property="og:image:width" content="600" />}
-      {postSEO ? <meta property="og:image:height" content="1200" /> : <meta property="og:image:height" content="315" />}
+      {postSEO ? (
+        <meta property="og:image:width" content="2200" />
+      ) : (
+        <meta property="og:image:width" content="600" />
+      )}
+      {postSEO ? (
+        <meta property="og:image:height" content="1200" />
+      ) : (
+        <meta property="og:image:height" content="315" />
+      )}
       {postSEO && <meta property="article:published_time" content={postNode.frontmatter.date} />}
-      {postSEO && postNode.frontmatter.tags.map(tag => <meta key={tag} property="article:tag" content={tag} />)}
+      {postSEO &&
+        postNode.frontmatter.tags.map(tag => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:site" content="@joaopedro.cc" />

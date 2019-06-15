@@ -5,7 +5,9 @@ import * as S from "./S.Post";
 export default ({ category, title, date, slug, image }) => (
   <S.Article>
     <S.Background
-      style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${image}')` }}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${image}')`,
+      }}
     >
       <Link to={`/${slug}`}>
         <h2>{title}</h2>

@@ -17,7 +17,9 @@ export default ({ data }) => {
       />
       <Container>
         <h2>Página não encontrada.</h2>
-        <p style={{ marginBottom: "35px", marginTop: "20px" }}>Se quiser pode dar uma olhada nos últimos posts :)</p>
+        <p style={{ marginBottom: "35px", marginTop: "20px" }}>
+          Se quiser pode dar uma olhada nos últimos posts :)
+        </p>
         <Row centered>
           {edges.map(item => (
             <Post

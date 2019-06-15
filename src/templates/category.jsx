@@ -35,7 +35,12 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___source], order: DESC }
-      filter: { frontmatter: { category: { frontmatter: { title: { eq: $category } } }, draft: { eq: false } } }
+      filter: {
+        frontmatter: {
+          category: { frontmatter: { title: { eq: $category } } }
+          draft: { eq: false }
+        }
+      }
     ) {
       totalCount
       edges {

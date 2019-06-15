@@ -33,10 +33,18 @@ export default class Search extends Component {
     const { results, query } = this.state;
     return (
       <Layout>
-        <SEO pageTitle="Buscar" pageDescription="Encontre todos os posts do blog buscando por palavras chaves." />
+        <SEO
+          pageTitle="Buscar"
+          pageDescription="Encontre todos os posts do blog buscando por palavras chaves."
+        />
         <Container>
           <h2>Digite algo para buscar:</h2>
-          <Input type="text" placeholder="Ex: React, blog, Gatsby..." value={query} onChange={this.search} />
+          <Input
+            type="text"
+            placeholder="Ex: React, blog, Gatsby..."
+            value={query}
+            onChange={this.search}
+          />
           <SearchList results={results} />
         </Container>
       </Layout>

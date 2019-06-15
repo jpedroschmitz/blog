@@ -18,15 +18,15 @@ export default styled.div`
     background-color: #393e46;
   }
 
-  & ul {
-    margin-top: 65px;
-  }
-
   & ul li {
     padding: 05px 10px;
     margin: 0;
     margin: 10px 0;
     font-weight: bold;
+
+    &:first-child {
+      padding-top: 60px;
+    }
   }
 
   & ul li a {
