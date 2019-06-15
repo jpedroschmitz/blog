@@ -18,7 +18,13 @@ module.exports = {
     "MarkdownRemark.frontmatter.category": "MarkdownRemark.frontmatter.title",
   },
   plugins: [
-    "gatsby-plugin-netlify-cms",
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        htmlTitle: "Gerenciador de Conteúdo",
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     "gatsby-plugin-styled-components",
@@ -159,12 +165,13 @@ module.exports = {
               }
             }
         }`,
+        serialize: ({ site, allSitePage }) =>
         // eslint-disable-next-line arrow-body-style
-        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => {
-          return {
-            url: site.siteMetadata.siteUrl + edge.node.path,
-          };
-        }),
+          allSitePage.edges.map(edge => {
+            return {
+              url: site.siteMetadata.siteUrl + edge.node.path,
+            };
+          }),
       },
     },
     {
