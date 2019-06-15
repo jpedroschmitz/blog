@@ -20,11 +20,7 @@ class CSSInjector extends React.Component {
     const { iframeRef } = this.state;
     const { children } = this.props;
     return (
-      <div>
-        {iframeRef && (
-          <StyleSheetManager target={iframeRef}>{children}</StyleSheetManager>
-        )}
-      </div>
+      <div>{iframeRef && <StyleSheetManager target={iframeRef}>{children}</StyleSheetManager>}</div>
     );
   }
 }
