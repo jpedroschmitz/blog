@@ -1,9 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react";
+import moment from "moment";
 import { StyleSheetManager } from "styled-components";
 import CMS from "netlify-cms";
-import PostPreview from "./preview/post-preview";
-import PagePreview from "./preview/page-preview";
+import Content from "../components/Content";
+import ContentInfo from "../components/ContentInfo";
+import InternalBar from "../components/InternalBar";
 
 class CSSInjector extends React.Component {
   state = {
@@ -11,8 +13,8 @@ class CSSInjector extends React.Component {
   };
 
   componentDidMount() {
-    const iframe = document.getElementsByTagName("iframe")[0];
-    const iframeHeadElem = iframe.contentDocument.head;
+    const iframe = document.querySelector("#nc-root iframe");
+    const iframeHeadElem = iframe && iframe.contentDocument.head;
     this.setState({ iframeRef: iframeHeadElem });
   }
 
@@ -25,14 +27,24 @@ class CSSInjector extends React.Component {
   }
 }
 
-CMS.registerPreviewTemplate("blog-pt", props => (
+CMS.registerPreviewTemplate("blog-pt", ({ widgetFor }) => (
   <CSSInjector>
-    <PostPreview {...props} />
+    <ContentInfo
+      timeToRead="1"
+      title={widgetFor("body")}
+      date={moment(widgetFor("body"), "YYYYMMDD").fromNow()}
+      category={widgetFor("category")}
+      color="#000"
+      image={widgetFor("image")}
+      tags={widgetFor("tags")}
+    />
+    <Content html={widgetFor("body")} />
   </CSSInjector>
 ));
 
-CMS.registerPreviewTemplate("pages-pt", props => (
+CMS.registerPreviewTemplate("pages-pt", ({ entry, widgetFor }) => (
   <CSSInjector>
-    <PagePreview {...props} />
+    <InternalBar title={entry.getIn(["title"])} introduction={widgetFor("introduction")} />
+    <Content html={widgetFor("body")} />
   </CSSInjector>
 ));
