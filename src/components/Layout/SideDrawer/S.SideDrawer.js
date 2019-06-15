@@ -9,13 +9,17 @@ export default styled.div`
   bottom: 0;
   z-index: 100;
   background-color: #ffffff;
-  padding: 78px 16px;
+  padding: 16px;
   box-sizing: border-box;
   transition: transform 0.3s ease-out;
   transform: ${props => (props.open ? "translateX(0)" : "translateX(100%)")};
 
   .dark & {
     background-color: #393e46;
+  }
+
+  & ul {
+    margin-top: 65px;
   }
 
   & ul li {
