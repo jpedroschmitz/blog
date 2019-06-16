@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
+import urljoin from "url-join";
 import ReactDisqusComments from "react-disqus-comments";
 
 export const PureComments = ({ data, postTitle, postSlug }) => {
@@ -9,14 +10,15 @@ export const PureComments = ({ data, postTitle, postSlug }) => {
     return null;
   }
 
+  const url = urljoin(siteUrl, postSlug);
   return (
     <>
       <h3 style={{ marginBottom: "35px", fontWeight: "bold" }}>Comentários xD</h3>
       <ReactDisqusComments
         shortname={disqusShortname}
-        identifier={postTitle}
+        identifier={postSlug}
         title={postTitle}
-        url={siteUrl + postSlug}
+        url={url}
       />
     </>
   );

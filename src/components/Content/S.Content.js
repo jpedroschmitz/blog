@@ -13,7 +13,8 @@ export default styled.div`
     list-style: disc;
   }
 
-  & ul > li, & ol > li {
+  & ul > li,
+  & ol > li {
     font-weight: 300;
     font-style: normal;
     font-size: 1em;
