@@ -53,7 +53,7 @@ Abaixo você pode ver algumas funcionalidades que iremos implementar.
 
 ## Pré-requisitos
 
-Não é necessário você ser um expert nessas tecnologias, mas, como vamos construir um blog com bastantes funcionalidades eu espero que você tenha ao menos um pouco de experiência com as tecnologias abaixo:
+Não é necessário você ser um expert nessas tecnologias, mas como vamos construir um blog com muitas funcionalidades, eu espero que você tenha ao menos um pouco de experiência com as tecnologias abaixo:
 
 - HTML
 - CSS
@@ -75,15 +75,15 @@ Caso você não tenha o Node.js instalado baixe do site [oficial](<https://nodej
 
 ## O que é o Gatsby?
 
-Se você conhece o React já sabe que apesar de ter ele trazer diversas vantagens para o FrontEnd ele possui diversos problemas com SEO devido a renderização dos componentes no JavaScript.
+Se você conhece o React, já sabe que apesar de ter ele trazer diversas vantagens para o FrontEnd, ele possui diversos problemas com SEO devido a renderização dos componentes no JavaScript.
 
-Para contornar essa situação surgiram alguns frameworks como o Next.js e o Gatsby. O Next.js utiliza um processo de SSR (server-side-rendering), onde o Node renderiza o componente antes da requisição do cliente chegar. Por sua vez o Gatsby é um SSG (static site generator), ou seja, um gerador de sites estáticos.
+Para contornar essa situação, surgiram alguns frameworks como o Next.js e o Gatsby. O Next.js utiliza um processo de SSR (server-side-rendering), onde o Node renderiza o componente antes da requisição do cliente chegar. Por sua vez o Gatsby é um SSG (static site generator), ou seja, um gerador de sites estáticos.
 
-Porém, vale ressaltar que o Gatsby não se limita a conteúdo estático, ele é meio que um hibrído, pois permite utilizar conteúdo dinâmico, conectar com um CMS e até mesmo utilizar SSR. Nessa série vamos focar principalmente na parte estática.
+Porém, vale ressaltar que o Gatsby não se limita a conteúdo estático, ele é meio que um híbrido, pois permite utilizar conteúdo dinâmico, conectar com um CMS e até mesmo utilizar SSR. Nessa série iremos focar principalmente na parte estática.
 
 ### Plugins
 
-O Gatsby tem uma quantidade gigantesca de plugins muito úteis. Basicamente eles podem adicionar conteúdo externo, transformar conteúdo de outros formatos como Markdown e também permitem implementar funcionalidades como manifest.json e suporte offline de uma maneira bem simples.
+O Gatsby tem uma quantidade gigantesca de plugins muito úteis. Basicamente eles podem adicionar conteúdo externo, transformar conteúdo de outros formatos como Markdown, e também permitem implementar funcionalidades como manifest.json e suporte offline de uma maneira bem simples.
 
 No nosso projeto vamos usar vários plugins, como o ``` gatsby-plugin-catch-links ```, que intercepta todos os links criados sem o ``` gatsby-link ``` e substitui o comportamento dos links para que a página não recarregue enquanto navegamos, preservando assim a sensação de SPA (Single Page Application).
 
@@ -93,7 +93,7 @@ Agora que já entendemos o que vamos construir e como é a tecnologia que iremos
 
 Dentro do terminal digite ``` mkdir codeblog ``` e em seguida ``` cd codeblog ```. Feito isso, digite o comando ``` npm init -y ``` que irá criar o ``` package.json ```.
 
-Com o ``` package.json ``` criado você pode abrir o projeto na sua IDE favorita. Caso você esteja usando o VS code pode usar o comando ``` code . ``` no terminal para abrir o projeto.
+Com o ``` package.json ``` criado você pode abrir o projeto no seu editor favorito. Caso você esteja usando o VS code pode usar o comando ``` code . ``` no terminal para abrir o projeto.
 
 ### Instalando dependências
 
@@ -105,7 +105,7 @@ npm install react react-dom gatsby gatsby-source-filesystem gatsby-transformer-r
 
 Rodando esse comando você instalará o Gatsby, React e alguns plugins que irei comentar mais adiante.
 
-Depois de todas as dependências estarem instaladas crie um arquivo na raíz da sua pasta chamado de ``` gatsby-config.js ``` e adicione o seguinte código:
+Depois de todas as dependências estarem instaladas, crie um arquivo na raíz da sua pasta chamado de ``` gatsby-config.js ``` e adicione o seguinte código:
 
 ```javascript
 // gatsby-config.js
@@ -147,7 +147,7 @@ No final de todos esse processo essa deve ser a sua estrutura:
 
 ## Criando o layout padrão
 
-Agora que temos a nossa estrutura pronta vamos criar o nosso componente padrão para todas as telas, o layout. Para isso, crie uma pasta com o nome de `` Layout `` dentro de ``components``. Dentro dessa pasta crie também um arquivo ``Layout.jsx`` e um arquivo `` index.js ``.
+Agora que temos a nossa estrutura pronta, vamos criar o nosso componente padrão para todas as telas, o layout. Para isso, crie uma pasta com o nome de `` Layout `` dentro de ``components``. Dentro dessa pasta crie também um arquivo ``Layout.jsx`` e um arquivo `` index.js ``.
 
 ```jsx
 // src/components/Layout/Layout.jsx
@@ -169,7 +169,7 @@ export default ({ children, title }) => (
 export { default } from "./Layout";
 ```
 
-Se você reparou no código anterior percebeu que usamos um componente Header que ainda não foi criado. Portanto, para criar esse componente siga a mesma estrutura de pastas e arquivos de Layout.
+Se você reparou no código anterior percebeu que usamos um componente Header que ainda não foi criado. Portanto, para criar esse componente, siga a mesma estrutura de pastas e arquivos de Layout.
 
 ```jsx
 // src/components/Header/Header.jsx
@@ -187,7 +187,7 @@ export default ({ title }) => (
 export { default } from "./Header";
 ```
 
-Com o básico do layout pronto vamos criar a página inicial. Para isso crie um arquivo `index.js` dentro de `pages`. É nesse arquivo que vamos fazer uma consulta utilizando GraphQL para pegarmos os dados do nosso blog (aqueles que salvamos no `gatsby-config.js`). O objetivo é simplificar a manutenção, até porque se precisarmos alterar o nosso título vamos a um só lugar :)
+Com o básico do layout pronto vamos criar a página inicial. Para isso, crie um arquivo `index.js` dentro de `pages`. É nesse arquivo que vamos fazer uma consulta utilizando GraphQL para pegarmos os dados do nosso blog (aqueles que salvamos no `gatsby-config.js`). O objetivo é simplificar a manutenção, até porque se precisarmos alterar o nosso título vamos a um só lugar :)
 
 ```jsx
 // src/pages/index.js
@@ -215,7 +215,7 @@ export const query = graphql`
 `
 ```
 
-Antes de testarmos se tudo está funcionando é importante destacar que com o Gatsby podemos consultar dados com [*page query*](https://www.gatsbyjs.org/docs/page-query/) ou com [*static query*](https://www.gatsbyjs.org/docs/static-query/).
+Antes de testarmos se tudo está funcionando, é importante destacar que com o Gatsby podemos consultar dados com [*page query*](https://www.gatsbyjs.org/docs/page-query/) ou com [*static query*](https://www.gatsbyjs.org/docs/static-query/).
 
 A *page query* permite que as páginas consultem dados, e a *static query* , que veio na segunda versão do Gatsby permite que componentes que não são páginas, como o Header, façam consultas com GraphQL.
 
