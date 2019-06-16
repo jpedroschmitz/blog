@@ -14,7 +14,7 @@ class CSSInjector extends Component {
 
   componentDidMount() {
     const iframe = document.querySelector("#nc-root iframe");
-    const iframeHeadElem = iframe && iframe.contentDocument.head;
+    const iframeHeadElem = iframe.contentDocument.head;
     this.setState({ iframeRef: iframeHeadElem });
   }
 
@@ -32,7 +32,7 @@ CMS.registerPreviewTemplate("blog-pt", ({ widgetFor }) => (
     <ContentInfo
       timeToRead="1"
       title={widgetFor("body")}
-      date={moment(widgetFor("body"), "YYYYMMDD").fromNow()}
+      date={moment(widgetFor("body"), "YYYY-MM-DDTh:m:sZ").fromNow()}
       category={widgetFor("category")}
       color="#000"
       image={widgetFor("image")}

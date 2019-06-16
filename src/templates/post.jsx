@@ -19,7 +19,7 @@ export default ({ data, pageContext }) => {
       <ContentInfo
         timeToRead={timeToRead}
         title={title}
-        date={moment(date, "YYYYMMDD").fromNow()}
+        date={moment(date, "YYYY-MM-DDTh:m:sZ").fromNow()}
         category={category.frontmatter.title}
         color={category.frontmatter.color}
         image={image}

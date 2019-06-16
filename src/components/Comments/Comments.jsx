@@ -11,7 +11,7 @@ export const PureComments = ({ data, postTitle, postSlug }) => {
 
   return (
     <>
-      <h3 style={{ marginBottom: "35px" }}>Comentários xD</h3>
+      <h3 style={{ marginBottom: "35px", fontWeight: "bold" }}>Comentários xD</h3>
       <ReactDisqusComments
         shortname={disqusShortname}
         identifier={postTitle}

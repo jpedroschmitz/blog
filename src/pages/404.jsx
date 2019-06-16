@@ -25,7 +25,7 @@ export default ({ data }) => {
             <Post
               key={item.node.frontmatter.slug}
               category={item.node.frontmatter.category}
-              date={moment(item.node.frontmatter.date, "YYYYMMDD").fromNow()}
+              date={moment(item.node.frontmatter.date, "YYYY-MM-DDTh:m:sZ").fromNow()}
               title={item.node.frontmatter.title}
               image={item.node.frontmatter.image}
               slug={item.node.frontmatter.slug}
@@ -48,7 +48,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "YYYYMMDD")
+            date
             slug
             image
             category {

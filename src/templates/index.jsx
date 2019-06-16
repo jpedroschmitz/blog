@@ -18,12 +18,13 @@ export default ({ data, pathContext }) => {
       <SEO postSEO={false} />
       <Container>
         <article>
+          {/* {} */}
           <Row centered>
             {edges.map(item => (
               <Post
                 key={item.node.frontmatter.slug}
                 category={item.node.frontmatter.category}
-                date={moment(item.node.frontmatter.date, "YYYYMMDD").fromNow()}
+                date={moment(item.node.frontmatter.date, "YYYY-MM-DDTh:m:sZ").fromNow()}
                 title={item.node.frontmatter.title}
                 image={item.node.frontmatter.image}
                 slug={item.node.frontmatter.slug}
