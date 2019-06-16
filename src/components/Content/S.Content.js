@@ -13,10 +13,17 @@ export default styled.div`
     list-style: disc;
   }
 
-  & ul > li {
+  & ul > li, & ol > li {
+    font-weight: 300;
+    font-style: normal;
     font-size: 1em;
-    line-height: 2;
     letter-spacing: 0.069rem;
+    line-height: 2;
+  }
+
+  & img {
+    display: block;
+    margin: auto;
   }
 
   & li > ul {
