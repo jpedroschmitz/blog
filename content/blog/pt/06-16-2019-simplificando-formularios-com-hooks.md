@@ -11,7 +11,7 @@ date: 2019-06-16T20:54:42.591Z
 description: "Desde o lançamento dos Hooks na versão 16.8.0 do React a forma de escrever componentes mudou. No post de hoje veremos como simplificar formulários no React utilizando essa nova API."
 ---
 
-Fala pessoal! Como vocês estão? Desde o lançamento dos Hooks na versão 16.8.0 do React a forma de escrever componentes mudou. Antes era muito difícil reutilizar lógica de estado entre componentes, e por exemplo, no caso de termos vários formulários dentro de nosso projeto muitas vezes teríamos algo parecido com isso repetidas vezes:
+Fala pessoal! Como vocês estão? Desde o lançamento dos Hooks, na versão 16.8.0 do React, a forma de escrever componentes mudou. Antes era muito difícil reutilizar lógica de estado entre componentes, e no caso de termos vários formulários dentro de nosso projeto muitas vezes teríamos algo parecido com isso repetidas vezes:
 
 ```jsx
 export default class Form extends Component {
@@ -46,7 +46,7 @@ export default class Form extends Component {
 
 Em um primeiro momento você pode olhar e dizer que não tem nada de errado com esse componente, e eu concordo contigo, não tem nada de errado com ele. Porém, imagine a seguinte situação: você tem 10 ou 20 formulários no seu projeto e todos eles compartilham basicamente esse mesmo código. Não me parece algo bom. Por isso no post de hoje nos veremos uma forma de compartilhar toda essa lógica criando um hook customizado.
 
-Caso você tenha começado a estudar React há pouco tempo e não conhece Hooks eu recomendo fortemente que dê uma olhada na [documentação do React](https://pt-br.reactjs.org/docs/hooks-intro.html), eles tem exemplos bem legais e lá você irá aprender um pouco mais dessa feature maravilhosa.
+Caso você tenha começado a estudar React há pouco tempo e não conhece Hooks, eu recomendo fortemente que dê uma olhada na [documentação do React](https://pt-br.reactjs.org/docs/hooks-intro.html). Eles tem exemplos bem legais e lá você irá aprender um pouco mais dessa feature maravilhosa.
 
 ## Iniciando um projeto
 
@@ -93,7 +93,7 @@ export default () => {
 }
 ```
 
-Se tudo deu certo até o momento você deve estar vendo uma tela parecida com essa no seu navegador:
+Se tudo deu certo até o momento, você deve estar vendo uma tela parecida com esta no seu navegador:
 
 ![Imagem do projeto criado até o momento](/img/upload/form-hooks.png)
 
@@ -101,11 +101,11 @@ Sim, eu sei que isso não é visualmente bonito, mas vou manter o foco do post. 
 
 ### Criando um Hook customizado
 
-Toda vez que queremos compartilhar lógica entre funções no JavaScript, ou em outras linguagens no geral, nos sempre extraímos ela para uma terceira função, permitindo assim o desacoplamento da lógica. E como Hooks são funções, então podemos fazer isso também.
+Toda vez que queremos compartilhar lógica entre funções no JavaScript, ou em outras linguagens no geral, nós sempre extraímos ela para uma terceira função, permitindo assim o desacoplamento da lógica. E como Hooks são funções, então podemos fazer isso também.
 
-É importante destacar que todo Hook customizado deve começar com "use" e que é possível utilizar o mesmo junto com outros Hooks próprios. E, diferente de um componente React nós podemos decidir quais argumentos ele vai receber e o que vai retornar, exatamente como uma função normal do JavaScript.
+É importante destacar que todo Hook customizado deve começar com "use", e que é possível utilizar o mesmo junto com outros Hooks próprios. E, diferente de um componente React, nós podemos decidir quais argumentos ele vai receber e o que vai retornar, exatamente como uma função normal do JavaScript.
 
-Antes de criar o Hook vamos primeiro criar uma pasta dentro de `src` com o nome de `hooks`. E dentro dessa nova pasta um arquivo `useForm.js`. Nesse arquivo vamos começar pelo básico: importando o `useState` da API dos Hooks e criando as funções básicas de um formulário, o `handleChange()` e o `handleSubmit()`.
+Antes de criar o Hook, vamos primeiro criar uma pasta dentro de `src` com o nome de `hooks`. E dentro dessa nova pasta, um arquivo `useForm.js`. Nesse arquivo vamos começar pelo básico: importando o `useState` da API dos Hooks e criando as funções básicas de um formulário, o `handleChange()` e o `handleSubmit()`.
 
 ```jsx
 // src/hooks/useForm.js
@@ -124,7 +124,9 @@ const useForm = () => {
 export default useForm;
 ```
 
-Até aqui você não viu nada de novo. Nós criamos e exportamos uma função, além disso criamos dois métodos para manipular os eventos de onChange e onSubmit. O método `handleSubmit()` recebe um parâmetro, o callback. Mas, aí você pode estar se perguntando o que esse callback vai fazer. Então, ele pode fazer básicamente qualquer coisa (ah, sério?), você pode fazer uma chamada para a API ou salvar os dados do formulário no `localStorage`, enfim, vai da lógica do componente. O que nós precisamos fazer agora é criar a lógica para esses métodos, além de adicionar estado.
+Até aqui você não viu nada de novo. Nós criamos e exportamos uma função, além disso criamos dois métodos para manipular os eventos de onChange e onSubmit. O método `handleSubmit()` recebe um parâmetro, o callback. Mas, aí você pode estar se perguntando: "O que esse callback vai fazer?". Então, ele pode fazer basicamente qualquer coisa, você pode fazer uma chamada para a API ou salvar os dados do formulário no `localStorage`. Enfim, vai da lógica do componente.
+
+O que precisamos fazer agora é criar a lógica para esses métodos, além de adicionar estado.
 
 ```jsx
 import { useState } from "react";
@@ -150,7 +152,7 @@ const useForm = (callback) => {
 export default useForm;
 ```
 
-Pronto, nosso Hook está começando a criar vida. E, se você reparou só falta fazer uma única coisa, retornar o estado junto com os métodos. Por isso, adicione o seguinte linha de código depois do `handleSubmit()`:
+Pronto, nosso Hook está começando a criar vida. E, se você reparar, só falta fazer uma única coisa, retornar o estado junto com os métodos. Por isso, adicione o seguinte linha de código depois do `handleSubmit()`:
 
 ```js
 return [{ values, loading }, handleChange, handleSubmit];
@@ -158,7 +160,7 @@ return [{ values, loading }, handleChange, handleSubmit];
 
 ## Ligando as partes
 
-Uma vez que criamos o nosso hook customizado nós temos que usá-lo no `App.js`. Portanto, adicione o seguinte código dentro do arquivo:
+Uma vez que criamos o nosso hook customizado, nós temos que usá-lo no `App.js`. Portanto, adicione o seguinte código dentro do arquivo:
 
 ```jsx
 import React from "react";
@@ -203,7 +205,7 @@ export default () => {
 
 Por mais que pareça grande, o código acima é bem simples. Nós começamos importando o nosso Hook logo depois do React. Depois, na declaração do `useForm()` nós recebemos o estado junto com os métodos que são usados nos eventos. Simples, não é?
 
-Lembrando que o nosso `handleSubmit()` recebia como argumento um callback, que, nesse caso é o método `enviaContato()`. Veja o resultado:
+Lembrando que o nosso `handleSubmit()` recebia como argumento um callback que, nesse caso, é o método `enviaContato()`. Veja o resultado:
 
 ![Resultado do projeto](/img/upload/hooks-form.gif)
 
