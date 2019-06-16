@@ -8,7 +8,7 @@ slug: simplificando-formularios-com-hooks
 image: /img/upload/form-hooks-banner.png
 draft: false
 date: 2019-06-16T20:54:42.591Z
-description: ""
+description: "Desde o lançamento dos Hooks na versão 16.8.0 do React a forma de escrever componentes mudou. No post de hoje veremos como simplificar formulários no React utilizando essa nova API."
 ---
 
 Fala pessoal! Como vocês estão? Desde o lançamento dos Hooks na versão 16.8.0 do React a forma de escrever componentes mudou. Antes era muito difícil reutilizar lógica de estado entre componentes, e por exemplo, no caso de termos vários formulários dentro de nosso projeto muitas vezes teríamos algo parecido com isso repetidas vezes:

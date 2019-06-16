@@ -20,18 +20,36 @@ Fala pessoal! Como vocês estão? Conforme prometido hoje estou aqui para começ
 
 ## Tabela de conteúdos <!-- omit in toc -->
 
-- [Pré-requisitos](#pr%C3%A9-requisitos)
-- [O que vamos construir?](#o-que-vamos-construir)
-  - [Funcionalidades do blog](#funcionalidades-do-blog)
-- [O que é o Gatsby?](#o-que-%C3%A9-o-gatsby)
-  - [Plugins](#plugins)
-- [Inciando o projeto](#inciando-o-projeto)
-  - [Instalando dependências](#instalando-depend%C3%AAncias)
-  - [Criando a estrutura](#criando-a-estrutura)
-- [Criando o layout padrão](#criando-o-layout-padr%C3%A3o)
-- [Testando no navegador](#testando-no-navegador)
-- [Conclusão](#conclus%C3%A3o)
+- [O que vamos construir?](#O-que-vamos-construir)
+  - [Funcionalidades do blog](#Funcionalidades-do-blog)
+- [Pré-requisitos](#Pr%C3%A9-requisitos)
+- [O que é o Gatsby?](#O-que-%C3%A9-o-Gatsby)
+  - [Plugins](#Plugins)
+- [Inciando o projeto](#Inciando-o-projeto)
+  - [Instalando dependências](#Instalando-depend%C3%AAncias)
+  - [Criando a estrutura](#Criando-a-estrutura)
+- [Criando o layout padrão](#Criando-o-layout-padr%C3%A3o)
+- [Testando no navegador](#Testando-no-navegador)
+- [Conclusão](#Conclus%C3%A3o)
 
+
+## O que vamos construir?
+
+Como já disse, o blog que iremos construir tem diversas funcionalidades. A ideia dessa série é que você possa aprender um pouco sobre o Gatsby para poder criar projetos e aumentar o seu portfólio. Além disso, ao final da série, você terá um blog bacana para poder publicar e compartilhar um pouco do que vem aprendendo.
+
+Abaixo você pode ver algumas funcionalidades que iremos implementar.
+
+### Funcionalidades do blog
+
+- Suporte para RSS Feed;
+- Gerador automático de Sitemap;
+- Suporte para Google Analytics;
+- Suporte offline;
+- Manifest.json;
+- Listagem de posts por tag;
+- Como usar fontes no Gatsby;
+- SEO (Robots.txt, OpenGraph Tags);
+- Além de muita performance, porque o Gatsby é top demais!
 
 ## Pré-requisitos
 
@@ -54,24 +72,6 @@ v8.11.3 // Node.js
 *Observação: A versão mínima do Node para usar o Gatsby é a 8.*
 
 Caso você não tenha o Node.js instalado baixe do site [oficial](<https://nodejs.org/en/>) e siga o processo de instalação.
-
-## O que vamos construir?
-
-Como já disse, o blog que iremos construir tem diversas funcionalidades. A ideia dessa série é que você possa aprender um pouco sobre o Gatsby para poder criar projetos e aumentar o seu portfólio. Além disso, ao final da série, você terá um blog bacana para poder publicar e compartilhar um pouco do que vem aprendendo.
-
-Abaixo você pode ver algumas funcionalidades que iremos implementar.
-
-### Funcionalidades do blog
-
-- Suporte para RSS Feed;
-- Gerador automático de Sitemap;
-- Suporte para Google Analytics;
-- Suporte offline;
-- Manifest.json;
-- Listagem de posts por tag;
-- Como usar fontes no Gatsby;
-- SEO (Robots.txt, OpenGraph Tags);
-- Além de muita performance, porque o Gatsby é top demais!
 
 ## O que é o Gatsby?
 
