@@ -3,16 +3,37 @@ import breakpoints from "../../styles/breakpoints";
 
 export const Article = styled.article`
   margin-bottom: 5rem;
-  width: 30.5%;
+  flex: 0 0 32%;
   height: 300px;
   position: relative;
   cursor: pointer;
-  ${breakpoints.xxl} {
-    width: 45%;
+
+  &:nth-child(3n-1) {
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
-  ${breakpoints.md} {
-    width: 100%;
+  ${breakpoints.xxl} {
+    flex: 0 0 45%;
+
+    &:nth-child(3n-1) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &:nth-child(even) {
+      margin-left: 10%;
+      margin-right: 0;
+    }
+  }
+
+  ${breakpoints.lg} {
+    flex: 0 0 100%;
+
+    &:nth-child(even) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 `;
 
