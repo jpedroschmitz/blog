@@ -74,7 +74,7 @@ export default createGlobalStyle`
   }
 
   .gatsby-highlight {
-    padding-bottom: 30px;
+    padding-bottom: 14px;
     margin-bottom: 0.5em;
   }
 
@@ -122,5 +122,14 @@ export default createGlobalStyle`
 
   :not(pre) > code[class*="language-"] {
     padding: .1em 0.4em!important;
+  }
+
+  blockquote {
+    border-left: 4px solid #e7e7e7;
+    padding: 0 2rem;
+    & p {
+      font-style: italic!important;
+      font-size: 0.88em!important;
+    }
   }
 `;
