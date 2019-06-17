@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Bar = styled.section`
   width: 100%;
-  height: 360px;
+  height: 400px;
   background: #f6f6f6;
 
   .dark & {
