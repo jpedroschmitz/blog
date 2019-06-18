@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1efc298c-bf78-440f-ac5d-cdaf5489b3f3/deploy-status)](https://app.netlify.com/sites/joaopedroblog/deploys)
 
-A Software Engineering student who is an enthusiast of new technologies and loves learning new JavaScript frameworks. Currently working as a FrontEnd developer but wishes to learn more about artificial intelligence.
+:computer: A blog from a Front End developer that is an enthusiast of new technologies and a JavaScript fan. Currently studying Software Engineering and working for a better world.
 
 ### 🤔 How it was developed?
 
