@@ -1,20 +1,18 @@
 <p align="center">
   <a href="https://joaopedro.cc">
-    <img alt="Gatsby" src="https://www.joaopedro.cc/img/mstile-144x144.png" width="120" height="120" />
+    <img alt="Gatsby" src="https://www.joaopedro.cc/img/mstile-144x144.png" width="140" height="140" />
   </a>
 </p>
 
-<p align="center">
-  <a href="https://joaopedro.cc" style="font-size: 2.2rem; font-weight: bold">João Pedro Schmitz</a>
-</p>
+<h1 align="center">
+  <a href="https://joaopedro.cc">João Pedro Schmitz</a>
+</h1>
 
 <p align="center">
   <a href="https://app.netlify.com/sites/joaopedroblog/deploys">
     <img src="https://api.netlify.com/api/v1/badges/1efc298c-bf78-440f-ac5d-cdaf5489b3f3/deploy-status"/>
   </a>
 </p>
-
----
 
 ### 🚀 About me
 
