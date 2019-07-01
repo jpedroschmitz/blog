@@ -13,7 +13,7 @@ slug: sobre-mim
 
 ## Sobre mim
 
-Olá, meu nome é João Pedro Schmitz, nasci em Pinhalzinho/SC e atualmente sou desenvolvedor FrontEnd, apaixonado por JavaScript e todo o ecossistema em torno dessa tecnologia.
+Olá, meu nome é João Pedro Schmitz, nasci em Pinhalzinho/SC e atualmente sou desenvolvedor e instrutor na [Rocketseat](https://rocketseat.com.br), além de ser um cara apaixonado por JavaScript e todo o ecossistema dessa tecnologia.
 
 Eu estudo Engenharia de Software na [Universidade do Estado de Santa Catarina](https://www.udesc.br/), mas, esse não é a único curso que faço, eu também estudo teologia na [Escola Convergência](https://escolaconvergencia.com.br). Nos finais de semana eu costumo trabalhar como voluntário em projetos para a [Life.Church](https://www.life.church/).
 
@@ -28,6 +28,7 @@ Além disso, eu adoro trabalhar em equipe e sou um cara bem comunicativo, que de
 - JavaScript (ES6/7)
 - React.js
 - Gatsby.js
+- Node.js
 - Git
 - PHP
 - Bancos relacionais (MySQL, PostgreSQL)
