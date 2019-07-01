@@ -34,7 +34,7 @@ export default class Search extends Component {
     return (
       <Layout>
         <SEO
-          pageTitle="Buscar"
+          pageTitle="Procurar posts 👀"
           pageDescription="Encontre todos os posts do blog buscando por palavras chaves."
         />
         <Container>
