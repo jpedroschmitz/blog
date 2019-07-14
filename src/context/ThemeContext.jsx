@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const defaultState = {
   dark: false,
@@ -7,7 +7,8 @@ const defaultState = {
 
 const ThemeContext = React.createContext(defaultState);
 
-const supportsDarkMode = () => window.matchMedia("(prefers-color-scheme: dark)").matches === true;
+const supportsDarkMode = () =>
+  window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
 class ThemeProvider extends React.Component {
   state = {
@@ -15,8 +16,8 @@ class ThemeProvider extends React.Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem("dark")) {
-      const lsDark = JSON.parse(localStorage.getItem("dark"));
+    if (localStorage.getItem('dark')) {
+      const lsDark = JSON.parse(localStorage.getItem('dark'));
       if (lsDark) {
         this.setState({ dark: lsDark });
       } else if (supportsDarkMode()) {
@@ -24,13 +25,13 @@ class ThemeProvider extends React.Component {
       }
     } else {
       const { dark } = this.state;
-      localStorage.setItem("dark", JSON.stringify(dark));
+      localStorage.setItem('dark', JSON.stringify(dark));
     }
   }
 
   toggleDark = () => {
     const { dark: darkEl } = this.state;
-    localStorage.setItem("dark", JSON.stringify(!darkEl));
+    localStorage.setItem('dark', JSON.stringify(!darkEl));
     this.setState({ dark: !darkEl });
   };
 

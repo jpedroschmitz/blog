@@ -1,7 +1,5 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable react/require-default-props */
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function HTML({
   htmlAttributes,
@@ -16,7 +14,10 @@ export default function HTML({
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
         {headComponents}
       </head>
       <body {...bodyAttributes}>
@@ -24,7 +25,11 @@ export default function HTML({
         <noscript key="noscript" id="gatsby-noscript">
           Pô dev, como assim o JavaScript está desababilitado?
         </noscript>
-        <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />
+        <div
+          key="body"
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
         {postBodyComponents}
       </body>
     </html>

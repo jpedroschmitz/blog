@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import breakpoints from "../../styles/breakpoints";
+import styled from 'styled-components';
+import breakpoints from '../../styles/breakpoints';
 
 export const Article = styled.article`
   margin-bottom: 5rem;

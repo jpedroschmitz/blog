@@ -1,9 +1,15 @@
-import React from "react";
-import Helmet from "react-helmet";
-import urljoin from "url-join";
-import config from "../../../content/data/config";
+import React from 'react';
+import Helmet from 'react-helmet';
+import urljoin from 'url-join';
+import config from '../../../content/data/config';
 
-export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => {
+export default ({
+  postNode,
+  postPath,
+  postSEO,
+  pageTitle,
+  pageDescription,
+}) => {
   let title;
   let description;
   let image;
@@ -12,7 +18,9 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
   if (postSEO) {
     const postMeta = postNode.frontmatter;
     ({ title } = postMeta);
-    description = postMeta.description ? postMeta.description : postNode.excerpt;
+    description = postMeta.description
+      ? postMeta.description
+      : postNode.excerpt;
     image = urljoin(config.siteUrl, config.pathPrefix, postMeta.image);
     postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
   } else {
@@ -24,24 +32,24 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
   const blogURL = urljoin(config.siteUrl, config.pathPrefix);
   const schemaOrgJSONLD = [
     {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
       url: blogURL,
       name: title,
-      alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+      alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
     },
   ];
   if (postSEO) {
     schemaOrgJSONLD.push(
       {
-        "@context": "http://schema.org",
-        "@type": "BreadcrumbList",
+        '@context': 'http://schema.org',
+        '@type': 'BreadcrumbList',
         itemListElement: [
           {
-            "@type": "ListItem",
+            '@type': 'ListItem',
             position: 1,
             item: {
-              "@id": postURL,
+              '@id': postURL,
               name: title,
               image,
             },
@@ -49,18 +57,18 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
         ],
       },
       {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
+        '@context': 'http://schema.org',
+        '@type': 'BlogPosting',
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+        alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
         headline: title,
         image: {
-          "@type": "ImageObject",
+          '@type': 'ImageObject',
           url: image,
         },
         description,
-      },
+      }
     );
   }
 
@@ -69,7 +77,10 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
-      <meta name="google-site-verification" content="T8zsZHxMzNJ2Sb1h-pnIo3ojB7IH0xPomCd1yEQXYJ0" />
+      <meta
+        name="google-site-verification"
+        content="T8zsZHxMzNJ2Sb1h-pnIo3ojB7IH0xPomCd1yEQXYJ0"
+      />
       <meta name="p:domain_verify" content="1dcab11aa10b5d7be93dd9ee349ff6ec" />
       <meta name="MobileOptimized" content="320" />
       <meta name="HandheldFriendly" content="True" />
@@ -101,7 +112,12 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
       ) : (
         <meta property="og:image:height" content="315" />
       )}
-      {postSEO && <meta property="article:published_time" content={postNode.frontmatter.date} />}
+      {postSEO && (
+        <meta
+          property="article:published_time"
+          content={postNode.frontmatter.date}
+        />
+      )}
       {postSEO &&
         postNode.frontmatter.tags.map(tag => (
           <meta key={tag} property="article:tag" content={tag} />
@@ -115,29 +131,55 @@ export default ({ postNode, postPath, postSEO, pageTitle, pageDescription }) => 
       <meta name="msapplication-TileColor" content={config.themeColor} />
       <meta
         name="msapplication-TileImage"
-        content={urljoin(config.siteUrl, config.pathPrefix, "/img/mstile-144x144.png")}
+        content={urljoin(
+          config.siteUrl,
+          config.pathPrefix,
+          '/img/mstile-144x144.png'
+        )}
       />
       <meta
         name="msapplication-square70x70logo"
-        content={urljoin(config.siteUrl, config.pathPrefix, "/img/mstile-70x70.png")}
+        content={urljoin(
+          config.siteUrl,
+          config.pathPrefix,
+          '/img/mstile-70x70.png'
+        )}
       />
       <meta
         name="msapplication-square144x144logo"
-        content={urljoin(config.siteUrl, config.pathPrefix, "/img/mstile-144x144.png")}
+        content={urljoin(
+          config.siteUrl,
+          config.pathPrefix,
+          '/img/mstile-144x144.png'
+        )}
       />
       <meta
         name="msapplication-square150x150logo"
-        content={urljoin(config.siteUrl, config.pathPrefix, "/img/mstile-150x150.png")}
+        content={urljoin(
+          config.siteUrl,
+          config.pathPrefix,
+          '/img/mstile-150x150.png'
+        )}
       />
       <meta
         name="msapplication-wide310x150logo"
-        content={urljoin(config.siteUrl, config.pathPrefix, "/img/mstile-310x150.png")}
+        content={urljoin(
+          config.siteUrl,
+          config.pathPrefix,
+          '/img/mstile-310x150.png'
+        )}
       />
       <meta
         name="msapplication-square310x310logo"
-        content={urljoin(config.siteUrl, config.pathPrefix, "/img/mstile-310x310.png")}
+        content={urljoin(
+          config.siteUrl,
+          config.pathPrefix,
+          '/img/mstile-310x310.png'
+        )}
       />
-      <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaOrgJSONLD)}
+      </script>
     </Helmet>
   );
 };

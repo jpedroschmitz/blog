@@ -1,6 +1,6 @@
-import React from "react";
-import GitHubButton from "react-github-btn";
-import * as S from "./S.Footer";
+import React from 'react';
+import GitHubButton from 'react-github-btn';
+import * as S from './S.Footer';
 
 export default () => (
   <S.Footer>

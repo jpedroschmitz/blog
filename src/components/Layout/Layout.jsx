@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Global from "../../styles/Global";
-import Header from "./Header";
-import Footer from "./Footer";
-import SideDrawer from "./SideDrawer";
-import ThemeContext from "../../context/ThemeContext";
-import breakpoints from "../../styles/breakpoints";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Global from '../../styles/Global';
+import Header from './Header';
+import Footer from './Footer';
+import SideDrawer from './SideDrawer';
+import ThemeContext from '../../context/ThemeContext';
+import breakpoints from '../../styles/breakpoints';
 
 const Main = styled.main`
   padding-top: 50px;
@@ -26,7 +26,7 @@ export default ({ children }) => {
   return (
     <ThemeContext.Consumer>
       {theme => (
-        <div className={theme.dark ? "dark" : "light"}>
+        <div className={theme.dark ? 'dark' : 'light'}>
           <Global />
           <Header isOpened={isOpened} openHandler={openHandler} />
           <SideDrawer isOpened={isOpened} openHandler={openHandler} />

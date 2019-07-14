@@ -1,8 +1,8 @@
-import React from "react";
-import kebabcase from "lodash.kebabcase";
-import Container from "../UI/Grid/Container";
-import * as S from "./S.ContentInfo";
-import Tags from "./Tags";
+import React from 'react';
+import kebabcase from 'lodash.kebabcase';
+import Container from '../UI/Grid/Container';
+import * as S from './S.ContentInfo';
+import Tags from './Tags';
 
 export default ({ title, category, date, image, timeToRead, color, tags }) => (
   <section>

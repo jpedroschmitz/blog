@@ -1,6 +1,6 @@
-import React from "react";
-import Icon from "../Icon/Icon";
-import * as S from "./S.HeaderItem";
+import React from 'react';
+import Icon from '../Icon/Icon';
+import * as S from './S.HeaderItem';
 
 export default ({ children, link, onClick, typeIcon }) => {
   let element = (

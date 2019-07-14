@@ -1,7 +1,7 @@
-import { createGlobalStyle } from "styled-components";
-import Roboto from "../assets/fonts/Roboto-Regular.ttf";
-import fonts from "./fonts";
-import colors from "./colors";
+import { createGlobalStyle } from 'styled-components';
+import Roboto from '../assets/fonts/Roboto-Regular.ttf';
+import fonts from './fonts';
+import colors from './colors';
 
 export default createGlobalStyle`
   @font-face {

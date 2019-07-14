@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Input = styled.input`
   padding: 8px 10px;
@@ -11,5 +11,10 @@ const Input = styled.input`
 `;
 
 export default ({ placeholder, value, onChange }) => (
-  <Input type="text" placeholder={placeholder} onChange={onChange} value={value} />
+  <Input
+    type="text"
+    placeholder={placeholder}
+    onChange={onChange}
+    value={value}
+  />
 );

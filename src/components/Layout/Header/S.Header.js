@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import breakpoints from "../../../styles/breakpoints";
+import styled from 'styled-components';
+import breakpoints from '../../../styles/breakpoints';
 
 export const Wrapper = styled.header`
   position: fixed;
@@ -45,7 +45,7 @@ export const NavResponsive = styled.div`
 export const TitleH1 = styled.h1`
   font-size: 1.6rem;
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 
   & a {
     color: inherit;

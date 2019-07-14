@@ -1,1 +1,1 @@
-export { default } from "./InternalBar";
+export { default } from './InternalBar';

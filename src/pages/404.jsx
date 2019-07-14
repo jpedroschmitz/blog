@@ -1,11 +1,11 @@
-import React from "react";
-import { graphql } from "gatsby";
-import moment from "moment";
-import Layout from "../components/Layout";
-import Post from "../components/Post";
-import Container from "../components/UI/Grid/Container";
-import Row from "../components/UI/Grid/Row";
-import SEO from "../components/SEO";
+import React from 'react';
+import { graphql } from 'gatsby';
+import moment from 'moment';
+import Layout from '../components/Layout';
+import Post from '../components/Post';
+import Container from '../components/UI/Grid/Container';
+import Row from '../components/UI/Grid/Row';
+import SEO from '../components/SEO';
 
 export default ({ data }) => {
   const { edges } = data.allMarkdownRemark;
@@ -17,7 +17,7 @@ export default ({ data }) => {
       />
       <Container>
         <h2>Página não encontrada.</h2>
-        <p style={{ marginBottom: "35px", marginTop: "20px" }}>
+        <p style={{ marginBottom: '35px', marginTop: '20px' }}>
           Se quiser pode dar uma olhada nos últimos posts :)
         </p>
         <Row centered>
@@ -25,7 +25,10 @@ export default ({ data }) => {
             <Post
               key={item.node.frontmatter.slug}
               category={item.node.frontmatter.category}
-              date={moment(item.node.frontmatter.date, "YYYY-MM-DDTh:m:sZ").fromNow()}
+              date={moment(
+                item.node.frontmatter.date,
+                'YYYY-MM-DDTh:m:sZ'
+              ).fromNow()}
               title={item.node.frontmatter.title}
               image={item.node.frontmatter.image}
               slug={item.node.frontmatter.slug}
@@ -42,7 +45,10 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 6
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } }, fields: { source: { eq: "posts" } } }
+      filter: {
+        frontmatter: { draft: { eq: false } }
+        fields: { source: { eq: "posts" } }
+      }
     ) {
       edges {
         node {

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import breakpoints from "../../../../styles/breakpoints";
+import styled from 'styled-components';
+import breakpoints from '../../../../styles/breakpoints';
 
 export default styled.div`
   width: 40px;
@@ -37,7 +37,7 @@ export default styled.div`
     &:before,
     &:after {
       background: #000;
-      content: "";
+      content: '';
       display: block;
       width: 100%;
       height: 100%;

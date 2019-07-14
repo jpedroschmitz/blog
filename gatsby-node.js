@@ -1,16 +1,16 @@
-const path = require("path");
-const kebabCase = require("lodash.kebabcase");
-const uniqBy = require("lodash.uniqby");
-const { paginate } = require("gatsby-awesome-pagination");
+const path = require('path');
+const kebabCase = require('lodash.kebabcase');
+const uniqBy = require('lodash.uniqby');
+const { paginate } = require('gatsby-awesome-pagination');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === "MarkdownRemark") {
+  if (node.internal.type === 'MarkdownRemark') {
     const fileNode = getNode(node.parent);
     const source = fileNode.sourceInstanceName;
     createNodeField({
       node,
-      name: "source",
+      name: 'source',
       value: source,
     });
   }
@@ -20,12 +20,12 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve("src/templates/post.jsx");
-    const tagTemplate = path.resolve("src/templates/tag.jsx");
-    const indexTemplate = path.resolve("src/templates/index.jsx");
-    const categoryTemplate = path.resolve("src/templates/category.jsx");
-    const categoriesTemplate = path.resolve("src/templates/categories.jsx");
-    const pageTemplate = path.resolve("src/templates/page.jsx");
+    const postTemplate = path.resolve('src/templates/post.jsx');
+    const tagTemplate = path.resolve('src/templates/tag.jsx');
+    const indexTemplate = path.resolve('src/templates/index.jsx');
+    const categoryTemplate = path.resolve('src/templates/category.jsx');
+    const categoriesTemplate = path.resolve('src/templates/categories.jsx');
+    const pageTemplate = path.resolve('src/templates/page.jsx');
     resolve(
       graphql(
         `
@@ -61,11 +61,9 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-        `,
-      ).then((result) => {
+        `
+      ).then(result => {
         if (result.errors) {
-          // eslint-disable-next-line no-console
-          console.log(result.errors);
           reject(result.errors);
         }
 
@@ -74,7 +72,7 @@ exports.createPages = ({ graphql, actions }) => {
         const categorySet = new Set();
         const tagSet = new Set();
         const postsSet = new Set();
-        items.forEach((edge) => {
+        items.forEach(edge => {
           const {
             node: {
               frontmatter: { category },
@@ -101,7 +99,7 @@ exports.createPages = ({ graphql, actions }) => {
             tags.forEach(tag => tagSet.add(tag));
           }
 
-          if (source === "pages") {
+          if (source === 'pages') {
             const {
               node: {
                 frontmatter: { slug },
@@ -115,7 +113,7 @@ exports.createPages = ({ graphql, actions }) => {
                 slug,
               },
             });
-          } else if (source === "posts") {
+          } else if (source === 'posts') {
             postsSet.add(edge);
           }
         });
@@ -127,21 +125,26 @@ exports.createPages = ({ graphql, actions }) => {
           items: posts,
           itemsPerFirstPage: itemsPerPage,
           itemsPerPage,
-          pathPrefix: "/",
+          pathPrefix: '/',
           component: indexTemplate,
         });
 
         const categoryList = Array.from(categorySet);
         createPage({
-          path: "/categorias",
+          path: '/categorias',
           component: categoriesTemplate,
           context: {
-            categories: uniqBy(categoryList, "frontmatter.title"),
+            categories: uniqBy(categoryList, 'frontmatter.title'),
           },
         });
 
-        categoryList.forEach((category) => {
-          const { title, introduction, description, color } = category.frontmatter;
+        categoryList.forEach(category => {
+          const {
+            title,
+            introduction,
+            description,
+            color,
+          } = category.frontmatter;
           createPage({
             path: `/categoria/${kebabCase(category.frontmatter.title)}/`,
             component: categoryTemplate,
@@ -155,7 +158,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         const tagList = Array.from(tagSet);
-        tagList.forEach((tag) => {
+        tagList.forEach(tag => {
           createPage({
             path: `/tag/${kebabCase(tag)}/`,
             component: tagTemplate,
@@ -169,7 +172,8 @@ exports.createPages = ({ graphql, actions }) => {
           const { source } = node.fields;
           const { slug } = node.frontmatter;
           const next = index === 0 ? null : posts[index - 1].node;
-          const prev = index === posts.length - 1 ? null : posts[index + 1].node;
+          const prev =
+            index === posts.length - 1 ? null : posts[index + 1].node;
 
           createPage({
             path: slug,
@@ -182,7 +186,7 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
-      }),
+      })
     );
   });
 };

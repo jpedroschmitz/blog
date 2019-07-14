@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "gatsby";
-import * as S from "./S.Post";
+import React from 'react';
+import { Link } from 'gatsby';
+import * as S from './S.Post';
 
 export default ({ category, title, date, slug, image }) => (
   <S.Article>

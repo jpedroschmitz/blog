@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "gatsby";
-import * as S from "./S.PostNavigation";
+import React from 'react';
+import { Link } from 'gatsby';
+import * as S from './S.PostNavigation';
 
 export default ({ next, prev }) => (
   <S.Posts>

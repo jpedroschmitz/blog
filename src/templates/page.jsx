@@ -1,10 +1,10 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Content from "../components/Content";
-import InternalBar from "../components/InternalBar";
-import Container from "../components/UI/Grid/Container";
-import SEO from "../components/SEO";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Content from '../components/Content';
+import InternalBar from '../components/InternalBar';
+import Container from '../components/UI/Grid/Container';
+import SEO from '../components/SEO';
 
 export default ({ data }) => {
   const { title, introduction, description } = data.markdownRemark.frontmatter;

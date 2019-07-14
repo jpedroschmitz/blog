@@ -1,1 +1,1 @@
-export { default } from "./InternalPost";
+export { default } from './InternalPost';

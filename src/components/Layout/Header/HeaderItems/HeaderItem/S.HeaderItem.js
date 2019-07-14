@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { Link } from "gatsby";
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 export const Item = styled.li`
   margin: 0 1.5rem;
   text-transform: lowercase;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 
   .dark & a {
     color: #eeeeee;

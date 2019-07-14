@@ -1,15 +1,15 @@
-import React from "react";
-import { graphql } from "gatsby";
-import moment from "moment";
-import "moment/locale/pt-br";
-import Layout from "../components/Layout";
-import Post from "../components/Post";
-import Container from "../components/UI/Grid/Container";
-import Row from "../components/UI/Grid/Row";
-import Pagination from "../components/Pagination";
-import SEO from "../components/SEO";
+import React from 'react';
+import { graphql } from 'gatsby';
+import moment from 'moment';
+import 'moment/locale/pt-br';
+import Layout from '../components/Layout';
+import Post from '../components/Post';
+import Container from '../components/UI/Grid/Container';
+import Row from '../components/UI/Grid/Row';
+import Pagination from '../components/Pagination';
+import SEO from '../components/SEO';
 
-moment.locale("pt-br");
+moment.locale('pt-br');
 
 export default ({ data, pathContext }) => {
   const { edges } = data.allMarkdownRemark;
@@ -24,7 +24,10 @@ export default ({ data, pathContext }) => {
               <Post
                 key={item.node.frontmatter.slug}
                 category={item.node.frontmatter.category}
-                date={moment(item.node.frontmatter.date, "YYYY-MM-DDTh:m:sZ").fromNow()}
+                date={moment(
+                  item.node.frontmatter.date,
+                  'YYYY-MM-DDTh:m:sZ'
+                ).fromNow()}
                 title={item.node.frontmatter.title}
                 image={item.node.frontmatter.image}
                 slug={item.node.frontmatter.slug}
@@ -49,7 +52,10 @@ export const pageQuery = graphql`
       skip: $skip
       limit: $limit
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } }, fields: { source: { eq: "posts" } } }
+      filter: {
+        frontmatter: { draft: { eq: false } }
+        fields: { source: { eq: "posts" } }
+      }
     ) {
       edges {
         node {

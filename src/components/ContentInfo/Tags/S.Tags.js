@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Link } from "gatsby";
-import colors from "../../../styles/colors";
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import colors from '../../../styles/colors';
 
 export const Tags = styled.div`
   margin-top: 35px;
@@ -24,7 +24,7 @@ export const Tag = styled(Link)`
   &::before {
     background: #000;
     border-radius: 10px;
-    content: "";
+    content: '';
     height: 6px;
     left: 10px;
     position: absolute;
@@ -37,7 +37,7 @@ export const Tag = styled(Link)`
     border-bottom: 13px solid transparent;
     border-left: 10px solid ${colors.link};
     border-top: 13px solid transparent;
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     top: 0;

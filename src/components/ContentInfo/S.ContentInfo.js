@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Link } from "gatsby";
-import breakpoints from "../../styles/breakpoints";
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+import breakpoints from '../../styles/breakpoints';
 
 export const Hightlight = styled.div`
   width: 100%;

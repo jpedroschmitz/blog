@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link } from "gatsby";
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 export const List = styled.ul`
   padding: 10px;

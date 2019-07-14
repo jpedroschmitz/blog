@@ -1,6 +1,6 @@
-import React from "react";
-import kebabCase from "lodash.kebabcase";
-import * as S from "./S.Tags";
+import React from 'react';
+import kebabCase from 'lodash.kebabcase';
+import * as S from './S.Tags';
 
 export default ({ tags }) => (
   <S.Tags>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.div`
   position: fixed;
@@ -12,7 +12,7 @@ export default styled.div`
   padding: 16px;
   box-sizing: border-box;
   transition: transform 0.3s ease-out;
-  transform: ${props => (props.open ? "translateX(0)" : "translateX(100%)")};
+  transform: ${props => (props.open ? 'translateX(0)' : 'translateX(100%)')};
 
   .dark & {
     background-color: #393e46;

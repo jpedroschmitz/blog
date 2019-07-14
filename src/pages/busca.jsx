@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { graphql } from "gatsby";
-import { Index } from "elasticlunr";
-import Layout from "../components/Layout";
-import SearchList from "../components/SearchList";
-import Container from "../components/UI/Grid/Container";
-import Input from "../components/UI/Input";
-import SEO from "../components/SEO";
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
+import { Index } from 'elasticlunr';
+import Layout from '../components/Layout';
+import SearchList from '../components/SearchList';
+import Container from '../components/UI/Grid/Container';
+import Input from '../components/UI/Input';
+import SEO from '../components/SEO';
 
 export default class Search extends Component {
   state = {
-    query: "",
+    query: '',
     results: [],
   };
 
@@ -25,7 +25,9 @@ export default class Search extends Component {
     this.index = this.getOrCreateIndex();
     this.setState({
       query,
-      results: this.index.search(query, {}).map(({ ref }) => this.index.documentStore.getDoc(ref)),
+      results: this.index
+        .search(query, {})
+        .map(({ ref }) => this.index.documentStore.getDoc(ref)),
     });
   };
 

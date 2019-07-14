@@ -1,10 +1,10 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import InternalBar from "../components/InternalBar";
-import InternalPost from "../components/InternalPost";
-import Container from "../components/UI/Grid/Container";
-import SEO from "../components/SEO";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import InternalBar from '../components/InternalBar';
+import InternalPost from '../components/InternalPost';
+import Container from '../components/UI/Grid/Container';
+import SEO from '../components/SEO';
 
 export default ({ data, pageContext }) => {
   const { category, introduction, description, color } = pageContext;
@@ -12,7 +12,11 @@ export default ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO pageTitle={category} pageDescription={description} />
-      <InternalBar color={color} title={`Categoria: ${category}`} introduction={introduction} />
+      <InternalBar
+        color={color}
+        title={`Categoria: ${category}`}
+        introduction={introduction}
+      />
       <Container>
         <article>
           {edges.map(item => (

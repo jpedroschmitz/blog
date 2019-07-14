@@ -166,7 +166,6 @@ module.exports = {
             }
         }`,
         serialize: ({ site, allSitePage }) =>
-        // eslint-disable-next-line arrow-body-style
           allSitePage.edges.map(edge => {
             return {
               url: site.siteMetadata.siteUrl + edge.node.path,

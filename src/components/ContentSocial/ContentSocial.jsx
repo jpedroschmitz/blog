@@ -1,5 +1,5 @@
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import {
   FacebookShareButton,
   WhatsappShareButton,
@@ -11,9 +11,9 @@ import {
   WhatsappIcon,
   LinkedinIcon,
   PocketIcon,
-} from "react-share";
-import urljoin from "url-join";
-import * as S from "./S.ContentSocial";
+} from 'react-share';
+import urljoin from 'url-join';
+import * as S from './S.ContentSocial';
 
 export const SocialIcons = ({ title, slug, data }) => {
   const { siteUrl } = data.site.siteMetadata;
