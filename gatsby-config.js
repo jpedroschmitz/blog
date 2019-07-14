@@ -1,5 +1,5 @@
-const urljoin = require("url-join");
-const config = require("./content/data/config");
+const urljoin = require('url-join');
+const config = require('./content/data/config');
 
 module.exports = {
   siteMetadata: {
@@ -10,120 +10,123 @@ module.exports = {
       feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/static/favicon.png`,
+      image_url: `${urljoin(
+        config.siteUrl,
+        config.pathPrefix
+      )}/static/favicon.png`,
       copyright: config.copyright,
     },
   },
   mapping: {
-    "MarkdownRemark.frontmatter.category": "MarkdownRemark.frontmatter.title",
+    'MarkdownRemark.frontmatter.category': 'MarkdownRemark.frontmatter.title',
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
-        htmlTitle: "Gerenciador de Conteúdo",
+        htmlTitle: 'Gerenciador de Conteúdo',
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-lodash",
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-image",
-    "gatsby-plugin-catch-links",
-    "gatsby-plugin-offline",
-    "gatsby-plugin-twitter",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-lodash',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-image',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-twitter',
     {
-      resolve: "gatsby-plugin-canonical-urls",
+      resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: config.siteUrl,
       },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: config.googleAnalyticsID,
       },
     },
     {
-      resolve: "gatsby-plugin-nprogress",
+      resolve: 'gatsby-plugin-nprogress',
       options: {
         color: config.themeColor,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "assets",
+        name: 'assets',
         path: `${__dirname}/static`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "upload",
+        name: 'upload',
         path: `${__dirname}/static/img/upload`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "posts",
+        name: 'posts',
         path: `${__dirname}/content/blog/pt`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
+        name: 'pages',
         path: `${__dirname}/content/pages/pt`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "categories",
+        name: 'categories',
         path: `${__dirname}/content/categories/pt`,
       },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 690,
             },
           },
           {
-            resolve: "gatsby-remark-responsive-iframe",
+            resolve: 'gatsby-remark-responsive-iframe',
           },
           {
-            resolve: "gatsby-remark-prismjs",
+            resolve: 'gatsby-remark-prismjs',
             options: {
               aliases: {
-                sh: "bash",
-                react: "jsx",
-                txt: "",
+                sh: 'bash',
+                react: 'jsx',
+                txt: '',
               },
             },
           },
-          "gatsby-remark-copy-linked-files",
+          'gatsby-remark-copy-linked-files',
           {
-            resolve: "gatsby-remark-autolink-headers",
+            resolve: 'gatsby-remark-autolink-headers',
             options: {
-              offsetY: "90",
+              offsetY: '90',
             },
           },
         ],
       },
     },
     {
-      resolve: "@gatsby-contrib/gatsby-plugin-elasticlunr-search",
+      resolve: '@gatsby-contrib/gatsby-plugin-elasticlunr-search',
       options: {
-        fields: ["title", "tags", "category", "description"],
+        fields: ['title', 'tags', 'category', 'description'],
         resolvers: {
           MarkdownRemark: {
             title: node => node.frontmatter.title,
@@ -134,22 +137,22 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
-        start_url: "/",
+        start_url: '/',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: "standalone",
-        icon: "static/favicon.png",
+        display: 'standalone',
+        icon: 'static/favicon.png',
       },
     },
     {
-      resolve: "gatsby-plugin-sitemap",
+      resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: "/sitemap.xml",
+        output: '/sitemap.xml',
         query: `
             {
             site {
@@ -174,12 +177,12 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: 'gatsby-plugin-feed',
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS Plugin Feed";
+          ret.generator = 'GatsbyJS Plugin Feed';
           return ret;
         },
         query: `
@@ -211,7 +214,7 @@ module.exports = {
                 guid: rssMetadata.site_url + edge.node.frontmatter.slug,
                 custom_elements: [
                   {
-                    "content:encoded": edge.node.html,
+                    'content:encoded': edge.node.html,
                   },
                   {
                     author: config.userEmail,
