@@ -23,7 +23,7 @@ export default function HTML({
       <body {...bodyAttributes}>
         {preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
-          Pô dev, como assim o JavaScript está desababilitado?
+          Pô dev, como assim o JavaScript está desabilitado?
         </noscript>
         <div
           key="body"
