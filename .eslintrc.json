@@ -1,54 +1,38 @@
 {
-  "extends": [
-    "airbnb"
-  ],
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
-  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier", "jsx-a11y", "react-hooks"],
   "rules": {
-    "operator-linebreak": "off",
-    "implicit-arrow-linebreak": "off",
-    "no-confusing-arrow": "off",
-    "react/prefer-stateless-function": "off",
-    "arrow-parens": "off",
-    "react/prop-types": "off",
-    "react/no-danger": "off",
-    "linebreak-style": 0,
-    "jsx-a11y/anchor-is-valid": [
-      "error",
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [
+      "warn",
       {
-        "components": [
-          "Link"
-        ],
-        "specialLink": [
-          "hrefLeft",
-          "hrefRight",
-          "to"
-        ],
-        "aspects": [
-          "noHref",
-          "invalidHref",
-          "preferButton"
-        ]
+        "extensions": [".jsx", ".js"]
       }
     ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "object-curly-newline": 0
-  },
-  "settings": {
-    "import/core-modules": []
-  },
-  "env": {
-    "browser": true
+    "arrow-body-style": "off",
+    "import/prefer-default-export": "off",
+    "no-param-reassign": "off",
+    "no-console": ["error", { "allow": ["tron"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "off",
+    "react/no-danger": "off"
   }
 }

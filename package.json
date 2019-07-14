@@ -14,14 +14,13 @@
     "frontend"
   ],
   "scripts": {
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "dev": "npm run develop",
+    "dev": "gatsby develop",
+    "serve": "gatsby serve",
     "lint": "eslint ./src/**/*.{js,jsx}",
     "lint:fix": "eslint ./src/**/*.{js,jsx} --fix",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
     "prepush": "npm run lint && npm run format",
     "test": "echo \"Write tests! -> In the next few months\""
   },
@@ -82,6 +81,7 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.1",
     "husky": "2.1.0",
     "prettier": "1.17.0"
   },
