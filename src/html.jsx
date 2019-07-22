@@ -12,7 +12,7 @@ export default function HTML({
   body,
 }) {
   return (
-    <html {...htmlAttributes} lang="pt">
+    <html {...htmlAttributes} lang="pt-BR">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
