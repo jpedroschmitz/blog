@@ -28,6 +28,8 @@ module.exports = {
         htmlTitle: 'Gerenciador de Conteúdo',
       },
     },
+    'gatsby-plugin-netlify',
+    'gatsby-plugin-netlify-cache',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
     'gatsby-plugin-styled-components',
@@ -145,7 +147,7 @@ module.exports = {
         start_url: '/',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'standalone',
+        display: 'minimal-ui',
         icon: 'static/favicon.png',
       },
     },
@@ -226,7 +228,10 @@ module.exports = {
             {
               allMarkdownRemark(
                 sort: { fields: [frontmatter___date], order: DESC }
-                filter: { frontmatter: { draft: { eq: false } } }
+                filter: {
+                  frontmatter: { draft: { eq: false } }
+                  fields: { source: { eq: "posts" } }
+                }
               ) {
                 edges {
                   node {
