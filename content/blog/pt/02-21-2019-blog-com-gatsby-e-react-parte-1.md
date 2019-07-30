@@ -20,17 +20,17 @@ Fala pessoal! Como vocês estão? Conforme prometido hoje estou aqui para começ
 
 ## Tabela de conteúdos <!-- omit in toc -->
 
-- [O que vamos construir?](#O-que-vamos-construir)
-  - [Funcionalidades do blog](#Funcionalidades-do-blog)
-- [Pré-requisitos](#Pr%C3%A9-requisitos)
-- [O que é o Gatsby?](#O-que-%C3%A9-o-Gatsby)
-  - [Plugins](#Plugins)
-- [Inciando o projeto](#Inciando-o-projeto)
-  - [Instalando dependências](#Instalando-depend%C3%AAncias)
-  - [Criando a estrutura](#Criando-a-estrutura)
-- [Criando o layout padrão](#Criando-o-layout-padr%C3%A3o)
-- [Testando no navegador](#Testando-no-navegador)
-- [Conclusão](#Conclus%C3%A3o)
+- [O que vamos construir?](#o-que-vamos-construir)
+  - [Funcionalidades do blog](#funcionalidades-do-blog)
+- [Pré-requisitos](#pré-requisitos)
+- [O que é o Gatsby?](#o-que-é-o-Gatsby)
+  - [Plugins](#plugins)
+- [Inciando o projeto](#inciando-o-projeto)
+  - [Instalando dependências](#instalando-dependências)
+  - [Criando a estrutura](#criando-a-estrutura)
+- [Criando o layout padrão](#criando-o-layout-padrão)
+- [Testando no navegador](#testando-no-navegador)
+- [Conclusão](#conclusão)
 
 
 ## O que vamos construir?
