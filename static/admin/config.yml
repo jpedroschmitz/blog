@@ -1,50 +1,74 @@
 backend:
   name: git-gateway
   branch: master
+  site_domain: joaopedro.cc
 
 media_folder: static/img/upload
 public_folder: /img/upload
+publish_mode: editorial_workflow
 
 collections:
-  - name: "blog-pt"
-    label: "Blog (PT)"
-    folder: "content/blog/pt"
+  - name: 'blog-pt'
+    label: 'Blog (PT)'
+    folder: 'content/blog/pt'
     create: true
-    slug: "{{day}}-{{month}}-{{year}}--{{slug}}"
+    slug: '{{day}}-{{month}}-{{year}}--{{slug}}'
     fields:
-      - {label: "Template", name: "template", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["title"], valueField: "category"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Template',
+          name: 'template',
+          widget: 'hidden',
+          default: 'post',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'relation',
+          collection: 'categories',
+          searchFields: ['title'],
+          valueField: 'category',
+        }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: "pages-pt"
-    label: "Pages (PT)"
-    folder: "content/pages/pt"
+  - name: 'pages-pt'
+    label: 'Pages (PT)'
+    folder: 'content/pages/pt'
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - {label: "Template", name: "template", widget: "hidden", default: "page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Introduction", name: "introduction", widget: "string"}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Template',
+          name: 'template',
+          widget: 'hidden',
+          default: 'page',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Introduction', name: 'introduction', widget: 'string' }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 
-  - name: "categories"
-    label: "Categories (PT)"
-    folder: "content/categories/pt"
+  - name: 'categories'
+    label: 'Categories (PT)'
+    folder: 'content/categories/pt'
     create: true
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     fields:
-      - {label: "Template", name: "template", widget: "hidden", default: "categories"}
-      - {label: "Category name", name: "title", widget: "string"}
-      - {label: "Introduction", name: "introduction", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Color", name: "color", widget: "string"}
+      - {
+          label: 'Template',
+          name: 'template',
+          widget: 'hidden',
+          default: 'categories',
+        }
+      - { label: 'Category name', name: 'title', widget: 'string' }
+      - { label: 'Introduction', name: 'introduction', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Color', name: 'color', widget: 'string' }
