@@ -3,18 +3,14 @@ import breakpoints from '../../../../styles/breakpoints';
 
 export default styled.div`
   margin: 100px auto 100px auto;
-  width: 75%;
-  max-width: 1200px;
-
-  ${breakpoints.xlg} {
-    width: 86%;
-  }
+  width: 70%;
+  max-width: 1100px;
 
   ${breakpoints.xxl} {
-    width: 92%;
+    width: 80%;
   }
 
   ${breakpoints.lg} {
-    width: 95%;
+    width: 85%;
   }
 `;
