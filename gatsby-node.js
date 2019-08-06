@@ -1,7 +1,18 @@
 const path = require('path');
 const kebabCase = require('lodash.kebabcase');
 const uniqBy = require('lodash.uniqby');
+
 const { paginate } = require('gatsby-awesome-pagination');
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, 'src'),
+      },
+    },
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
