@@ -23,7 +23,7 @@ Fala pessoal! Como vocês estão? Conforme prometido hoje estou aqui para começ
 - [O que vamos construir?](#o-que-vamos-construir)
   - [Funcionalidades do blog](#funcionalidades-do-blog)
 - [Pré-requisitos](#pré-requisitos)
-- [O que é o Gatsby?](#o-que-é-o-Gatsby)
+- [O que é o Gatsby?](#o-que-é-o-gatsby)
   - [Plugins](#plugins)
 - [Inciando o projeto](#inciando-o-projeto)
   - [Instalando dependências](#instalando-dependências)
