@@ -18,20 +18,22 @@ export default styled.div`
     background-color: #393e46;
   }
 
-  & ul li {
-    padding: 05px 10px;
-    margin: 0;
-    margin: 10px 0;
-    font-weight: bold;
+  ul {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
 
-    &:first-child {
-      padding-top: 60px;
+    li {
+      padding: 05px 10px;
+      margin: 0;
+      margin: 10px 0;
+      font-weight: bold;
+
+      a {
+        font-size: 1.6rem;
+        text-align: right;
+        border: none;
+      }
     }
-  }
-
-  & ul li a {
-    font-size: 1.6rem;
-    text-align: right;
-    border: none;
   }
 `;
