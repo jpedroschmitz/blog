@@ -21,7 +21,6 @@
     "lint": "eslint ./src/**/*.{js,jsx}",
     "lint:fix": "eslint ./src/**/*.{js,jsx} --fix",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "prepush": "npm run lint && npm run format",
     "test": "echo \"Write tests! -> In the next few months\""
   },
   "dependencies": {
