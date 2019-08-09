@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import Roboto from '../assets/fonts/Roboto-Regular.ttf';
-import fonts from './fonts';
-import colors from './colors';
+import Roboto from '~/assets/fonts/Roboto-Regular.ttf';
 
 export default createGlobalStyle`
   @font-face {
@@ -25,7 +23,7 @@ export default createGlobalStyle`
   body {
     display: flex;
     flex-direction: column;
-    ${fonts.text}
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol';
     transition: color .5s ease-in-out;
   }
 
@@ -99,21 +97,21 @@ export default createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    ${fonts.primary}
+    font-family: 'Roboto', sans-serif;
   }
 
   a {
-    color: ${colors.link};
+    color: #00a8ff;
     border-bottom: 1px solid transparent;
   }
 
   .dark {
-    background-color: ${colors.dark};
-    color: ${colors.darkColor};
+    background-color: #393e46;
+    color: #eee;
   }
 
   .dark p {
-    color: ${colors.darkColor};
+    color: #eee;
   }
 
   :not(pre) > code[class*="language-"] {
