@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import InternalBar from '../components/InternalBar';
-import InternalPost from '../components/InternalPost';
-import Container from '../components/UI/Grid/Container';
-import SEO from '../components/SEO';
+import Layout from '~/components/Layout';
+import InternalBar from '~/components/InternalBar';
+import InternalPost from '~/components/InternalPost';
+import Container from '~/components/UI/Container';
+import SEO from '~/components/SEO';
 
-export default ({ pageContext, data }) => {
+export default function Tag({ pageContext, data }) {
   const { tag } = pageContext;
   const { edges } = data.allMarkdownRemark;
   return (
@@ -32,7 +33,7 @@ export default ({ pageContext, data }) => {
       </Container>
     </Layout>
   );
-};
+}
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
@@ -57,3 +58,14 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+Tag.propTypes = {
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string.isRequired,
+  }),
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array.isRequired,
+    }).isRequired,
+  }),
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import moment from 'moment';
 import Layout from '../components/Layout';
@@ -7,10 +8,10 @@ import ContentInfo from '../components/ContentInfo';
 import Content from '../components/Content';
 import ContentSocial from '../components/ContentSocial';
 import ContentNavigation from '../components/ContentNavigation';
-import Container from '../components/UI/Grid/Container';
+import Container from '../components/UI/Container';
 import SEO from '../components/SEO';
 
-export default ({ data, pageContext }) => {
+export default function Post({ data, pageContext }) {
   const { html } = data.markdownRemark;
   const {
     title,
@@ -41,7 +42,7 @@ export default ({ data, pageContext }) => {
       </Container>
     </Layout>
   );
-};
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -66,3 +67,29 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+Post.propTypes = {
+  pageContext: PropTypes.shape({
+    prev: PropTypes.object,
+    next: PropTypes.object,
+  }),
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        category: PropTypes.shape({
+          frontmatter: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            color: PropTypes.string.isRequired,
+          }).isRequired,
+        }).isRequired,
+        slug: PropTypes.string.isRequired,
+        tags: PropTypes.array.isRequired,
+      }).isRequired,
+      timeToRead: PropTypes.number.isRequired,
+      html: PropTypes.string.isRequired,
+    }).isRequired,
+  }),
+};

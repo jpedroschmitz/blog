@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Index } from 'elasticlunr';
 import Layout from '../components/Layout';
 import SearchList from '../components/SearchList';
-import Container from '../components/UI/Grid/Container';
+import Container from '../components/UI/Container';
 import Input from '../components/UI/Input';
 import SEO from '../components/SEO';
 

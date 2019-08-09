@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content from '../components/Content';
 import InternalBar from '../components/InternalBar';
-import Container from '../components/UI/Grid/Container';
+import Container from '../components/UI/Container';
 import SEO from '../components/SEO';
 
-export default ({ data }) => {
+export default function Page({ data }) {
   const { title, introduction, description } = data.markdownRemark.frontmatter;
   const { html } = data.markdownRemark;
   return (
@@ -18,7 +19,7 @@ export default ({ data }) => {
       </Container>
     </Layout>
   );
-};
+}
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -32,3 +33,16 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+Page.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.string.isRequired,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        introduction: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};

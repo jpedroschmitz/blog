@@ -4,8 +4,8 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 import Layout from '../components/Layout';
 import Post from '../components/Post';
-import Container from '../components/UI/Grid/Container';
-import Row from '../components/UI/Grid/Row';
+import Container from '../components/UI/Container';
+import Row from '../components/UI/Row';
 import Pagination from '../components/Pagination';
 import SEO from '../components/SEO';
 
@@ -18,7 +18,6 @@ export default ({ data, pathContext }) => {
       <SEO postSEO={false} />
       <Container>
         <article>
-          {/* {} */}
           <Row centered>
             {edges.map(item => (
               <Post
