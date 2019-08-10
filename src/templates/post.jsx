@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import moment from 'moment';
-import Layout from '../components/Layout';
-import Comments from '../components/Comments';
-import ContentInfo from '../components/ContentInfo';
-import Content from '../components/Content';
-import ContentSocial from '../components/ContentSocial';
-import ContentNavigation from '../components/ContentNavigation';
-import Container from '../components/UI/Container';
-import SEO from '../components/SEO';
+import Layout from '~/components/Layout';
+import Comments from '~/components/Comments';
+import ContentInfo from '~/components/ContentInfo';
+import Content from '~/components/Content';
+import ContentSocial from '~/components/ContentSocial';
+import ContentNavigation from '~/components/ContentNavigation';
+import Container from '~/components/UI/Container';
+import SEO from '~/components/SEO';
 
 export default function Post({ data, pageContext }) {
   const { html } = data.markdownRemark;

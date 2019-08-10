@@ -1,6 +1,6 @@
 import React from 'react';
 import kebabcase from 'lodash.kebabcase';
-import Container from '../UI/Container';
+import Container from '~/components/UI/Container';
 import * as S from './styles';
 import Tags from './Tags';
 

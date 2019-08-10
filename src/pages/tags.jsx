@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import InternalBar from '../components/InternalBar';
-import InternalPost from '../components/InternalPost';
-import Container from '../components/UI/Container';
-import SEO from '../components/SEO';
+import Layout from '~/components/Layout';
+import InternalBar from '~/components/InternalBar';
+import InternalPost from '~/components/InternalPost';
+import Container from '~/components/UI/Container';
+import SEO from '~/components/SEO';
 
 const TagsPage = ({
   data: {
