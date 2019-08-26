@@ -33,12 +33,10 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
     'gatsby-plugin-styled-components',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-image',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
     'gatsby-plugin-twitter',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
