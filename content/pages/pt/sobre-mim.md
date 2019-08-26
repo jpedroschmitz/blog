@@ -39,4 +39,5 @@ Além disso, eu adoro trabalhar em equipe e sou um cara bem comunicativo, que de
 
 - [LinkedIn](https://www.linkedin.com/in/jpedroschmitz/)
 - [E-mail](mailto:jpedroschmitz@hotmail.com)
+- [Twitter](https://twitter.com/joaopedro_cc)
 - [GitHub](https://github.com/jpedroschmitz)
