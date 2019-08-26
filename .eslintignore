@@ -1,8 +1,8 @@
-node_modules/*
-.cache/*
+node_modules/
+.cache/
 
 # Ignore markdown files and examples
-content/*
+content/
 
 # Ignore built files
-public/*
+public/
