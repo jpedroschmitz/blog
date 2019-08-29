@@ -9,22 +9,20 @@ export const StateProvider = ({ children }) => {
   const [dark, setDark] = useState(true);
 
   useEffect(() => {
-    if (localStorage.getItem('dark')) {
-      const lsDark = JSON.parse(localStorage.getItem('dark'));
-      if (lsDark) {
-        setDark(Boolean(lsDark));
-      } else if (
-        window.matchMedia('(prefers-color-scheme: dark)').matches === true
-      ) {
-        setDark(true);
-      }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches === true) {
+      setDark(true);
+      localStorage.setItem('@joaopedro.cc/dark-theme', JSON.stringify(dark));
     } else {
-      localStorage.setItem('dark', JSON.stringify(dark));
+      const darkTheme = localStorage.getItem('@joaopedro.cc/dark-theme');
+      if (darkTheme) {
+        const lsDark = JSON.parse(darkTheme);
+        setDark(lsDark);
+      }
     }
-  }, [dark]);
+  }, []);
 
   const toggleDark = () => {
-    localStorage.setItem('dark', JSON.stringify(!dark));
+    localStorage.setItem('@joaopedro.cc/dark-theme', JSON.stringify(!dark));
     setDark(!dark);
   };
 
