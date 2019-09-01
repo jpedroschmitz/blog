@@ -8,7 +8,7 @@ const config = {
   siteUrl: "https://www.joaopedro.cc",
   pathPrefix: "/",
   siteDescription:
-    "Um blog de um desenvolvedor Front End entusiasta de novas tecnologias e fã de JavaScript. Atualmente estudando Engenharia de Software e trabalhando por um mundo melhor.",
+    "Um blog de um desenvolvedor Front End entusiasta de novas tecnologias e fã de JavaScript. Atualmente trabalhando na Rocketseat.",
   siteRss: "/rss.xml",
   googleAnalyticsID: "UA-134411592-1",
   disqusShortname: "blog-do-joao-pedro",
