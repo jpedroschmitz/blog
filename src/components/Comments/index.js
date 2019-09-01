@@ -24,7 +24,7 @@ export const PureComments = ({ data, postTitle, postSlug }) => {
   );
 };
 
-export const Comments = props => (
+export default props => (
   <StaticQuery
     query={graphql`
       query CommentsQuery {
@@ -39,5 +39,3 @@ export const Comments = props => (
     render={data => <PureComments {...props} data={data} />}
   />
 );
-
-export default Comments;

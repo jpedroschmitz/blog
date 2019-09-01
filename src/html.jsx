@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * - Corrigir problema do preview no Netlify
+ * - Melhorar a busca
+ * - Corrigir problema do dark mode
+ * - Focar no SEO do blog
+ * - Trocar moment por date-fns
+ */
+
 export default function HTML({
   htmlAttributes,
   headComponents,

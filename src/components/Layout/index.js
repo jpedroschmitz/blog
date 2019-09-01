@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
-import GlobalStyle from '~/styles/global';
+import GlobalStyle from 'styles/global';
+import { StateContext } from 'context/StateContext';
 import Header from './Header';
 import Footer from './Footer';
 import SideDrawer from './SideDrawer';
-import { StateContext } from '~/context/StateContext';
 import { Main } from './styles';
 
 export default ({ children }) => {

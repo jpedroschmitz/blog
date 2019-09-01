@@ -1,6 +1,6 @@
 import React from 'react';
+import HeaderItem from 'components/Layout/Header/HeaderItem';
 import SideDrawer from './styles';
-import HeaderItem from '~/components/Layout/Header/HeaderItem';
 
 export default ({ isOpened }) => (
   <SideDrawer open={isOpened}>

@@ -2,11 +2,11 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import moment from 'moment';
 import 'moment/locale/pt-br';
-import Layout from '~/components/Layout';
-import Post from '~/components/Post';
-import Container from '~/components/UI/Container';
-import Row from '~/components/UI/Row';
-import SEO from '~/components/SEO';
+import Layout from 'components/Layout';
+import Post from 'components/Post';
+import Container from 'components/UI/Container';
+import Row from 'components/UI/Row';
+import SEO from 'components/SEO';
 
 export default ({ data }) => {
   const { edges } = data.allMarkdownRemark;

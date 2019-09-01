@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import Roboto from '~/assets/fonts/Roboto-Regular.ttf';
+import Roboto from 'assets/fonts/Roboto-Regular.ttf';
 
 export default createGlobalStyle`
   @font-face {
@@ -30,7 +30,7 @@ export default createGlobalStyle`
   ::-webkit-scrollbar {
     width: 8px;
     background-color: rgba(0, 0, 0, 0.09);
-    -webkit-border-radius: 100px;
+    border-radius: 100px;
   }
 
   ::-webkit-scrollbar:hover {
@@ -39,18 +39,18 @@ export default createGlobalStyle`
 
   ::-webkit-scrollbar-thumb:vertical {
     background: rgba(0, 0, 0, 0.5);
-    -webkit-border-radius: 100px;
+    border-radius: 100px;
   }
 
   ::-webkit-scrollbar-thumb:vertical:active {
     background: rgba(0, 0, 0, 0.61);
-    -webkit-border-radius: 100px;
+    border-radius: 100px;
   }
 
   pre::-webkit-scrollbar {
     height: 8px;
     background-color: rgba(0, 0, 0, 0);
-    -webkit-border-radius: 100px;
+    border-radius: 100px;
   }
 
   pre::-webkit-scrollbar:hover {
@@ -59,12 +59,12 @@ export default createGlobalStyle`
 
   pre::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.5);
-    -webkit-border-radius: 100px;
+    border-radius: 100px;
   }
 
   pre::-webkit-scrollbar-thumb:active {
     background: rgba(0, 0, 0, 0.5);
-    -webkit-border-radius: 100px;
+    border-radius: 100px;
   }
 
   .gatsby-highlight {

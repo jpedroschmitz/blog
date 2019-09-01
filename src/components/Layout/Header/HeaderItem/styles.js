@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 
-import day from '~/assets/images/icons/day.svg';
-import night from '~/assets/images/icons/night.svg';
-import search from '~/assets/images/icons/search.svg';
+import day from 'assets/images/icons/day.svg';
+import night from 'assets/images/icons/night.svg';
+import search from 'assets/images/icons/search.svg';
 
 export const Item = styled.li`
   margin: 0 1.5rem;

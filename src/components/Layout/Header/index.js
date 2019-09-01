@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, navigate } from 'gatsby';
-import { StateContext } from '~/context/StateContext';
+import { StateContext } from 'context/StateContext';
 import HeaderItem from './HeaderItem';
 import { Icon } from './HeaderItem/styles';
 import DrawerToggle from './DrawerToggle';
