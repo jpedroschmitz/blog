@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 
 export const StateContext = createContext({
-  dark: true,
+  dark: false,
   toggleDark: () => {},
 });
 
@@ -15,9 +15,6 @@ export const StateProvider = ({ children }) => {
       const lsDark = JSON.parse(darkTheme);
       setDark(lsDark);
       localStorage.setItem('@joaopedro.cc/dark-theme', JSON.stringify(lsDark));
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setDark(true);
-      localStorage.setItem('@joaopedro.cc/dark-theme', JSON.stringify(true));
     }
   }, []);
 
