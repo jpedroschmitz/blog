@@ -77,6 +77,7 @@ export default ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
+      <meta name="msvalidate.01" content="5B83D140A74367E21329DC7476E9C0DD" />
       <meta
         name="google-site-verification"
         content="T8zsZHxMzNJ2Sb1h-pnIo3ojB7IH0xPomCd1yEQXYJ0"
