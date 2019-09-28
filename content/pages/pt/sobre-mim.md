@@ -27,17 +27,18 @@ Além disso, eu adoro trabalhar em equipe e sou um cara bem comunicativo, que de
 - CSS Frameworks (Bootstrap, Materialize)
 - JavaScript (ES6/7)
 - React.js
+- React Native
 - Gatsby.js
 - Node.js
 - Git
-- PHP
 - Bancos relacionais (MySQL, PostgreSQL)
 - Scrum
-- O que não sei, eu aprendo rápido ;)
+- O que não sei ainda, eu aprendo rápido ;)
 
 ## Contato
 
 - [LinkedIn](https://www.linkedin.com/in/jpedroschmitz/)
+- [Instagram](https://www.instagram.com/jpedroschmitz/)
 - [E-mail](mailto:oi@joaopedro.cc)
 - [Twitter](https://twitter.com/joaopedro_cc)
 - [GitHub](https://github.com/jpedroschmitz)
