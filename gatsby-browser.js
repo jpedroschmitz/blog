@@ -1,4 +1,4 @@
-import { wrapRootElement as wrap } from './wrap-root-element';
+import { wrapRootElement as wrap } from './gatsby/wrapRootElement';
 
 import 'minireset.css';
 import 'prismjs/themes/prism-okaidia.css';
