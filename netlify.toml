@@ -1,3 +1,20 @@
 [build]
   command = "gatsby build"
   publish = "public/"
+
+[context.deploy-preview]
+  command = "gatsby build"
+  publish = "public/"
+
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true
