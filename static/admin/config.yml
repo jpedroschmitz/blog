@@ -1,7 +1,6 @@
 backend:
   name: git-gateway
   branch: master
-  site_domain: joaopedro.cc
 
 media_folder: static/img/upload
 public_folder: /img/upload
