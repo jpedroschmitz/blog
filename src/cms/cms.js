@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CMS from 'netlify-cms-app';
-import moment from 'moment';
 import { StyleSheetManager } from 'styled-components';
 import Content from '../components/Content';
 import ContentInfo from '../components/ContentInfo';
@@ -35,7 +34,7 @@ CMS.registerPreviewTemplate('blog-pt', ({ widgetFor }) => (
     <ContentInfo
       timeToRead="1"
       title={widgetFor('body')}
-      date={moment(widgetFor('body'), 'YYYY-MM-DDTh:m:sZ').fromNow()}
+      date={widgetFor('body')}
       category={widgetFor('category')}
       color="#000"
       image={widgetFor('image')}

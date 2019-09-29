@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import moment from 'moment';
+
 import Layout from 'components/Layout';
 import Comments from 'components/Comments';
 import ContentInfo from 'components/ContentInfo';
@@ -12,7 +12,7 @@ import Container from 'components/UI/Container';
 import SEO from 'components/SEO';
 
 export default function Post({ data, pageContext }) {
-  const { html } = data.markdownRemark;
+  const { html, timeToRead } = data.markdownRemark;
   const {
     title,
     image,
@@ -21,13 +21,12 @@ export default function Post({ data, pageContext }) {
     slug,
     tags,
   } = data.markdownRemark.frontmatter;
-  const { timeToRead } = data.markdownRemark;
   return (
     <Layout>
       <ContentInfo
         timeToRead={timeToRead}
         title={title}
-        date={moment(date, 'YYYY-MM-DDTh:m:sZ').fromNow()}
+        date={date}
         category={category.frontmatter.title}
         color={category.frontmatter.color}
         image={image}
@@ -54,7 +53,7 @@ export const pageQuery = graphql`
         title
         image
         slug
-        date
+        date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
         category {
           frontmatter {
             title

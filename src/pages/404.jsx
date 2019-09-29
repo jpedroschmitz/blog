@@ -1,7 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import moment from 'moment';
-import 'moment/locale/pt-br';
 import Layout from 'components/Layout';
 import Post from 'components/Post';
 import Container from 'components/UI/Container';
@@ -25,11 +23,8 @@ export default ({ data }) => {
           {edges.map(item => (
             <Post
               key={item.node.frontmatter.slug}
-              category={item.node.frontmatter.category}
-              date={moment(
-                item.node.frontmatter.date,
-                'YYYY-MM-DDTh:m:sZ'
-              ).fromNow()}
+              timeToRead={item.node.timeToRead}
+              date={item.node.frontmatter.date}
               title={item.node.frontmatter.title}
               image={item.node.frontmatter.image}
               slug={item.node.frontmatter.slug}
@@ -53,9 +48,10 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          timeToRead
           frontmatter {
             title
-            date
+            date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-br")
             slug
             image
             category {

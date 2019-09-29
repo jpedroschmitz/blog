@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import * as S from './styles';
 
-export default ({ category, title, date, slug, image }) => (
+export default ({ timeToRead, title, date, slug, image }) => (
   <S.Article>
     <S.Background
       style={{
@@ -11,7 +11,9 @@ export default ({ category, title, date, slug, image }) => (
     >
       <Link to={`/${slug}`}>
         <h2>{title}</h2>
-        <S.Info>{`${date} em ${category.frontmatter.title}`}</S.Info>
+        <S.Info>
+          {date} - {timeToRead} min
+        </S.Info>
       </Link>
     </S.Background>
   </S.Article>
