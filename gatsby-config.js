@@ -24,8 +24,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        htmlTitle: 'Gerenciador de Conteúdo',
-        htmlFavicon: '/favicon.png',
+        htmlTitle: 'João Pedro Schmitz | Admin',
+        htmlFavicon: '/static/favicon.png',
+        includeRobots: false,
+        publicPath: 'admin',
+        enableIdentityWidget: true,
       },
     },
     'gatsby-plugin-netlify',
