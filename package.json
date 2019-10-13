@@ -2,6 +2,7 @@
   "name": "joaopedro.cc",
   "description": "A blog from a FrontEnd developer that is an enthusiast of new technologies and a JavaScript fan. Currently studying Software Engineering and working for a better world.",
   "version": "2.0.0",
+  "private": true,
   "author": "João Pedro Schmitz <jpedroschmitz@hotmail.com> (https://www.joaopedro.cc/)",
   "license": "ISC",
   "main": "n/a",
@@ -22,6 +23,18 @@
     "lint:fix": "eslint ./src/**/*.{js,jsx} --fix",
     "format": "prettier --write src/**/*.{js,jsx}",
     "test": "echo \"Write tests! -> In the next few months\""
+  },
+  "lint-staged": {
+    "./src/**/*.{js,jsx}": [
+      "eslint ./src/**/*.js",
+      "prettier --write src/**/*.js",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && lint-staged"
+    }
   },
   "dependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "2.2.1",
@@ -70,6 +83,7 @@
     "url-join": "4.0.0"
   },
   "devDependencies": {
+    "commitlint-config-rocketseat": "^0.0.1",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.2.0",
@@ -81,7 +95,8 @@
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "7.12.4",
     "eslint-plugin-react-hooks": "^1.6.1",
-    "husky": "2.1.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "prettier": "1.17.0"
   },
   "repository": {
