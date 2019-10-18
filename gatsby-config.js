@@ -26,8 +26,6 @@ module.exports = {
       options: {
         htmlTitle: 'João Pedro Schmitz | Admin',
         htmlFavicon: '/static/favicon.png',
-        includeRobots: false,
-        publicPath: 'admin',
         enableIdentityWidget: true,
       },
     },
