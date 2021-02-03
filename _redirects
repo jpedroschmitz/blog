@@ -1,0 +1,24 @@
+/                  https://joaopedro.dev                  301
+/sobre-mim         https://joaopedro.dev/about            301
+/categorias        https://joaopedro.dev                  301
+/tags              https://joaopedro.dev                  301
+
+/busca             https://joaopedro.dev                  302
+
+/categoria/react             https://joaopedro.dev/tag/react                301
+/categoria/gatsby            https://joaopedro.dev/tag/gatsby               301
+/categoria/geral             https://joaopedro.dev/tag/geral                301
+/tag/hooks                   https://joaopedro.dev                          301
+/tag/blog                    https://joaopedro.dev                          301
+/tag/react                   https://joaopedro.dev/tag/react                301
+/tag/gatsby                  https://joaopedro.dev/tag/gatsby               301
+
+/simplificando-formularios-com-hooks    https://joaopedro.dev/simplificando-formularios-com-hooks       301
+/blog-com-gatsby-e-react-parte-5        https://joaopedro.dev/blog-com-gatsby-e-react-parte-5           301
+/blog-com-gatsby-e-react-parte-4        https://joaopedro.dev/blog-com-gatsby-e-react-parte-4           301
+/blog-com-gatsby-e-react-parte-3        https://joaopedro.dev/blog-com-gatsby-e-react-parte-3           301
+/blog-com-gatsby-e-react-parte-2        https://joaopedro.dev/blog-com-gatsby-e-react-parte-2           301
+/blog-com-gatsby-e-react-parte-1        https://joaopedro.dev/blog-com-gatsby-e-react-parte-1           301
+/uma-breve-introducao                   https://joaopedro.dev/uma-breve-introducao                      301
+
+/* https://joaopedro.dev/:splat 200
