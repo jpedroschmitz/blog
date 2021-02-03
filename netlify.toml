@@ -5,3 +5,123 @@
 [context.deploy-preview]
   command = "gatsby build"
   publish = "public/"
+
+[[redirects]]
+from = "/"
+to = "https://joaopedro.dev"
+status = 301
+force = true
+
+[[redirects]]
+from = "/sobre-mim"
+to = "https://joaopedro.dev/about"
+status = 301
+force = true
+
+[[redirects]]
+from = "/categorias"
+to = "https://joaopedro.dev"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tags"
+to = "https://joaopedro.dev"
+status = 301
+force = true
+
+[[redirects]]
+from = "/busca"
+to = "https://joaopedro.dev"
+status = 302
+force = true
+
+[[redirects]]
+from = "/categoria/react"
+to = "https://joaopedro.dev/tag/react"
+status = 301
+force = true
+
+[[redirects]]
+from = "/categoria/gatsby"
+to = "https://joaopedro.dev/tag/gatsby"
+status = 301
+force = true
+
+[[redirects]]
+from = "/categoria/geral"
+to = "https://joaopedro.dev/tag/geral"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tag/hooks"
+to = "https://joaopedro.dev"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tag/blog"
+to = "https://joaopedro.dev"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tag/react"
+to = "https://joaopedro.dev/tag/react"
+status = 301
+force = true
+
+[[redirects]]
+from = "/tag/gatsby"
+to = "https://joaopedro.dev/tag/gatsby"
+status = 301
+force = true
+
+[[redirects]]
+from = "/simplificando-formularios-com-hooks"
+to = "https://joaopedro.dev/simplificando-formularios-com-hooks"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog-com-gatsby-e-react-parte-5"
+to = "https://joaopedro.dev/blog-com-gatsby-e-react-parte-5"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog-com-gatsby-e-react-parte-4"
+to = "https://joaopedro.dev/blog-com-gatsby-e-react-parte-4"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog-com-gatsby-e-react-parte-3"
+to = "https://joaopedro.dev/blog-com-gatsby-e-react-parte-3"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog-com-gatsby-e-react-parte-2"
+to = "https://joaopedro.dev/blog-com-gatsby-e-react-parte-2"
+status = 301
+force = true
+
+[[redirects]]
+from = "/blog-com-gatsby-e-react-parte-1"
+to = "https://joaopedro.dev/blog-com-gatsby-e-react-parte-1"
+status = 301
+force = true
+
+[[redirects]]
+from = "/uma-breve-introducao"
+to = "https://joaopedro.dev/uma-breve-introducao"
+status = 301
+force = true
+
+[[redirects]]
+from = "/*"
+to = "https://joaopedro.dev/:splat"
+status = 200
+force = true
